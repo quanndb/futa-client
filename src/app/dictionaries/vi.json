@@ -1,0 +1,9 @@
+{
+  "title": "Chào mừng đến với trang web của tôi",
+  "description": "Đây là ví dụ đơn giản về đa ngôn ngữ trong NextJS",
+  "greeting": "Xin chào, Thế giới!",
+  "languageSwitch": {
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt"
+  }
+}

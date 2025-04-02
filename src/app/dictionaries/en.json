@@ -1,0 +1,9 @@
+{
+  "title": "Welcome to my website",
+  "description": "This is a simple example of NextJS internationalization",
+  "greeting": "Hello, World!",
+  "languageSwitch": {
+    "en": "English",
+    "vi": "Vietnamese"
+  }
+}

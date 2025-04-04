@@ -1,5 +1,8 @@
 import { getDictionary } from "@/app/dictionaries/dictionaries";
+import { DatePicker } from "@/components/common/DatePicker";
+import Header from "@/components/Header";
 import LanguageSwitcher from "@/components/common/LanguageSwitcher";
+import { Button } from "@/components/ui/button";
 import { languages } from "@/middleware";
 
 // Xác định các tham số động hợp lệ
@@ -13,20 +16,8 @@ export default async function Home({ params }: { params: { lang: string } }) {
   const dictionary = await getDictionary(lang);
 
   return (
-    <div
-      className="container"
-      style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}
-    >
-      <LanguageSwitcher
-        currentLang={lang}
-        dictionary={dictionary.languageSwitch}
-      />
-
-      <div style={{ marginTop: "2rem" }}>
-        <h1>{dictionary.title}</h1>
-        <p>{dictionary.description}</p>
-        <p style={{ fontWeight: "bold" }}>{dictionary.greeting}</p>
-      </div>
-    </div>
+    <>
+      <Header />
+    </>
   );
 }

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import LoginForm from "../Login";
+import TicketBookingPage from "../TicketBooking";
 
 interface HeaderProps {
   isLogin?: boolean;
@@ -68,6 +69,9 @@ const Header = ({ isLogin = false }: HeaderProps) => {
 
       {isLogin && (
         <LoginForm className="absolute left-1/2 transform -translate-x-1/2 w-full mt-12  max-w-6xl" />
+      )}
+      {!isLogin && (
+        <TicketBookingPage className="absolute left-1/2 transform -translate-x-1/2 w-full mt-12  max-w-6xl" />
       )}
     </header>
   );

@@ -1,4 +1,4 @@
-import axios from "src/services";
+import axios from "@/services";
 
 const authAPI = {
   login: (params) => {

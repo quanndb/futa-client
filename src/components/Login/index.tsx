@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { cn } from "@/lib/utils";
+import { authStorage, cn } from "@/lib/utils";
 import authAPI from "@/services/API/authAPI";
 import { EyeIcon, EyeOffIcon, MailIcon } from "lucide-react";
 import Image from "next/image";
@@ -50,8 +50,7 @@ async function loginAction(prevState: any, formData: FormData) {
     const data = response.data;
 
     if (data?.accessToken) {
-      localStorage.setItem("accessToken", response.data.accessToken);
-      localStorage.setItem("refreshToken", response.data.refreshToken);
+      authStorage.saveTokens(data.accessToken, data.refreshToken);
     }
 
     return { status: "success", message: data.message || "Login successful!" };
@@ -65,8 +64,7 @@ async function loginAction(prevState: any, formData: FormData) {
 }
 
 export function clearAuthToken() {
-  localStorage.removeItem("accessToken");
-  localStorage.removeItem("refreshToken");
+  authStorage.clearTokens();
 }
 
 async function signupAction(prevState: any, formData: FormData) {
@@ -82,7 +80,6 @@ async function signupAction(prevState: any, formData: FormData) {
         message: "Invalid form data",
       };
     }
-
 
     // const response = await authAPI.register(validatedFields.data);
     console.log("Signup submission:", validatedFields.data);

@@ -4,11 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
+import authAPI from "@/services/API/authAPI";
 import { EyeIcon, EyeOffIcon, MailIcon } from "lucide-react";
 import Image from "next/image";
-import { useState, useRef } from "react";
-import { z } from "zod";
+import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
+import { z } from "zod";
 
 const emailValidation = z
   .string()
@@ -45,27 +46,27 @@ async function loginAction(prevState: any, formData: FormData) {
       };
     }
 
-    const response = await fetch(
-      "https://better-unduly-shiner.ngrok-free.app/iam/api/v1/auth/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(validatedFields.data),
-      }
-    );
+    const response = await authAPI.login(validatedFields.data);
+    const data = response.data;
 
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.message || "Login failed");
+    if (data?.accessToken) {
+      localStorage.setItem("accessToken", response.data.accessToken);
+      localStorage.setItem("refreshToken", response.data.refreshToken);
     }
 
-    return { status: "success", message: "Login successful!" };
-  } catch (error) {
-    return { status: "error", message: error.message || "Login failed." };
+    return { status: "success", message: data.message || "Login successful!" };
+  } catch (error: any) {
+    return {
+      status: "error",
+      message:
+        error.response?.data?.message || error.message || "Login failed.",
+    };
   }
+}
+
+export function clearAuthToken() {
+  localStorage.removeItem("accessToken");
+  localStorage.removeItem("refreshToken");
 }
 
 async function signupAction(prevState: any, formData: FormData) {
@@ -82,8 +83,8 @@ async function signupAction(prevState: any, formData: FormData) {
       };
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
 
+    // const response = await authAPI.register(validatedFields.data);
     console.log("Signup submission:", validatedFields.data);
 
     return { status: "success", message: "Signup successful!" };

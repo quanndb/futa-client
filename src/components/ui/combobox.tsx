@@ -1,7 +1,6 @@
 "use client";
 
-import { Check, X } from "lucide-react";
-import * as React from "react";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -14,9 +13,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useEffect, useState, useRef } from "react";
+import { Check, X } from "lucide-react";
+import { useEffect, useState, useMemo } from "react";
 
 interface ComboboxProps {
   value: string;
@@ -35,7 +34,6 @@ export function Combobox({
 }: ComboboxProps) {
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (value) {
@@ -43,32 +41,44 @@ export function Combobox({
       if (selectedItem) {
         setSearchQuery(selectedItem.label);
       }
+    } else {
+      setSearchQuery("");
     }
   }, [value, options]);
 
-  const filteredOptions = searchQuery
-    ? options.filter((option) =>
-        option.label.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : options;
+  const filteredOptions = useMemo(() => {
+    const searchQueryLowerCase = searchQuery.trim().toLowerCase();
+    return searchQueryLowerCase
+      ? options.filter((option) =>
+          option.label.toLowerCase().includes(searchQueryLowerCase)
+        )
+      : options;
+  }, [searchQuery, options]);
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchQuery(value);
-
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    timeoutRef.current = setTimeout(() => {
-      onChange(value);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      onChange(searchQuery);
     }, 500);
+    return () => clearTimeout(timeoutId);
+  }, [searchQuery, onChange]);
+
+  const handleSearchChange = (input: string) => {
+    setSearchQuery(input);
   };
 
   const handleClearInput = (e: React.MouseEvent) => {
     e.stopPropagation();
     setSearchQuery("");
     onChange("");
+  };
+
+  const handleSelectOption = (optionValue: string) => {
+    const selectedOption = options.find((opt) => opt.value === optionValue);
+    if (selectedOption) {
+      onChange(selectedOption.value);
+      setSearchQuery(selectedOption.label);
+      setOpen(false);
+    }
   };
 
   return (
@@ -79,50 +89,48 @@ export function Combobox({
           role="combobox"
           aria-expanded={open}
           className={cn("w-full justify-between", className)}
+          onClick={() => setOpen(true)}
         >
-          {value ? value : placeholder || "Select"}
+          {value ? searchQuery : placeholder || "Select"}
+          {searchQuery && (
+            <X
+              className="ml-2 h-4 w-4 shrink-0 opacity-50 hover:opacity-100"
+              onClick={handleClearInput}
+            />
+          )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-full p-0 max-h-72 overflow-y-auto">
+      <PopoverContent
+        className="w-full p-0"
+        style={{ maxHeight: "300px", overflowY: "auto" }}
+      >
         <Command>
-          <div className="relative">
-            <CommandInput
-              className="p-4 pr-10"
-              value={searchQuery || ""}
-              onVolumeChange={handleSearchChange}
-              placeholder="Search..."
-            />
-            {searchQuery && (
-              <button
-                onClick={handleClearInput}
-                className="absolute right-2 top-2 text-muted"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            )}
-          </div>
+          <CommandInput
+            placeholder="Search..."
+            value={searchQuery}
+            onValueChange={handleSearchChange}
+            className="h-9"
+            autoFocus
+          />
           <CommandEmpty>No option found.</CommandEmpty>
           <CommandGroup>
-            {filteredOptions.map((option) => (
-              <CommandItem
-                key={option.value}
-                value={option.value}
-                onSelect={() => {
-                  onChange(option.value);
-                  setSearchQuery(option.label);
-                  setOpen(false);
-                }}
-                className={cn("p-2 cursor-pointer flex items-center ", "")}
-              >
-                {option.label}
-                {/* <Check
-                  className={cn(
-                    "ml-auto h-4 w-4",
-                    value === option.value ? "opacity-100" : "opacity-0"
+            {filteredOptions.length > 0 ? (
+              filteredOptions.map((option) => (
+                <CommandItem
+                  key={option.value}
+                  value={option.value}
+                  onSelect={() => handleSelectOption(option.value)}
+                  className="flex items-center cursor-pointer p-2"
+                >
+                  {option.label}
+                  {value === option.value && (
+                    <Check className="ml-auto h-4 w-4" />
                   )}
-                /> */}
-              </CommandItem>
-            ))}
+                </CommandItem>
+              ))
+            ) : (
+              <div className="py-2 px-2 text-sm">No results found</div>
+            )}
           </CommandGroup>
         </Command>
       </PopoverContent>

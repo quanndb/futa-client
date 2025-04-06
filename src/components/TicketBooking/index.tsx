@@ -21,6 +21,7 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { ArrowRightLeft, CalendarIcon } from "lucide-react";
 import { useState } from "react";
+import { Combobox } from "../ui/combobox";
 
 const southernVietnamCities = [
   { value: "TP. Hồ Chí Minh", label: "TP. Hồ Chí Minh" },
@@ -123,40 +124,34 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="relative">
               <Label className="text-sm mb-1 block">Origin</Label>
-              <Select value={origin} onValueChange={setOrigin}>
-                <SelectTrigger className="w-full focus-visible:ring-orange-500">
-                  <SelectValue placeholder="Select origin" />
-                </SelectTrigger>
-                <SelectContent>
-                  {southernVietnamCities.map((city) => (
-                    <SelectItem key={city.value} value={city.value}>
-                      {city.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <Combobox
+                value={origin}
+                onChange={setOrigin}
+                options={southernVietnamCities.filter(
+                  (city) => city.value !== destination
+                )}
+                placeholder="Select origin"
+                className="p-6"
+              />
             </div>
 
             <div className="relative">
               <Label className="text-sm mb-1 block">Destination</Label>
               <div className="flex items-center">
-                <Select value={destination} onValueChange={setDestination}>
-                  <SelectTrigger className="w-full focus-visible:ring-orange-500">
-                    <SelectValue placeholder="Select destination" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {southernVietnamCities.map((city) => (
-                      <SelectItem key={city.value} value={city.value}>
-                        {city.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <Combobox
+                  value={destination}
+                  onChange={setDestination}
+                  options={southernVietnamCities.filter(
+                    (city) => city.value !== origin
+                  )}
+                  placeholder="Select destination"
+                  className="w-full p-6"
+                />
                 <Button
                   type="button"
                   variant="ghost"
                   size="icon"
-                  className="absolute -left-6"
+                  className="absolute -left-7.5 shadow-2lg bg-amber-50 rounded-full"
                   onClick={swapLocations}
                 >
                   <ArrowRightLeft className="h-4 w-4 text-orange-500" />
@@ -167,7 +162,7 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
             <div>
               <Label className="text-sm mb-1 block">Departure date</Label>
               <Popover>
-                <PopoverTrigger asChild>
+                <PopoverTrigger asChild className="py-6">
                   <Button
                     variant="outline"
                     className="w-full justify-start text-left font-normal border focus-visible:ring-orange-500"
@@ -199,10 +194,10 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
             <div>
               {tripType === "round-trip" ? (
                 <div className="flex w-full space-x-2">
-                  <div className="w-9/12">
+                  <div className="w-9/12 ">
                     <Label className="text-sm mb-1 block">Return date</Label>
                     <Popover>
-                      <PopoverTrigger asChild>
+                      <PopoverTrigger asChild className="py-6">
                         <Button
                           variant="outline"
                           className="w-full justify-start text-left font-normal border focus-visible:ring-orange-500"
@@ -235,10 +230,10 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                       </PopoverContent>
                     </Popover>
                   </div>
-                  <div className="w-3/12">
+                  <div className="w-3/12 ">
                     <Label className="text-sm mb-1 block">Tickets</Label>
                     <Select defaultValue={tickets} onValueChange={setTickets}>
-                      <SelectTrigger className="w-full focus:ring-orange-500">
+                      <SelectTrigger className="w-full focus:ring-orange-500 py-6">
                         <SelectValue placeholder="Select tickets" />
                       </SelectTrigger>
                       <SelectContent>
@@ -255,7 +250,7 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                 <div className="w-full">
                   <Label className="text-sm mb-1 block">Tickets</Label>
                   <Select defaultValue={tickets} onValueChange={setTickets}>
-                    <SelectTrigger className="w-full focus:ring-orange-500">
+                    <SelectTrigger className="w-full focus:ring-orange-500 py-6">
                       <SelectValue placeholder="Select tickets" />
                     </SelectTrigger>
                     <SelectContent>

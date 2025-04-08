@@ -4,29 +4,47 @@ import Link from "next/link";
 import Image from "next/image";
 import LoginForm from "../Login";
 import TicketBookingPage from "../TicketBooking";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 interface HeaderProps {
   isLogin?: boolean;
 }
 
 const Header = ({ isLogin = false }: HeaderProps) => {
+  const { t, i18n } = useTranslation("common");
+  const currentLang = i18n.language || "en";
+  const [lang, setLang] = useState(currentLang);
+
+  const toggleLanguage = () => {
+    const newLang = lang === "vi" ? "en" : "vi";
+    i18n.changeLanguage(newLang);
+    localStorage.setItem("i18nextLng", newLang);
+    setLang(newLang);
+  };
+
   return (
-    <header
-      className="relative w-full text-sm shadow-md  bg-cover bg-center min-h-56 bg-[url('/assets/images/home_banner.png')]
-"
-    >
+    <header className="relative w-full text-sm shadow-md bg-cover bg-center min-h-56 bg-[url('/assets/images/home_banner.png')]">
       <div className="flex items-center justify-between max-w-6xl mx-auto px-4 pb-3">
         {/* Left Side */}
         <div className="flex items-center gap-6 flex-1">
-          <div className="flex items-center cursor-pointer">
+          {/* Language switch */}
+          <div
+            className="flex items-center cursor-pointer"
+            onClick={toggleLanguage}
+          >
             <Image
-              src={"/assets/images/vietnam.svg"}
+              src={`/assets/images/${lang === "vi" ? "vietnam" : "eng"}.svg`}
               width={26}
               height={26}
               alt="Language Icon"
             />
-            <span className="mx-2 uppercase text-gray-700">VI</span>
+            <span className="mx-2 uppercase text-gray-700">
+              {lang.toUpperCase()}
+            </span>
           </div>
+
+          {/* Download App */}
           <div className="border-l pl-4 flex items-center cursor-pointer">
             <Image
               src={"/assets/images/download_app.svg"}
@@ -34,7 +52,7 @@ const Header = ({ isLogin = false }: HeaderProps) => {
               height={26}
               alt="Download App"
             />
-            <span className="mx-2 text-gray-700">Download App</span>
+            <span className="mx-2 text-gray-700">{t("downloadApp")}</span>
           </div>
         </div>
 
@@ -61,17 +79,16 @@ const Header = ({ isLogin = false }: HeaderProps) => {
                 height={20}
                 alt="Person"
               />
-              <span>Sign In/Sign Out</span>
+              <span>{t("signInOut")}</span>
             </button>
           </Link>
         </div>
       </div>
 
-      {isLogin && (
-        <LoginForm className="absolute left-1/2 transform -translate-x-1/2 w-full mt-12  max-w-6xl" />
-      )}
-      {!isLogin && (
-        <TicketBookingPage className="absolute left-1/2 transform -translate-x-1/2 w-full mt-12  max-w-6xl" />
+      {isLogin ? (
+        <LoginForm className="absolute left-1/2 transform -translate-x-1/2 w-full mt-12 max-w-6xl" />
+      ) : (
+        <TicketBookingPage className="absolute left-1/2 transform -translate-x-1/2 w-full mt-12 max-w-6xl" />
       )}
     </header>
   );

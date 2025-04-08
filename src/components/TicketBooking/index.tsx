@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,8 +18,10 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
+import { enUS, vi } from "date-fns/locale";
 import { ArrowRightLeft, CalendarIcon } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Combobox } from "../ui/combobox";
 
 const southernVietnamCities = [
@@ -47,6 +48,8 @@ const southernVietnamCities = [
 ];
 
 const TicketBookingPage = ({ className }: { className?: string }) => {
+  const { t, i18n } = useTranslation("common");
+  const currentLocale = i18n.language === "vi" ? vi : enUS;
   const [tripType, setTripType] = useState<"one-way" | "round-trip">("one-way");
   const [departureDate, setDepartureDate] = useState<Date | undefined>(
     new Date()
@@ -105,7 +108,7 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                   id="one-way"
                   className="text-orange-500"
                 />
-                <Label htmlFor="one-way">One-way</Label>
+                <Label htmlFor="one-way">{t("one-way")}</Label>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
@@ -113,30 +116,30 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                   id="round-trip"
                   className="text-orange-500"
                 />
-                <Label htmlFor="round-trip">Round-trip</Label>
+                <Label htmlFor="round-trip">{t("round-trip")}</Label>
               </div>
             </RadioGroup>
             <a href="#" className="text-orange-500 text-sm">
-              Ticket booking guide
+              {t("ticket-guide")}
             </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="relative">
-              <Label className="text-sm mb-1 block">Origin</Label>
+              <Label className="text-sm mb-1 block">{t("origin")}</Label>
               <Combobox
                 value={origin}
                 onChange={setOrigin}
                 options={southernVietnamCities.filter(
                   (city) => city.value !== destination
                 )}
-                placeholder="Select origin"
+                placeholder={t("select-origin")}
                 className="p-6"
               />
             </div>
 
             <div className="relative">
-              <Label className="text-sm mb-1 block">Destination</Label>
+              <Label className="text-sm mb-1 block">{t("destination")}</Label>
               <div className="flex items-center">
                 <Combobox
                   value={destination}
@@ -144,7 +147,7 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                   options={southernVietnamCities.filter(
                     (city) => city.value !== origin
                   )}
-                  placeholder="Select destination"
+                  placeholder={t("select-destination")}
                   className="w-full p-6"
                 />
                 <Button
@@ -160,7 +163,9 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
             </div>
 
             <div>
-              <Label className="text-sm mb-1 block">Departure date</Label>
+              <Label className="text-sm mb-1 block">
+                {t("departure-date")}
+              </Label>
               <Popover>
                 <PopoverTrigger asChild className="py-6">
                   <Button
@@ -171,11 +176,13 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                       <>
                         {format(departureDate, "dd/MM/yyyy")}
                         <div className="text-xs text-muted-foreground mt-1">
-                          {format(departureDate, "EEEE")}
+                          {format(departureDate, "EEEE", {
+                            locale: currentLocale,
+                          })}
                         </div>
                       </>
                     ) : (
-                      <span>Select date</span>
+                      <span>{t("select-date")}</span>
                     )}
                     <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                   </Button>
@@ -195,7 +202,10 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
               {tripType === "round-trip" ? (
                 <div className="flex w-full space-x-2">
                   <div className="w-9/12 ">
-                    <Label className="text-sm mb-1 block">Return date</Label>
+                    <Label className="text-sm mb-1 block">
+                      {" "}
+                      {t("return-date")}
+                    </Label>
                     <Popover>
                       <PopoverTrigger asChild className="py-6">
                         <Button
@@ -206,12 +216,14 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                             <>
                               {format(returnDate, "dd/MM/yyyy")}
                               <div className="text-xs text-muted-foreground mt-1">
-                                {format(returnDate, "EEEE")}
+                                {format(departureDate, "EEEE", {
+                                  locale: currentLocale,
+                                })}
                               </div>
                             </>
                           ) : (
                             <span className="text-muted-foreground">
-                              Select return date
+                              {t("select-return-date")}
                             </span>
                           )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
@@ -231,10 +243,10 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                     </Popover>
                   </div>
                   <div className="w-3/12 ">
-                    <Label className="text-sm mb-1 block">Tickets</Label>
+                    <Label className="text-sm mb-1 block">{t("tickets")}</Label>
                     <Select defaultValue={tickets} onValueChange={setTickets}>
                       <SelectTrigger className="w-full focus:ring-orange-500 py-6">
-                        <SelectValue placeholder="Select tickets" />
+                        <SelectValue placeholder={t("tickets")} />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="1">1</SelectItem>
@@ -248,10 +260,10 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                 </div>
               ) : (
                 <div className="w-full">
-                  <Label className="text-sm mb-1 block">Tickets</Label>
+                  <Label className="text-sm mb-1 block">{t("tickets")}</Label>
                   <Select defaultValue={tickets} onValueChange={setTickets}>
                     <SelectTrigger className="w-full focus:ring-orange-500 py-6">
-                      <SelectValue placeholder="Select tickets" />
+                      <SelectValue placeholder={t("select-tickets")} />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="1">1</SelectItem>
@@ -268,7 +280,7 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
 
           {recentSearches.length > 0 && (
             <div className="mt-6">
-              <h3 className="text-sm font-medium mb-2">Recent search</h3>
+              <h3 className="text-sm font-medium mb-2">{t("recent-search")}</h3>
               <div className="flex flex-wrap gap-2">
                 {recentSearches.map((search, index) => (
                   <div
@@ -297,7 +309,7 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
               onClick={handleSearch}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 rounded-full"
             >
-              Search trip
+              {t("search-trip")}
             </Button>
           </div>
         </CardContent>

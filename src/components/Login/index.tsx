@@ -9,6 +9,7 @@ import { EyeIcon, EyeOffIcon, MailIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
+import { useTranslation } from "react-i18next";
 import { z } from "zod";
 
 const emailValidation = z
@@ -118,7 +119,7 @@ const LoginForm = ({ className }: { className?: string }) => {
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
-
+  const { t } = useTranslation("common");
   return (
     <div className={cn("bg-white rounded-lg shadow-md p-8 mx-auto", className)}>
       <div className="flex flex-col md:flex-row">
@@ -151,13 +152,13 @@ const LoginForm = ({ className }: { className?: string }) => {
                 value="signin"
                 className="data-[state=active]:text-orange-500 pb-4 text-base font-medium rounded-none"
               >
-                SIGN IN
+                {t("signIn")}
               </TabsTrigger>
               <TabsTrigger
                 value="signup"
                 className="data-[state=active]:text-orange-500 pb-4 text-base font-medium rounded-none"
               >
-                SIGN UP
+                {t("signUp")}
               </TabsTrigger>
             </TabsList>
 
@@ -168,7 +169,7 @@ const LoginForm = ({ className }: { className?: string }) => {
                   <Input
                     type="email"
                     name="email"
-                    placeholder="Enter email address"
+                    placeholder={t("enterEmail")}
                     className="pl-10 py-6 bg-gray-50 border border-gray-200 rounded-md"
                   />
                   {loginState?.errors?.email && (
@@ -182,7 +183,7 @@ const LoginForm = ({ className }: { className?: string }) => {
                   <Input
                     type={showPassword ? "text" : "password"}
                     name="password"
-                    placeholder="Enter password"
+                    placeholder={t("enterPassword")}
                     className="pl-10 py-6 bg-gray-50 border border-gray-200 rounded-md"
                   />
                   {showPassword ? (
@@ -220,11 +221,11 @@ const LoginForm = ({ className }: { className?: string }) => {
                     {loginState.message}
                   </p>
                 )}
-                <SubmitButton>Login</SubmitButton>
+                <SubmitButton>{t("login")}</SubmitButton>
 
                 <div className="text-start mt-4">
                   <a href="#" className="text-orange-500 text-sm font-medium">
-                    Forgot password
+                    {t("forgotPassword")}
                   </a>
                 </div>
               </form>
@@ -259,7 +260,7 @@ const LoginForm = ({ className }: { className?: string }) => {
                   </p>
                 )}
 
-                <SubmitButton>Sign Up</SubmitButton>
+                <SubmitButton>{t("signUp")}</SubmitButton>
               </form>
             </TabsContent>
           </Tabs>

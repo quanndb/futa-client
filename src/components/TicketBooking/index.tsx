@@ -216,9 +216,10 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                             <>
                               {format(returnDate, "dd/MM/yyyy")}
                               <div className="text-xs text-muted-foreground mt-1">
-                                {format(departureDate, "EEEE", {
-                                  locale: currentLocale,
-                                })}
+                                {departureDate &&
+                                  format(departureDate, "EEEE", {
+                                    locale: currentLocale,
+                                  })}
                               </div>
                             </>
                           ) : (

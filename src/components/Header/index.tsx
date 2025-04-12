@@ -2,16 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import LoginForm from "../Login";
-import TicketBookingPage from "../TicketBooking";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import Navbar from "../Navbar";
 
-interface HeaderProps {
-  isLogin?: boolean;
-}
-
-const Header = ({ isLogin = false }: HeaderProps) => {
+const Header = () => {
   const { t, i18n } = useTranslation("common");
   const currentLang = i18n.language || "en";
   const [lang, setLang] = useState(currentLang);
@@ -24,7 +19,7 @@ const Header = ({ isLogin = false }: HeaderProps) => {
   };
 
   return (
-    <header className="relative w-full text-sm shadow-md bg-cover bg-center min-h-56 bg-[url('/assets/images/home_banner.png')]">
+    <header className=" w-full text-sm shadow-md bg-cover bg-center min-h-52 bg-[url('/assets/images/home_banner.png')]">
       <div className="flex items-center justify-between max-w-6xl mx-auto px-4 pb-3">
         {/* Left Side */}
         <div className="flex items-center gap-6 flex-1">
@@ -84,12 +79,6 @@ const Header = ({ isLogin = false }: HeaderProps) => {
           </Link>
         </div>
       </div>
-
-      {isLogin ? (
-        <LoginForm className="absolute left-1/2 transform -translate-x-1/2 w-full mt-12 max-w-6xl" />
-      ) : (
-        <TicketBookingPage className="absolute left-1/2 transform -translate-x-1/2 w-full mt-12 max-w-6xl" />
-      )}
     </header>
   );
 };

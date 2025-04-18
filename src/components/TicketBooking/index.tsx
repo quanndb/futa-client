@@ -20,6 +20,7 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { enUS, vi } from "date-fns/locale";
 import { ArrowRightLeft, CalendarIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Combobox } from "../ui/combobox";
@@ -47,8 +48,13 @@ const southernVietnamCities = [
   { value: "ANMINH", label: "ANMINH" },
 ];
 
+const getCityId = (cityName: string) => {
+  return cityName ? cityName.replace(/\s+/g, "").toLowerCase() : "";
+};
+
 const TicketBookingPage = ({ className }: { className?: string }) => {
   const { t, i18n } = useTranslation("common");
+  const router = useRouter();
   const currentLocale = i18n.language === "vi" ? vi : enUS;
   const [tripType, setTripType] = useState<"one-way" | "round-trip">("one-way");
   const [departureDate, setDepartureDate] = useState<Date | undefined>(
@@ -67,13 +73,34 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
   ]);
 
   const handleSearch = () => {
+    if (!origin || !destination || !departureDate) {
+      // Validate trước khi tìm kiếm
+      return;
+    }
+
     const newSearch = {
       origin,
       destination,
-      date: departureDate || new Date(),
+      date: departureDate,
     };
-
     setRecentSearches([newSearch, ...recentSearches.slice(0, 2)]);
+
+    const params = new URLSearchParams();
+    params.append("from", origin);
+    params.append("to", destination);
+    params.append("fromId", getCityId(origin));
+    params.append("toId", getCityId(destination));
+    params.append("fromTime", format(departureDate, "MM-dd-yyyy"));
+    params.append("ticketCount", tickets);
+
+    if (tripType === "round-trip" && returnDate) {
+      params.append("toTime", format(returnDate, "MM-dd-yyyy"));
+      params.append("isReturn", "true");
+    } else {
+      params.append("isReturn", "false");
+    }
+
+    router.push(`/dat-ve/ket-qua?${params.toString()}`);
   };
 
   const swapLocations = () => {
@@ -216,10 +243,9 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
                             <>
                               {format(returnDate, "dd/MM/yyyy")}
                               <div className="text-xs text-muted-foreground mt-1">
-                                {departureDate &&
-                                  format(departureDate, "EEEE", {
-                                    locale: currentLocale,
-                                  })}
+                                {format(returnDate, "EEEE", {
+                                  locale: currentLocale,
+                                })}
                               </div>
                             </>
                           ) : (
@@ -309,6 +335,7 @@ const TicketBookingPage = ({ className }: { className?: string }) => {
             <Button
               onClick={handleSearch}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 rounded-full"
+              disabled={!origin || !destination || !departureDate}
             >
               {t("search-trip")}
             </Button>

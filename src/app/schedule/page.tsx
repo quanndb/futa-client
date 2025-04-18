@@ -163,9 +163,9 @@ export default function TransportationSearch() {
               {Object.entries(groupedRoutes).map(([origin, routes]) => (
                 <Card
                   key={origin}
-                  className="overflow-hidden border rounded-lg py-0"
+                  className="border rounded-lg py-0"
                 >
-                  <div className="max-h-64 overflow-y-auto">
+                  <div className="">
                     <div className="divide-y">
                       {routes.map((route) => (
                         <div

@@ -116,6 +116,7 @@
   background: transparent !important;
   box-shadow: none !important;
 }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -123,4 +124,19 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.layout {
+  max-width: 1128px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-form {
+  border: 1px solid rgba(239, 82, 34, 0.6);
+  outline: 8px solid rgba(170, 46, 8, 0.1);
+}
+
+.card-box-shadown {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.2);
 }

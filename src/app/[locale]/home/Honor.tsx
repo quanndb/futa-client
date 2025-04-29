@@ -18,6 +18,7 @@ export default function Honor() {
               width={70}
               height={70}
               alt={"Honor"}
+              className="h-auto w-auto"
             />
             <div>
               <p className="text-4xl font-bold">
@@ -33,6 +34,7 @@ export default function Honor() {
               width={70}
               height={70}
               alt={"Honor"}
+              className="h-auto w-auto"
             />
             <div>
               <p className="text-4xl font-bold">
@@ -48,6 +50,7 @@ export default function Honor() {
               width={70}
               height={70}
               alt={"Honor"}
+              className="h-auto w-auto"
             />
             <div>
               <p className="text-4xl font-bold">
@@ -63,6 +66,7 @@ export default function Honor() {
           width={600}
           height={600}
           alt={"Honor"}
+          className="h-auto w-auto"
         />
       </div>
     </div>

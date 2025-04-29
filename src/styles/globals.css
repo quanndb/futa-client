@@ -140,3 +140,20 @@
 .card-box-shadown {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.2);
 }
+
+.bg-white-dark {
+  background: #f3f3f5;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

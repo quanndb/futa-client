@@ -1,11 +1,8 @@
+"use client";
 import Home from "@/app/[locale]/home/page";
 
-const index = () => {
-  return (
-    <div>
-      <Home />
-    </div>
-  );
+const Page = () => {
+  return <Home />;
 };
 
-export default index;
+export default Page;

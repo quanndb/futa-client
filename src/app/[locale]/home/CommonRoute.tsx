@@ -10,21 +10,39 @@ const departureData = [
         name: "Đà Lạt",
         distance: "305km",
         duration: "8 hours",
-        date: "01/05/2025",
+        date: new Date()
+          .toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          .replace(/\//g, "/"),
         price: "290.000đ",
       },
       {
         name: "Cần Thơ",
         distance: "166km",
         duration: "5 hours 30 minutes",
-        date: "01/05/2025",
+        date: new Date()
+          .toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          .replace(/\//g, "/"),
         price: "165.000đ",
       },
       {
         name: "Long Xuyên",
         distance: "203km",
         duration: "5 hours",
-        date: "01/05/2025",
+        date: new Date()
+          .toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          .replace(/\//g, "/"),
         price: "190.000đ",
       },
     ],
@@ -37,21 +55,39 @@ const departureData = [
         name: "TP. Hồ Chí Minh",
         distance: "310km",
         duration: "8 hours",
-        date: "01/05/2025",
+        date: new Date()
+          .toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          .replace(/\//g, "/"),
         price: "290.000đ",
       },
       {
         name: "Đà Nẵng",
         distance: "757km",
         duration: "17 hours",
-        date: "01/05/2025",
+        date: new Date()
+          .toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          .replace(/\//g, "/"),
         price: "410.000đ",
       },
       {
         name: "Cần Thơ",
         distance: "457km",
         duration: "11 hours",
-        date: "01/05/2025",
+        date: new Date()
+          .toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          .replace(/\//g, "/"),
         price: "435.000đ",
       },
     ],
@@ -64,21 +100,39 @@ const departureData = [
         name: "Đà Lạt",
         distance: "666km",
         duration: "17 hours",
-        date: "01/05/2025",
+        date: new Date()
+          .toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          .replace(/\//g, "/"),
         price: "410.000đ",
       },
       {
         name: "BX An Sương",
         distance: "966km",
         duration: "20 hours",
-        date: "01/05/2025",
+        date: new Date()
+          .toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          .replace(/\//g, "/"),
         price: "470.000đ",
       },
       {
         name: "Nha Trang",
         distance: "528km",
         duration: "9 hours 25 minutes",
-        date: "01/05/2025",
+        date: new Date()
+          .toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          .replace(/\//g, "/"),
         price: "370.000đ",
       },
     ],
@@ -105,9 +159,9 @@ export default function CommonRoute() {
               <Image
                 src={`/assets/images/${item.image}`}
                 alt={item.departure}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
+                width={300}
+                height={100}
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-opacity-40 flex flex-col justify-end p-4">
                 <span className="text-white text-sm">Departure from</span>

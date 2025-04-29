@@ -1,4 +1,32 @@
 {
+  "common": {
+    "autocomplete": {
+      "search": "Tìm kiếm...",
+      "selectOption": "Lựa chọn...",
+      "emptyMessage": "Không tìm thấy kết quả."
+    },
+    "hour": "giờ",
+    "min": "phút",
+    "nodata": "Không có dữ liệu",
+    "action": {
+      "ok": "Đồng ý",
+      "cancel": "Hủy",
+      "yes": "Có",
+      "no": "Không",
+      "delete": "Xóa",
+      "edit": "Sửa",
+      "save": "Lưu",
+      "view": "Xem",
+      "completed": "Hoàn tất"
+    },
+    "actionSuccess": "Xử lý hành động thành công",
+    "actionFailed": "Xử lý hành động không thành công",
+    "backHome": "Quay lại trang chủ"
+  },
+  "success": "Thành công",
+  "failed": "Không thành công",
+  "submit": "Xử lý",
+
   "signInOut": "Đăng nhập / Đăng xuất",
   "downloadApp": "Tải ứng dụng",
   "signInAccount": "Đăng nhập tài khoản",
@@ -6,11 +34,28 @@
   "signUp": "Đăng ký",
   "enterEmail": "Nhập địa chỉ email",
   "enterPassword": "Nhập mật khẩu",
+  "enterFullname": "Nhập họ và tên",
+  "enterPhonenumber": "Nhập số điện thoại",
+  "gender": "Giơi tính",
+  "enterGender": "Nhập giới tính",
   "login": "Đăng nhập",
   "forgotPassword": "Quên mật khẩu",
+  "loginSuccess": "Đăng nhập thành công",
+  "loginWithGoogle": "Đăng nhập với Google",
+  "registerSuccess": "Đăng ký thành công",
+  "fullName": "Họ và tên",
+  "phoneNumber": "Số điện thoại",
+  "password": "Mật khẩu",
+  "forgotPasswordTitle": "Quên mật khẩu",
+  "pleaseEnterEmail": "Vui lòng nhập địa chỉ email",
+  "setPassword": "Thiết lập mật khẩu mới",
+  "setPasswordDes": "Vui lòng nhập mật khẩu mới cho tài khoản",
+  "male": "Nam",
+  "female": "Nữ",
+  "other": "Khác",
 
   "one-way": "Một chiều",
-  "round-trip": "Đường dài",
+  "round-trip": "Khứ hồi",
   "ticket-guide": "Hướng dẫn đặt vé",
   "origin": "Điểm đi",
   "destination": "Điểm đến",
@@ -24,11 +69,12 @@
   "select-tickets": "Chọn vé",
   "recent-search": "Tìm kiếm gần đây",
   "search-trip": "Tìm kiếm chuyến đi",
+  "slogan": "Cùng bạn trên mọi nẻo đường",
 
   "nav": {
     "home": "Trang chủ",
     "schedule": "Lịch trình",
-    "booking": "Tra cứu vé",
+    "booking": "Đặt vé",
     "contact": "Liên hệ",
     "about": "Về chúng tôi"
   },
@@ -125,5 +171,37 @@
         "des": "Hiểu được nhu cầu nghỉ ngơi, thư giãn của hành khách trên các hành trình dài qua nhiều tỉnh, thành phố, Công ty Phương Trang đã đầu tư vào hệ thống Trạm Dừng Phúc Lộc tại các khu vực trọng điểm như Tiền Giang, Lâm Đồng, Bến Tre, Vĩnh Long, Sóc Trăng… Hệ thống Trạm Dừng Phúc Lộc được đầu tư bài bản, đảm bảo phục vụ lượng lớn khách hàng 24/7."
       }
     }
+  },
+
+  "profile": {
+    "tabs": {
+      "futaPay": "Ví Futa",
+      "accountInfo": "Thông tin tài khoản",
+      "bookingHistory": "Lịch sử mua vé",
+      "password": "Đổi mật khẩu",
+      "logout": "Đăng xuất"
+    },
+    "logoutDialog": {
+      "title": "Xác nhận đăng xuất",
+      "message": "Bạn có chắc chắn muốn đăng xuất?"
+    },
+    "accountInfo": {
+      "title": "Thông tin tài khoản",
+      "des": "Quản lý thông tin hồ sơ",
+      "fullName": "Họ và tên",
+      "phone": "Số điện thoại",
+      "gender": "Giới tính",
+      "selectImage": "Chọn ảnh",
+      "selectMessage": "Dụng lượng file tối đa 1 MB Định dạng:.JPEG, .PNG"
+    }
+  },
+
+  "validator": {
+    "emailAtLeast": "Email phải có ít nhất 5 ký tự",
+    "emailAtLast": "Email phải ít hơn 50 ký tự",
+    "emailNotValid": "Vui lòng nhập địa chỉ email hợp lệ",
+    "notContainA": "Email chỉ được chứa một ký tự '@'",
+    "passwordAtLeast": "Mật khẩu phải có ít nhất 6 ký tự",
+    "fieldRequired": "Trường này không được để trống"
   }
 }

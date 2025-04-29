@@ -79,10 +79,9 @@ export default function Footer() {
                         alt=""
                         loading="lazy"
                         decoding="async"
-                        data-nimg="fill"
                         width={86}
                         height={24}
-                        className="transition-all duration-200 relative min-h-[24px] w-[86px] object-cover"
+                        className="transition-all duration-200 relative min-h-[24px] w-[86px] object-cover h-auto"
                         src="https://cdn.futabus.vn/futa-busline-cms-dev/CH_Play_712783c88a/CH_Play_712783c88a.svg"
                       />
                     </div>
@@ -97,10 +96,9 @@ export default function Footer() {
                         alt=""
                         loading="lazy"
                         decoding="async"
-                        data-nimg="fill"
                         width={86}
                         height={24}
-                        className="transition-all duration-200 relative min-h-[24px] w-[86px] object-cover"
+                        className="transition-all duration-200 relative min-h-[24px] w-[86px] object-cover h-auto"
                         src="https://cdn.futabus.vn/futa-busline-cms-dev/App_Store_60da92cb12/App_Store_60da92cb12.svg"
                       />
                     </div>
@@ -123,7 +121,7 @@ export default function Footer() {
                         height={27}
                         decoding="async"
                         data-nimg="1"
-                        className="transition-all duration-200"
+                        className="transition-all duration-200 w-auto h-auto"
                         src="https://cdn.futabus.vn/futa-busline-cms-dev/facebook_1830e1b97c/facebook_1830e1b97c.svg"
                       />
                     </div>
@@ -141,7 +139,7 @@ export default function Footer() {
                         height={27}
                         decoding="async"
                         data-nimg="1"
-                        className="transition-all duration-200"
+                        className="transition-all duration-200 w-auto h-auto"
                         src="https://cdn.futabus.vn/futa-busline-cms-dev/youtube_d5ef476c0e/youtube_d5ef476c0e.svg"
                       />
                     </div>

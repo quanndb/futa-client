@@ -9,7 +9,7 @@ export default function Contact() {
   const t = useTranslations("contact");
 
   return (
-    <div className="layout grid grid-cols-1 md:grid-cols-3 gap-10 w-[100%] justify-self-start justify-between">
+    <div className="layout grid grid-cols-1 md:grid-cols-3 gap-10 w-[100%] justify-self-start justify-between my-20">
       <div className="col-span-1 text-left flex flex-col">
         <h2 className="text-3xl text-secondary uppercase font-bold text-center">
           {t("title")}

@@ -1,4 +1,32 @@
 {
+  "common": {
+    "autocomplete": {
+      "search": "Search...",
+      "selectOption": "Select option...",
+      "emptyMessage": "No results found."
+    },
+    "hour": "hour",
+    "min": "min",
+    "nodata": "No data",
+    "action": {
+      "ok": "OK",
+      "cancel": "Cancel",
+      "yes": "Yes",
+      "no": "No",
+      "delete": "Delete",
+      "edit": "Edit",
+      "save": "Save",
+      "view": "View",
+      "completed": "Completed"
+    },
+    "actionSuccess": "Action successfully",
+    "actionFailed": "Action fail",
+    "backHome": "Back home"
+  },
+  "success": "Success",
+  "failed": "Failed",
+  "submit": "Submit",
+
   "signInOut": "Sign In / Sign Out",
   "downloadApp": "Download App",
   "signInAccount": "Sign in account",
@@ -6,8 +34,25 @@
   "signUp": "Sign Up",
   "enterEmail": "Enter email address",
   "enterPassword": "Enter password",
+  "enterFullname": "Enter full name",
+  "enterPhonenumber": "Enter phone number",
+  "gender": "Gender",
+  "enterGender": "Enter gender",
   "login": "Login",
   "forgotPassword": "Forgot password",
+  "loginSuccess": "Login successfully",
+  "loginWithGoogle": "Login with Google",
+  "registerSuccess": "Register successfully",
+  "fullName": "Full name",
+  "phoneNumber": "Phone number",
+  "password": "Password",
+  "forgotPasswordTitle": "Forgot password",
+  "pleaseEnterEmail": "Please enter email",
+  "setPassword": "Set a new password",
+  "setPasswordDes": "Enter a new password to reset your password",
+  "male": "Male",
+  "female": "Female",
+  "other": "Other",
 
   "one-way": "One-way",
   "round-trip": "Round-trip",
@@ -24,6 +69,7 @@
   "select-tickets": "Select tickets",
   "recent-search": "Recent search",
   "search-trip": "Search trip",
+  "slogan": "With you on every trip",
 
   "nav": {
     "home": "Home",
@@ -122,8 +168,40 @@
       },
       "s5": {
         "name": "FUTA REST STOP",
-        "des": "Hiểu được nhu cầu nghỉ ngơi, thư giãn của hành Khách trên các hành trình dài qua nhiều tỉnh, thành phố, Công ty Phương Trang còn đầu tư vào hệ thống trạm dừng Phúc Lộc tại các khu vực trọng điểm như Tiền Giang, Lâm Đồng, Bến Tre, Vĩnh Long, Sóc Trăng… Hệ thống Trạm dừng Phúc Lộc được đầu tư toàn diện, đảm bảo phục vụ lượng lớn khách hàng 24/7."
+        "des": "Understanding the need for rest and relaxation of passengers on long journeys through many provinces and cities, Phuong Trang Company also invested in the Phuc Loc bus stop system in key areas such as Tien Giang, Lam Dong, Ben Tre, Vinh Long, Soc Trang... The Phuc Loc bus stop system is comprehensively invested, ensuring to serve a large number of customers 24/7."
       }
     }
+  },
+
+  "profile": {
+    "tabs": {
+      "futaPay": "Futa Wallet",
+      "accountInfo": "Account Information",
+      "bookingHistory": "Booking History",
+      "password": "Change Password",
+      "logout": "Logout"
+    },
+    "logoutDialog": {
+      "title": "Logout Confirmation",
+      "message": "Are you sure you want to logout?"
+    },
+    "accountInfo": {
+      "title": "Account Information",
+      "des": "Manage profile information",
+      "fullName": "Full name",
+      "phone": "Phonenumber",
+      "gender": "Gender",
+      "selectImage": "Choose Image",
+      "selectMessage": "Maximum file size 1MB Format:.JPEG, .PNG"
+    }
+  },
+
+  "validator": {
+    "emailAtLeast": "Email must be at least 5 characters",
+    "emailAtLast": "Email must be less than 50 characters",
+    "emailNotValid": "Please enter a valid email address",
+    "notContainA": "Email must contain only one '@' character",
+    "passwordAtLeast": "Password must be at least 6 characters",
+    "fieldRequired": "This field is required"
   }
 }

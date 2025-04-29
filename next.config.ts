@@ -3,7 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["cdn.futabus.vn"],
+    domains: ["cdn.futabus.vn", "localhost", "lh3.googleusercontent.com"],
   },
 };
 

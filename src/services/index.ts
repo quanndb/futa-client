@@ -1,7 +1,9 @@
+import { authStorage } from "@/lib/utils/authUtils";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const instance = axios.create({
-  baseURL: "https://better-unduly-shiner.ngrok-free.app/iam/api/v1",
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -19,9 +21,14 @@ instance.interceptors.request.use(
 );
 
 instance.interceptors.response.use(
-  (response) => response.data,
+  (response) => {
+    return response.data;
+  },
   (error) => {
-    console.error("API Error:", error);
+    toast.error(error.response.data.message);
+    if (error.status === 401) {
+      authStorage.clearTokens();
+    }
     throw error;
   }
 );

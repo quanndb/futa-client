@@ -7,10 +7,11 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-const DowloadAppBtn = () => {
+const DowloadAppBtn = ({ className }: { className?: string }) => {
   const t = useTranslations();
 
   const downloadApp = (os: string) => {
@@ -26,29 +27,31 @@ const DowloadAppBtn = () => {
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <div className="border-l pl-4 flex items-center cursor-pointer">
-          <Image
-            src={"/assets/images/download_app.svg"}
-            width={26}
-            height={26}
-            alt="Download App"
-          />
-          <span className="mx-2 text-white">{t("downloadApp")}</span>
-        </div>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuRadioGroup onValueChange={downloadApp}>
-          <DropdownMenuRadioItem value="android" className="px-2">
-            ANDROID
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="ios" className="px-2">
-            IOS
-          </DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div className={cn(className)}>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <div className="border-l pl-4 flex items-center cursor-pointer">
+            <Image
+              src={"/assets/images/download_app.svg"}
+              width={26}
+              height={26}
+              alt="Download App"
+            />
+            <span className="mx-2 text-white">{t("downloadApp")}</span>
+          </div>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuRadioGroup onValueChange={downloadApp}>
+            <DropdownMenuRadioItem value="android" className="px-2">
+              ANDROID
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="ios" className="px-2">
+              IOS
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   );
 };
 

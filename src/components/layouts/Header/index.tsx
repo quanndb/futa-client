@@ -37,7 +37,7 @@ const Header = () => {
               <div className="flex items-center gap-2">
                 <Avatar>
                   <AvatarImage
-                    src={avatarEncoder(userInfo.avatar)}
+                    src={avatarEncoder(userInfo?.avatar)}
                     className="object-cover"
                   />
                   <AvatarFallback>AV</AvatarFallback>

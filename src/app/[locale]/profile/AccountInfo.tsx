@@ -47,6 +47,8 @@ const AccountInfo = () => {
   const [selectedUrl, setSelectedUrl] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
+  const { userInfo, setUserInfo } = useUserInfo();
+
   const { data } = useQuery({
     queryKey: ["profile"],
     queryFn: () => accountAPI.getProfile(),
@@ -54,8 +56,12 @@ const AccountInfo = () => {
 
   const { mutate } = useMutation({
     mutationFn: (file: File) => accountAPI.updateAvatar(file),
-    onSuccess: () => {
+    onSuccess: (res) => {
       toast.success(t("success"));
+      setUserInfo({
+        ...userInfo!,
+        avatar: res?.data?.avatarUrl || "",
+      });
     },
   });
 

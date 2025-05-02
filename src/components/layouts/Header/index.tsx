@@ -2,7 +2,6 @@
 
 import DowloadAppBtn from "@/components/layouts/Header/DowloadAppBtn";
 import LangSwitcher from "@/components/layouts/Header/LangSwitcher";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { avatarEncoder } from "@/lib/utils/LinkConverter";
 import { useUserInfo } from "@/store/AuthStore";
 import { useTranslations } from "next-intl";
@@ -33,15 +32,15 @@ const Header = () => {
         </div>
         <div className="flex items-center justify-end flex-1">
           {userInfo ? (
-            <Link href="/profile">
+            <Link href="/profile/accountInfo">
               <div className="flex items-center gap-2">
-                <Avatar>
-                  <AvatarImage
-                    src={avatarEncoder(userInfo?.avatar)}
-                    className="object-cover"
-                  />
-                  <AvatarFallback>AV</AvatarFallback>
-                </Avatar>
+                <Image
+                  src={avatarEncoder(userInfo.avatar)}
+                  width={35}
+                  height={35}
+                  alt="Avatar"
+                  className="rounded-full"
+                />
                 <p className="hidden md:block text-white font-bold">
                   {userInfo.full_name}
                 </p>

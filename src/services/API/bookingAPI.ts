@@ -1,0 +1,88 @@
+import { Page, PagingRequest } from "@/lib/types/Paging";
+import axios from "@/services";
+
+export interface GetBookingsRequest extends PagingRequest {
+  code?: string;
+  departureDate?: string;
+  status?: BookingStatus[];
+}
+
+export type BookingResponse = {
+  code: string;
+  status: BookingStatus;
+  departureTrip: BookingDetailsType;
+  returnTrip?: BookingDetailsType;
+  paymentLink?: string;
+  departureRoute: string;
+  returnRoute?: string;
+  departureTime: string;
+  returnTime?: string;
+  totalPrice: number;
+  numOfTickets: number;
+  createdAt: string;
+};
+
+export type BookingDetailsType = {
+  numOfTickets: number;
+  busType: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  departureDate: string;
+  route: string;
+  departureId: string;
+  departure: string;
+  departureAddress: string;
+  departureTime: string;
+  destinationId: string;
+  destination: string;
+  destinationAddress: string;
+  destinationTime: string;
+  pricePerSeat: number;
+  tickets: Ticket[];
+};
+
+export type Ticket = {
+  seatNumber: string;
+};
+
+export enum BookingStatus {
+  WAIT_TO_PAY = "WAIT_TO_PAY",
+  OUT_OF_PAY = "OUT_OF_PAY",
+  PAYED = "PAYED",
+  RETURNED = "RETURNED",
+  FAILED = "FAILED",
+}
+
+const bookingAPI = {
+  getMyBooking: (
+    params: GetBookingsRequest
+  ): Promise<{ data: BookingResponse[]; page: Page }> => {
+    const url = "/booking/api/v1/me/bookings";
+    return axios.get(url, { params });
+  },
+
+  createPaymentLink: (
+    code: string,
+    isUseWallet: boolean
+  ): Promise<{ data: BookingResponse }> => {
+    const url =
+      "/booking/api/v1/bookings/payment?code=" +
+      code +
+      "&isUseWallet=" +
+      isUseWallet;
+    return axios.post(url);
+  },
+
+  returnTicket: (code: string) => {
+    const url = "/booking/api/v1/bookings/return?code=" + code;
+    return axios.post(url);
+  },
+
+  getBookingDetails: (code: string): Promise<{ data: BookingResponse }> => {
+    const url = "/booking/api/v1/bookings/details?code=" + code;
+    return axios.get(url);
+  },
+};
+
+export default bookingAPI;

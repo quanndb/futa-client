@@ -4,6 +4,7 @@ import Footer from "@/components/layouts/Footer";
 import Header from "@/components/layouts/Header";
 import Navbar from "@/components/layouts/Navbar";
 import { routing } from "@/i18n/routing";
+import "@/styles/custom.css";
 import "@/styles/globals.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Metadata } from "next";

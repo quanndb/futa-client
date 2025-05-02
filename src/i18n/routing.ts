@@ -1,9 +1,14 @@
 import { defineRouting } from "next-intl/routing";
 
+export enum Locale {
+  EN = "en",
+  VI = "vi",
+}
+
 export const routing = defineRouting({
   // A list of all locales that are supported
-  locales: ["en", "vi"],
+  locales: [Locale.VI, Locale.EN],
 
   // Used when no locale matches
-  defaultLocale: "vi",
+  defaultLocale: Locale.VI,
 });

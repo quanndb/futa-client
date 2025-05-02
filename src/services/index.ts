@@ -29,6 +29,9 @@ instance.interceptors.response.use(
     toast.error(error.response.data.message);
     if (error.status === 401) {
       authStorage.clearTokens();
+      if (typeof window !== "undefined") {
+        window.location.href = "/login";
+      }
     }
     throw error;
   }

@@ -1,5 +1,5 @@
 "use client";
-import { Autocomplete } from "@/components/ui/autocomplete";
+import AutoComplete from "@/components/ui/autocomplete";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,77 +10,51 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { AutocompleteOption } from "@/lib/types/common";
 import { cn } from "@/lib/utils";
+import { formatDateToYYYYMMDD } from "@/lib/utils/DateConverter";
 import transitAPI from "@/services/API/transitAPI";
-import { useMutation } from "@tanstack/react-query";
+import { useRecentSearches } from "@/store/RecentSearches";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
 import { ArrowRightLeftIcon, CalendarIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Fragment, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Fragment, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const enum TripType {
   ONEWAY = "one-way",
   ROUND_TRIP = "round-trip",
 }
 
-type OriginType = {
-  value: string;
-  label: string;
-};
-
-const SearchTrip = ({ className }: { className?: string }) => {
+const SearchTrip = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
   const t = useTranslations();
+  const router = useRouter();
   const [tripType, setTripType] = useState<TripType>(TripType.ONEWAY);
   const [departureDate, setDepartureDate] = useState<Date | undefined>(
     new Date()
   );
   const [returnDate, setReturnDate] = useState<Date | undefined>(undefined);
-  const [origin, setOrigin] = useState("");
-  const [destination, setDestination] = useState("");
-  const [recentSearches, setRecentSearches] = useState([
-    {
-      origin: "TP. Hồ Chí Minh",
-      destination: "ANMINH",
-      date: new Date(),
-    },
-  ]);
+  const [origin, setOrigin] = useState<AutocompleteOption | null>(null);
+  const [destination, setDestination] = useState<AutocompleteOption | null>(
+    null
+  );
+  const { recentSearches, addRecentSearch } = useRecentSearches();
 
-  // data
-  const [originData, setOriginData] = useState<OriginType[]>([]);
-  const [destinationData, setDestinationData] = useState<OriginType[]>([]);
-
-  // const handleSearch = () => {
-  //   if (!origin || !destination || !departureDate) {
-  //     // Validate trước khi tìm kiếm
-  //     toast.error(t("searchTrip.error"));
-  //     return;
-  //   }
-
-  //   const newSearch = {
-  //     origin,
-  //     destination,
-  //     date: departureDate,
-  //   };
-  //   setRecentSearches([newSearch, ...recentSearches.slice(0, 2)]);
-
-  //   const params = new URLSearchParams();
-  //   params.append("from", origin);
-  //   params.append("to", destination);
-  //   params.append("fromId", getCityId(origin));
-  //   params.append("toId", getCityId(destination));
-  //   params.append("fromTime", format(departureDate, "MM-dd-yyyy"));
-
-  //   if (tripType === "round-trip" && returnDate) {
-  //     params.append("toTime", format(returnDate, "MM-dd-yyyy"));
-  //     params.append("isReturn", "true");
-  //   } else {
-  //     params.append("isReturn", "false");
-  //   }
-
-  //   router.push(`/dat-ve/ket-qua?${params.toString()}`);
-  // };
+  useEffect(() => {
+    if (recentSearches.length > 0) {
+      setOrigin(recentSearches[0].origin);
+      setDestination(recentSearches[0].destination);
+    }
+  }, [recentSearches]);
 
   const swapLocations = () => {
     const temp = origin;
@@ -88,20 +62,24 @@ const SearchTrip = ({ className }: { className?: string }) => {
     setDestination(temp);
   };
 
-  const { mutate: searchTransit, isPending } = useMutation({
-    mutationFn: (keyword: string) =>
-      transitAPI.getTransit({ keyword, sortBy: "name.asc" }),
-    onSuccess: (data) => {
-      const transitData = data.data.map((item) => ({
-        value: item.id,
-        label: item.name,
-      }));
-      setOriginData(transitData);
-      setDestinationData(transitData);
-    },
-  });
-
-  const handleSearch = () => {};
+  const handleSearch = () => {
+    if (!origin || !destination) {
+      toast.error(t("departureAndDestinationRequired"));
+      return;
+    }
+    if (tripType === TripType.ROUND_TRIP && !returnDate) {
+      toast.error(t("returnDateRequired"));
+      return;
+    }
+    addRecentSearch({ origin, destination });
+    const searchParams = new URLSearchParams({
+      departure: origin?.value,
+      destination: destination?.value,
+      departureDate: formatDateToYYYYMMDD(departureDate),
+      returnDate: formatDateToYYYYMMDD(returnDate),
+    });
+    router.push(`/bookings?${searchParams.toString()}`);
+  };
 
   // sub component
   const Banner = () => {
@@ -123,7 +101,7 @@ const SearchTrip = ({ className }: { className?: string }) => {
       <Card className="w-full border-pink-100 shadow-sm search-form">
         <CardContent className="pt-6">
           <TripTypeRadioGroup />
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-col md:flex-row flex-wrap gap-5">
             <InputStation />
             <InputDate />
           </div>
@@ -179,41 +157,59 @@ const SearchTrip = ({ className }: { className?: string }) => {
     );
   };
 
+  const loadOptions = (
+    inputValue: string,
+    callback: (options: AutocompleteOption[]) => void
+  ) => {
+    transitAPI
+      .getTransit({
+        keyword: inputValue,
+        sortBy: "name.asc",
+      })
+      .then((res) => {
+        const options = res.data.map((tp) => ({
+          label: tp.name,
+          value: tp.id,
+        }));
+        callback(options);
+      })
+      .catch((error) => {
+        console.error("Error loading options:", error);
+        callback([]);
+      });
+  };
+
   const InputStation = () => {
     return (
-      <div className="flex-2 flex flex-wrap gap-5 relative">
+      <div className="flex flex-col md:flex-row md:flex-2 gap-5 relative">
         {/* departure */}
         <div className="flex-1">
           <Label className="text-sm mb-1 block">{t("origin")}</Label>
-          <Autocomplete
-            options={originData}
+          <AutoComplete
+            loadOptions={loadOptions}
+            placeholder={t("origin")}
             value={origin}
-            onChange={setOrigin}
-            isLoading={isPending}
-            onSearch={searchTransit}
-            className="w-full p-6"
+            onChangeValue={setOrigin}
+            className="w-full h-full"
           />
         </div>
         {/* destination */}
         <div className="flex-1">
           <Label className="text-sm mb-1 block">{t("destination")}</Label>
-          <div className="flex items-center">
-            <Autocomplete
-              options={destinationData}
-              value={destination}
-              onChange={setDestination}
-              isLoading={isPending}
-              onSearch={searchTransit}
-              className="w-full p-6"
-            />
-          </div>
+          <AutoComplete
+            loadOptions={loadOptions}
+            placeholder={t("destination")}
+            value={destination}
+            onChangeValue={setDestination}
+            className="w-full h-full"
+          />
         </div>
         {/* swap button */}
         <Button
           type="button"
           variant="ghost"
           size="icon"
-          className="shadow-2lg bg-white rounded-full border cursor-pointer absolute top-1/2 left-1/2 transform -translate-x-1/2"
+          className="shadow-2lg bg-white rounded-full border cursor-pointer absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/5 z-100"
           onClick={swapLocations}
         >
           <ArrowRightLeftIcon className="h-4 w-4 text-orange-500" />
@@ -225,10 +221,10 @@ const SearchTrip = ({ className }: { className?: string }) => {
   const InputDate = () => {
     return (
       <Fragment>
-        <div className="flex-1">
+        <div className="md:flex-1">
           <Label className="text-sm mb-1 block">{t("departure-date")}</Label>
           <Popover>
-            <PopoverTrigger asChild className="py-6">
+            <PopoverTrigger asChild className="pt-6 pb-5">
               <Button
                 variant="outline"
                 className="w-full justify-start text-left font-normal border focus-visible:ring-orange-500"
@@ -254,16 +250,17 @@ const SearchTrip = ({ className }: { className?: string }) => {
                 selected={departureDate}
                 onSelect={setDepartureDate}
                 initialFocus
+                disabled={(date) => date < new Date()}
               />
             </PopoverContent>
           </Popover>
         </div>
 
         {tripType === "round-trip" && (
-          <div className="w-full space-x-2 flex-1">
+          <div className="w-full space-x-2 md:flex-1">
             <Label className="text-sm mb-1 block">{t("return-date")}</Label>
             <Popover>
-              <PopoverTrigger asChild className="py-6">
+              <PopoverTrigger asChild className="pt-6 pb-5">
                 <Button
                   variant="outline"
                   className="w-full justify-start text-left font-normal border focus-visible:ring-orange-500"
@@ -290,7 +287,7 @@ const SearchTrip = ({ className }: { className?: string }) => {
                   mode="single"
                   selected={returnDate}
                   onSelect={setReturnDate}
-                  disabled={(date) => !!departureDate && date < departureDate}
+                  disabled={(date) => date < new Date()}
                   initialFocus
                 />
               </PopoverContent>
@@ -300,6 +297,7 @@ const SearchTrip = ({ className }: { className?: string }) => {
       </Fragment>
     );
   };
+
   const SearchButton = () => {
     return (
       <div className="flex justify-center relative transform translate-y-7 -m-5">
@@ -316,6 +314,7 @@ const SearchTrip = ({ className }: { className?: string }) => {
   };
 
   const RecentSearch = () => {
+    const recentSearches = useRecentSearches((state) => state.recentSearches);
     return (
       <div>
         {recentSearches.length > 0 && (
@@ -329,14 +328,13 @@ const SearchTrip = ({ className }: { className?: string }) => {
                   onClick={() => {
                     setOrigin(search.origin);
                     setDestination(search.destination);
-                    setDepartureDate(search.date);
                   }}
                 >
                   <div className="font-medium">
-                    {search.origin} - {search.destination}
+                    {search.origin.label} - {search.destination.label}
                   </div>
                   <div className="text-gray-500 text-xs mt-1">
-                    {format(search.date, "dd/MM/yyyy")}
+                    {format(new Date(), "dd/MM/yyyy")}
                   </div>
                 </div>
               ))}
@@ -352,6 +350,7 @@ const SearchTrip = ({ className }: { className?: string }) => {
       <div className="absolute max-w-6xl top-20 left-1/2 transform -translate-x-1/2 w-full mt-12 px-5">
         <Banner />
         <SearchCard />
+        {children}
       </div>
     </div>
   );

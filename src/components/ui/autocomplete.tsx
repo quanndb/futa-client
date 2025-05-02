@@ -1,119 +1,167 @@
-"use client";
-
-import { Check, ChevronsUpDown } from "lucide-react";
-import * as React from "react";
-
-import { Button } from "@/components/ui/button";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { useDebounce } from "@/hooks/useDebounce";
-import { cn } from "@/lib/utils";
+import { AutocompleteOption } from "@/lib/types/common";
 import { useTranslations } from "next-intl";
+import { useMemo } from "react";
+import { GroupBase } from "react-select";
+import AsyncSelect from "react-select/async";
 
-export interface AutocompleteOption {
-  value: string;
-  label: string;
-}
-
-interface AutocompleteProps {
-  options: AutocompleteOption[];
-  value?: string;
-  onChange?: (value: string) => void;
+// Define props interface
+interface AutoCompleteProps {
+  value?: AutocompleteOption | null;
+  onChangeValue?: (selectedOption: AutocompleteOption | null) => void;
+  loadOptions: (
+    inputValue: string,
+    callback: (options: AutocompleteOption[]) => void
+  ) => void;
   placeholder?: string;
-  searchPlaceholder?: string;
-  emptyMessage?: string;
   className?: string;
-  disabled?: boolean;
-  isLoading?: boolean;
-  onSearch?: (search: string) => void;
+  isDisabled?: boolean;
 }
 
-export function Autocomplete({
-  options,
+export default function AutoComplete({
   value,
-  onChange,
-  placeholder = "selectOption",
-  searchPlaceholder = "search",
-  emptyMessage = "emptyMessage",
-  className,
-  disabled = false,
-  isLoading = false,
-  onSearch,
-}: AutocompleteProps) {
-  const [open, setOpen] = React.useState(false);
-  const [searchValue, setSearchValue] = React.useState("");
-  const t = useTranslations("common.autocomplete");
-  const debouncedSearchValue = useDebounce(searchValue, 300);
+  onChangeValue,
+  loadOptions,
+  placeholder,
+  className = "",
+  isDisabled = false,
+}: AutoCompleteProps) {
+  const t = useTranslations();
 
-  React.useEffect(() => {
-    if (open && onSearch && debouncedSearchValue) {
-      onSearch(debouncedSearchValue);
+  // Handle change event
+  const handleChange = (newValue: AutocompleteOption | null) => {
+    if (onChangeValue) {
+      return onChangeValue(newValue);
     }
-  }, [debouncedSearchValue, onSearch, open]);
+  };
+
+  // Create a debounced loadOptions function using useMemo
+  const debouncedLoadOptions = useMemo(() => {
+    // We'll store the timeout ID here
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
+    // Return a function with the same signature as loadOptions
+    return function (
+      inputValue: string,
+      callback: (options: AutocompleteOption[]) => void
+    ) {
+      // Handle empty input immediately
+      if (!inputValue || inputValue.trim() === "") {
+        callback([]);
+        return;
+      }
+
+      // Clear previous timeout if it exists
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+
+      // Set a new timeout
+      timeoutId = setTimeout(() => {
+        loadOptions(inputValue, callback);
+      }, 300); // 300ms debounce delay
+    };
+  }, [loadOptions]); // Only re-create when loadOptions changes
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          role="combobox"
-          aria-expanded={open}
-          className={cn("w-full justify-between", className)}
-          disabled={disabled}
-        >
-          {value
-            ? options.find((option) => option.value === value)?.label
-            : t(placeholder)}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-80 p-0">
-        <Command>
-          <CommandInput
-            placeholder={t(searchPlaceholder)}
-            value={searchValue}
-            onValueChange={setSearchValue}
-          />
-          <CommandList>
-            <CommandEmpty>{t(emptyMessage)}</CommandEmpty>
-            <CommandGroup>
-              {isLoading ? (
-                <CommandItem disabled>Loading...</CommandItem>
-              ) : (
-                options.map((option) => (
-                  <CommandItem
-                    key={option.value}
-                    value={option.value}
-                    onSelect={(currentValue) => {
-                      onChange?.(currentValue === value ? "" : currentValue);
-                      setOpen(false);
-                    }}
-                  >
-                    {option.label}
-                    <Check
-                      className={cn(
-                        "ml-auto h-4 w-4",
-                        value === option.value ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                  </CommandItem>
-                ))
-              )}
-            </CommandGroup>
-          </CommandList>
-        </Command>
-      </PopoverContent>
-    </Popover>
+    <AsyncSelect<AutocompleteOption, false, GroupBase<AutocompleteOption>>
+      value={value}
+      cacheOptions
+      defaultOptions
+      onChange={handleChange}
+      isClearable
+      isDisabled={isDisabled}
+      loadOptions={debouncedLoadOptions}
+      styles={customStyles({ isDisabled })}
+      placeholder={placeholder || t("common.autocomplete.selectOption")}
+      noOptionsMessage={() => t("common.autocomplete.emptyMessage")}
+      loadingMessage={() => t("common.autocomplete.loading")}
+      classNamePrefix="autocomplete"
+      className={className}
+      menuPortalTarget={typeof window !== "undefined" ? document.body : null}
+    />
   );
 }
+
+// Custom styles for the AsyncSelect component
+const customStyles = ({ isDisabled }: { isDisabled: boolean }) => ({
+  container: (provided) => ({
+    ...provided,
+    position: "relative",
+  }),
+  control: (provided, state) => ({
+    ...provided,
+    minHeight: "44px",
+    backgroundColor: isDisabled ? "#f9fafb" : "white",
+    borderColor: state.isFocused ? "#2563eb" : "#e2e8f0",
+    borderRadius: "0.375rem",
+    boxShadow: state.isFocused ? "0 0 0 1px #2563eb" : "none",
+    "&:hover": {
+      borderColor: state.isFocused ? "#2563eb" : "#cbd5e1",
+    },
+    transition: "all 0.2s ease",
+  }),
+  menu: (provided) => ({
+    ...provided,
+    zIndex: 9999,
+    borderRadius: "0.375rem",
+    boxShadow:
+      "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    marginTop: "4px",
+  }),
+  menuPortal: (provided) => ({
+    ...provided,
+    zIndex: 9999,
+  }),
+  option: (provided, state) => ({
+    ...provided,
+    padding: "10px 16px",
+    backgroundColor: state.isSelected
+      ? "#eef2ff"
+      : state.isFocused
+      ? "#f9fafb"
+      : "white",
+    color: state.isSelected ? "#4f46e5" : "#1f2937",
+    cursor: "pointer",
+    ":active": {
+      backgroundColor: "#eef2ff",
+    },
+  }),
+  placeholder: (provided) => ({
+    ...provided,
+    color: "#9ca3af",
+  }),
+  singleValue: (provided) => ({
+    ...provided,
+    color: "#1f2937",
+  }),
+  valueContainer: (provided) => ({
+    ...provided,
+    padding: "2px 12px",
+  }),
+  indicatorsContainer: (provided) => ({
+    ...provided,
+    height: "44px",
+  }),
+  dropdownIndicator: (provided, state) => ({
+    ...provided,
+    color: state.isFocused ? "#6366f1" : "#9ca3af",
+    "&:hover": {
+      color: state.isFocused ? "#4f46e5" : "#6b7280",
+    },
+  }),
+  clearIndicator: (provided) => ({
+    ...provided,
+    color: "#9ca3af",
+    "&:hover": {
+      color: "#6b7280",
+    },
+  }),
+  loadingIndicator: (provided) => ({
+    ...provided,
+    color: "#6366f1",
+  }),
+  noOptionsMessage: (provided) => ({
+    ...provided,
+    color: "#6b7280",
+  }),
+});

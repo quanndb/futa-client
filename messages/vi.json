@@ -3,10 +3,11 @@
     "autocomplete": {
       "search": "Tìm kiếm...",
       "selectOption": "Lựa chọn...",
-      "emptyMessage": "Không tìm thấy kết quả."
+      "emptyMessage": "Không tìm thấy kết quả.",
+      "loading": "Đang tìm kiếm..."
     },
-    "hour": "giờ",
-    "min": "phút",
+    "hour": "Giờ",
+    "min": "Phút",
     "nodata": "Không có dữ liệu",
     "action": {
       "ok": "Đồng ý",
@@ -21,11 +22,42 @@
     },
     "actionSuccess": "Xử lý hành động thành công",
     "actionFailed": "Xử lý hành động không thành công",
-    "backHome": "Quay lại trang chủ"
+    "backHome": "Quay lại trang chủ",
+    "searchTrip": "Tìm chuyến xe"
   },
   "success": "Thành công",
   "failed": "Không thành công",
   "submit": "Xử lý",
+  "search": "Tìm kiếm",
+  "all": "Tất cả",
+  "returnTicket": "Trả vé",
+  "pay": "Thanh toán",
+  "orderBy": "Sắp xếp theo",
+  "departureAndDestinationRequired": "Điểm xuất phát và điểm cuối không được bỏ trống",
+  "returnDateRequired": "Ngày về không được bỏ trống",
+  "searchFilter": "Bộ lọc tìm kiếm",
+  "deleteFilter": "Xóa lọc",
+  "busType": {
+    "SEAT": "Ghế",
+    "BED": "Giường",
+    "LIMOUSINE": "Limousine"
+  },
+  "morning": "Sáng",
+  "afternoon": "Chiều",
+  "evening": "Tối",
+  "night": "Đêm",
+  "busTypeTitle": "Loại xe",
+  "departureTime": "Giờ khởi hành",
+  "price": "Giá",
+  "departureTrip": "Chuyến đi",
+  "returnTrip": "Chuyến về",
+  "foundResults": "Kết quả tìm kiếm",
+  "blankSeat": "Ghế trống",
+  "selectTrip": "Chọn chuyến xe",
+  "schedule": "Lịch trình",
+  "transshipment": "Trung chuyển",
+  "policy": "Chính sách",
+  "details": "Chi tiết",
 
   "signInOut": "Đăng nhập / Đăng xuất",
   "downloadApp": "Tải ứng dụng",
@@ -193,6 +225,31 @@
       "gender": "Giới tính",
       "selectImage": "Chọn ảnh",
       "selectMessage": "Dụng lượng file tối đa 1 MB Định dạng:.JPEG, .PNG"
+    },
+    "changePass": {
+      "title": "Đổi mật khẩu",
+      "des": "Quản lý mật khẩu",
+      "oldPass": "Mật khẩu cũ",
+      "enterOldPass": "Nhập mật khẩu cũ",
+      "newPass": "Mật khẩu mới",
+      "enterNewPass": "Nhập mật khẩu mới"
+    },
+    "futaWallet": {
+      "title": "Ví Futa",
+      "des": "Quản lý Ví Futa của bạn",
+      "balance": "Số dư",
+      "deposit": "Nạp tiền",
+      "withdraw": "Rút tiền",
+      "depositAmount": "Số tiền nạp",
+      "withdrawAmount": "Số tiền rút",
+      "enterDepositAmount": "Nhập số tiền muốn nạp",
+      "enterWithdrawAmount": "Nhập số tiền muốn rút",
+      "walletHistory": "Lịch sử giao dịch",
+      "walletCommand": "Lịch sử thực hiện"
+    },
+    "bookingHistory": {
+      "title": "Lịch sử đặt vé",
+      "des": "Quản lý lich sử đặt vé"
     }
   },
 
@@ -203,5 +260,130 @@
     "notContainA": "Email chỉ được chứa một ký tự '@'",
     "passwordAtLeast": "Mật khẩu phải có ít nhất 6 ký tự",
     "fieldRequired": "Trường này không được để trống"
+  },
+
+  "walletAction": {
+    "deposit": "Nạp tiền",
+    "withdraw": "Rút tiền",
+    "using": "Sử dụng",
+    "return": "Hoàn tiền"
+  },
+  "walletHistory": {
+    "bank": "Ngân hàng",
+    "accountNumber": "Số tài khoản",
+    "receiver": "Người nhận",
+    "amount": "Số tiền",
+    "content": "Nội dung",
+    "time": "Thời gian",
+    "balance": "Số dư",
+    "action": "Hành động"
+  },
+  "bookingHistory": {
+    "code": "Mã đơn",
+    "route": "Tuyến xe",
+    "departureTime": "Thời gian xuất phát",
+    "departureDate": "Ngày xuất phát",
+    "numOfTickets": "Số vé",
+    "totalPrice": "Giá vé",
+    "createdAt": "Thời gian tạo",
+    "status": "Trạng thái",
+    "action": "Hành động"
+  },
+  "bookingStatus": {
+    "payed": "Đã thanh toán",
+    "failed": "Thất bại",
+    "returned": "Đã trả vé",
+    "waitToPay": "Chờ thanh toán",
+    "outOfPay": "Hết hạn"
+  },
+
+  "TripPolicy": {
+    "cancellationPolicy": {
+      "title": "Chính sách hủy vé",
+      "exchangeOnce": "Vé chỉ được đổi một lần duy nhất.",
+      "costExplanation": "Phí hủy vé từ 10% đến 30% giá vé tùy theo thời gian hủy so với giờ khởi hành và số lượng vé cá nhân/nhóm.",
+      "contactInstruction": "Liên hệ tổng đài 1900 6067 hoặc quầy vé ít nhất 24 giờ trước giờ khởi hành ghi trên vé."
+    },
+    "boarding": {
+      "title": "Yêu cầu khi lên xe",
+      "arrivalTime": "Có mặt tại văn phòng/bến xe (điểm đón trực tiếp) trước giờ khởi hành 30 phút (ngày lễ và Tết đến sớm 60 phút).",
+      "presentTicket": "Xuất trình thông tin vé qua SMS/Email/Ứng dụng Futa hoặc liên hệ quầy vé để nhận thông tin vé.",
+      "noStrongOdors": "Không mang theo thức ăn/nước uống có mùi nặng lên xe.",
+      "noSmokingAlcohol": "Không hút thuốc, uống rượu bia, hoặc sử dụng chất kích thích trên xe.",
+      "noFlammableItems": "Không mang theo vật dễ cháy nổ lên xe.",
+      "noLittering": "Không xả rác trên xe.",
+      "noPets": "Không mang theo thú cưng lên xe."
+    },
+    "baggage": {
+      "title": "Hành lý xách tay",
+      "maxWeight": "Tổng trọng lượng hành lý không vượt quá 20kg.",
+      "noBulkyGoods": "Không vận chuyển hàng hóa cồng kềnh."
+    },
+    "childrenPregnant": {
+      "title": "Trẻ em & Phụ nữ mang thai",
+      "childTicketPolicy": "Trẻ em dưới 6 tuổi, cao dưới 1.3m và nặng dưới 30kg không cần mua vé.",
+      "maxOneChild": "Mỗi người lớn được đi kèm tối đa một trẻ em.",
+      "pregnantCaution": "Phụ nữ mang thai cần đảm bảo sức khỏe trong suốt hành trình."
+    },
+    "pickup": {
+      "title": "Đón khách",
+      "registerPickup": "Liên hệ tổng đài 19006067 để đăng ký ít nhất 2 giờ trước giờ khởi hành. Chuẩn bị hành lý gọn nhẹ (tối đa 20kg).",
+      "pickupLocationNote": "Chỉ hỗ trợ đón tại một số địa điểm thuận tiện dọc tuyến đường."
+    }
+  },
+
+  "Transshipment": {
+    "title": "Đón/trả tận nơi",
+    "guestTime": "Thời gian tiếp nhận khách: Trước giờ khởi hành 4 tiếng.",
+    "pickupTime": "Thời gian đón khách: Chuẩn bị trước 2–3 tiếng. Tài xế sẽ liên hệ trước vì có thể kẹt xe và ghép nhiều điểm đón.",
+    "smallAlleys": "Hẻm nhỏ không quay đầu được: Xe đón khách tại đầu hẻm/đường.",
+    "noParking": "Khu vực cấm đỗ: Xe đón tại vị trí gần nhất có thể.",
+    "luggage": "Hành lý: Gọn nhẹ dưới 20kg, không mang theo thú cưng, hàng hóa có mùi hoặc chảy nước."
+  },
+
+  "Schedule": {
+    "noted": "Lưu ý",
+    "note": "Thời gian các mốc lịch trình là thời gian dự kiến. Lịch trình này có thể thay đổi tuỳ vào tình hình thực tế xuất bến sớm hay trễ."
+  },
+
+  "booking": {
+    "bookingDetails": "Chi Tiết Đặt Vé",
+    "customerInformation": "Thông Tin Khách Hàng",
+    "departureTrip": "Chuyến Đi",
+    "returnTrip": "Chuyến Về",
+    "name": "Họ Tên",
+    "email": "Email",
+    "phone": "Số Điện Thoại",
+    "departure": "Điểm Khởi Hành",
+    "departureDate": "Ngày Khởi Hành",
+    "departureAddress": "Địa Chỉ Khởi Hành",
+    "departureTime": "Giờ Khởi Hành",
+    "destination": "Điểm Đến",
+    "destinationAddress": "Địa Chỉ Đến",
+    "destinationTime": "Giờ Đến",
+    "route": "Tuyến Đường",
+    "pricePerSeat": "Giá Mỗi Ghế",
+    "seatNumbers": "Số Ghế",
+    "totalPrice": "Tổng Tiền",
+    "numOfTickets": "Số Lượng Vé",
+    "tickets": "vé",
+    "createdAt": "Ngày Tạo",
+    "pay": "Thanh Toán",
+    "returnTicket": "Hoàn Trả Vé",
+    "processing": "Đang Xử Lý...",
+    "paymentSuccess": "Thanh toán được khởi tạo thành công",
+    "returnSuccess": "Hoàn trả vé thành công",
+    "status": {
+      "wait_to_pay": "Chờ Thanh Toán",
+      "out_of_pay": "Hết Hạn Thanh Toán",
+      "payed": "Đã Thanh Toán",
+      "returned": "Đã Hoàn Trả",
+      "failed": "Thất Bại"
+    }
+  },
+
+  "returnModal": {
+    "title": "Hoàn trả vé",
+    "des": "Bạn có chắc chắn muốn hoàn trả vé này và nhận tiền vào ví Futa của bạn?"
   }
 }

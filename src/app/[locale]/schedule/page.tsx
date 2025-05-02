@@ -7,17 +7,21 @@ import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { intToHour, intToMin } from "@/lib/utils/TimeConverter";
 import routeAPI, { Route } from "@/services/API/routeAPI";
+import { useRecentSearches } from "@/store/RecentSearches";
 import { useQuery } from "@tanstack/react-query";
 import { Search } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function TransportationSearch() {
   const t = useTranslations("common");
+  const router = useRouter();
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
   const [page, setPage] = useState(1);
+  const { addRecentSearch } = useRecentSearches();
 
   const { data } = useQuery({
     queryKey: ["routes", origin, destination, page],
@@ -44,6 +48,16 @@ export default function TransportationSearch() {
       groupedRoutes[route.departure].push(route);
     });
   }
+
+  const handleSearchTrip = (route: Route) => {
+    if (!route) return;
+    console.log(route);
+    addRecentSearch({
+      origin: { value: route.departureId, label: route.departure },
+      destination: { value: route.destinationId, label: route.destination },
+    });
+    router.push("/bookings");
+  };
 
   return (
     <div className="container mx-auto max-w-6xl my-10 justify-self-start">
@@ -120,8 +134,9 @@ export default function TransportationSearch() {
                               <Button
                                 variant="outline"
                                 className="bg-orange-100 text-orange-500 hover:bg-orange-200 hover:text-orange-600 border-orange-200"
+                                onClick={() => handleSearchTrip(route)}
                               >
-                                Search trip
+                                {t("searchTrip")}
                               </Button>
                             </div>
                           </div>

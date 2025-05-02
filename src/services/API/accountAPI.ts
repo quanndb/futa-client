@@ -43,6 +43,11 @@ const accountAPI = {
     return axios.post(url);
   },
 
+  changePassword: (params: { oldPassword: string; newPassword: string }) => {
+    const url = "/iam/api/v1/accounts/me/password";
+    return axios.post(url, params);
+  },
+
   setPassword: (newPassword: string) => {
     const url = "/iam/api/v1/accounts/action/password-verification";
     return axios.post(url, { newPassword });

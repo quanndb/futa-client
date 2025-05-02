@@ -86,6 +86,7 @@ const AccountInfo = () => {
     <div>
       <p className="text-4xl font-semibold">{t("profile.accountInfo.title")}</p>
       <p className="text mt-2">{t("profile.accountInfo.des")}</p>
+      <hr className="my-5" />
       {data && (
         <div>
           {/* avatar */}
@@ -204,44 +205,46 @@ const InfoForm = ({
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="gender"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t("gender")}</FormLabel>
-                <FormControl>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value?.toString() || undefined}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder={t("enterGender")} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="MALE">{t("male")}</SelectItem>
-                      <SelectItem value="FEMALE">{t("female")}</SelectItem>
-                      <SelectItem value="OTHER">{t("other")}</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phoneNumber"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t("phoneNumber")}</FormLabel>
-                <FormControl>
-                  <Input placeholder={t("enterPhonenumber")} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="flex gap-5 flex-col md:flex-row">
+            <FormField
+              control={form.control}
+              name="gender"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormLabel>{t("gender")}</FormLabel>
+                  <FormControl>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value?.toString() || undefined}
+                    >
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder={t("enterGender")} />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="MALE">{t("male")}</SelectItem>
+                        <SelectItem value="FEMALE">{t("female")}</SelectItem>
+                        <SelectItem value="OTHER">{t("other")}</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phoneNumber"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormLabel>{t("phoneNumber")}</FormLabel>
+                  <FormControl>
+                    <Input placeholder={t("enterPhonenumber")} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
         </form>
       </Form>
     </div>

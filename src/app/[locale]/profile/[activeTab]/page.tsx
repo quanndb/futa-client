@@ -1,18 +1,31 @@
 "use client";
 import AccountInfo from "@/app/[locale]/profile/AccountInfo";
+import BookingHistory from "@/app/[locale]/profile/BookingHistory";
+import ChangePassword from "@/app/[locale]/profile/ChangePassword";
+import FutaWallet from "@/app/[locale]/profile/FutaWallet";
 import LogoutModal from "@/app/[locale]/profile/LogoutModal";
 import { Card } from "@/components/ui/card";
 import { authStorage } from "@/lib/utils/authUtils";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 
-const tabs = ["futaPay", "accountInfo", "bookingHistory", "password", "logout"];
+enum tabEnum {
+  FUTA_PAY = "futaPay",
+  ACCOUNT_INFO = "accountInfo",
+  BOOKING_HISTORY = "bookingHistory",
+  PASSWORD = "password",
+  LOGOUT = "logout",
+}
 
-export default function Profile() {
+export default function Profile({
+  params,
+}: {
+  params: Promise<{ activeTab: string }>;
+}) {
+  const { activeTab } = use(params);
   const t = useTranslations("profile");
-  const [activeTab, setActiveTab] = useState(tabs[1]);
   const [logoutModalOpen, setLogoutModalOpen] = useState(false);
   const router = useRouter();
 
@@ -20,23 +33,23 @@ export default function Profile() {
     if (authStorage.getAccessToken() === null) {
       router.push("/login");
     }
-  }, [router]);
+  }, [router, activeTab]);
 
   return (
     <div className="layout w-full grid grid-cols-4 gap-5  my-20">
-      <Card className="p-3 md:col-span-1 col-span-4 ">
+      <Card className="p-3 md:col-span-1 col-span-4 md:min-h-[500px]">
         <div className="flex md:block">
-          {tabs.map((tab, idx) => (
+          {Object.values(tabEnum).map((tab, idx) => (
             <div
               key={tab}
               className={`w-full items-center flex flex-col md:flex-row gap-3 px-5 py-3 cursor-pointer hover:bg-red-50 rounded-md ${
                 activeTab === tab ? "bg-red-50" : ""
               }`}
               onClick={() => {
-                if (tab === "logout") {
+                if (tab === tabEnum.LOGOUT) {
                   setLogoutModalOpen(true);
                 } else {
-                  setActiveTab(tab);
+                  router.push(tab);
                 }
               }}
             >
@@ -54,12 +67,12 @@ export default function Profile() {
           ))}
         </div>
       </Card>
-      <Card className="w-full md:col-span-3 col-span-4">
+      <Card className="w-full md:col-span-3 col-span-4 p-3">
         <div className="p-3">
-          {activeTab === "futaPay" && <p>{t("futaPay")}</p>}
-          {activeTab === "accountInfo" && <AccountInfo />}
-          {activeTab === "bookingHistory" && <p>{t("bookingHistory")}</p>}
-          {activeTab === "password" && <p>{t("password")}</p>}
+          {activeTab === tabEnum.FUTA_PAY && <FutaWallet />}
+          {activeTab === tabEnum.ACCOUNT_INFO && <AccountInfo />}
+          {activeTab === tabEnum.BOOKING_HISTORY && <BookingHistory />}
+          {activeTab === tabEnum.PASSWORD && <ChangePassword />}
         </div>
       </Card>
       <LogoutModal open={logoutModalOpen} onOpenChange={setLogoutModalOpen} />

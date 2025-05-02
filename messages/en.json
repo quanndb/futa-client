@@ -3,10 +3,11 @@
     "autocomplete": {
       "search": "Search...",
       "selectOption": "Select option...",
-      "emptyMessage": "No results found."
+      "emptyMessage": "No results found.",
+      "loading": "Loading..."
     },
-    "hour": "hour",
-    "min": "min",
+    "hour": "Hour",
+    "min": "Min",
     "nodata": "No data",
     "action": {
       "ok": "OK",
@@ -21,11 +22,42 @@
     },
     "actionSuccess": "Action successfully",
     "actionFailed": "Action fail",
-    "backHome": "Back home"
+    "backHome": "Back home",
+    "searchTrip": "Search trip"
   },
   "success": "Success",
   "failed": "Failed",
   "submit": "Submit",
+  "search": "Search",
+  "all": "All",
+  "returnTicket": "Return ticket",
+  "pay": "Pay",
+  "orderBy": "Order by",
+  "departureAndDestinationRequired": "Departure and destination is required",
+  "returnDateRequired": "Return date is required",
+  "searchFilter": "Search filter",
+  "deleteFilter": "Delete filters",
+  "busType": {
+    "SEAT": "Seat",
+    "BED": "Bed",
+    "LIMOUSINE": "Limousine"
+  },
+  "morning": "Morning",
+  "afternoon": "Afternoon",
+  "evening": "Evening",
+  "night": "Night",
+  "busTypeTitle": "Bus type",
+  "departureTime": "Departure time",
+  "price": "Price",
+  "departureTrip": "Departure trip",
+  "returnTrip": "Return trip",
+  "foundResults": "Found results",
+  "blankSeat": "Blank seats",
+  "selectTrip": "Select trip",
+  "schedule": "Schedule",
+  "transshipment": "Transshipment",
+  "policy": "Policy",
+  "details": "Details",
 
   "signInOut": "Sign In / Sign Out",
   "downloadApp": "Download App",
@@ -193,6 +225,31 @@
       "gender": "Gender",
       "selectImage": "Choose Image",
       "selectMessage": "Maximum file size 1MB Format:.JPEG, .PNG"
+    },
+    "changePass": {
+      "title": "Change Password",
+      "des": "Manage your password",
+      "oldPass": "Old Password",
+      "enterOldPass": "Enter old password",
+      "newPass": "New Password",
+      "enterNewPass": "Enter new password"
+    },
+    "futaWallet": {
+      "title": "Futa Wallet",
+      "des": "Manage your Futa Wallet",
+      "balance": "Balance",
+      "deposit": "Deposit",
+      "withdraw": "Withdraw",
+      "depositAmount": "Deposit Amount",
+      "withdrawAmount": "Withdraw Amount",
+      "enterDepositAmount": "Enter deposit amount",
+      "enterWithdrawAmount": "Enter withdraw amount",
+      "walletHistory": "Wallet history",
+      "walletCommand": "Wallet command"
+    },
+    "bookingHistory": {
+      "title": "Booking History",
+      "des": "Manage your booking history"
     }
   },
 
@@ -203,5 +260,129 @@
     "notContainA": "Email must contain only one '@' character",
     "passwordAtLeast": "Password must be at least 6 characters",
     "fieldRequired": "This field is required"
+  },
+  "walletAction": {
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "using": "Using",
+    "return": "Return"
+  },
+  "walletHistory": {
+    "bank": "Bank",
+    "accountNumber": "Account Number",
+    "receiver": "Receiver",
+    "amount": "Amount",
+    "content": "Content",
+    "time": "Time",
+    "balance": "Balance",
+    "action": "Action"
+  },
+  "bookingHistory": {
+    "code": "Code",
+    "route": "Route",
+    "departureTime": "Departure Time",
+    "departureDate": "Departure Date",
+    "numOfTickets": "Number of Tickets",
+    "totalPrice": "Total Price",
+    "createdAt": "Created At",
+    "status": "Status",
+    "action": "Action"
+  },
+  "bookingStatus": {
+    "payed": "Payed",
+    "failed": "Failed",
+    "returned": "Returned",
+    "waitToPay": "Wait to pay",
+    "outOfPay": "Out of pay"
+  },
+
+  "TripPolicy": {
+    "cancellationPolicy": {
+      "title": "Cancellation Policy",
+      "exchangeOnce": "Tickets can only be exchanged once.",
+      "costExplanation": "The cost of ticket cancellation is from 10% to 30% of the fare depending on the cancellation time and the number of tickets.",
+      "contactInstruction": "Contact Call Center 1900 6067 or the ticket counter at least 24 hours before departure."
+    },
+    "boarding": {
+      "title": "Requirements when boarding",
+      "arrivalTime": "Arrive 30 minutes before departure (60 minutes for holidays and Tet).",
+      "presentTicket": "Show ticket information sent via SMS/Email/Futa App or contact counter.",
+      "noStrongOdors": "Do not bring food/beverages with strong odors on board.",
+      "noSmokingAlcohol": "No smoking, alcohol, or stimulants on the bus.",
+      "noFlammableItems": "No flammable/explosive items on board.",
+      "noLittering": "Do not litter on the bus.",
+      "noPets": "No pets on board."
+    },
+    "baggage": {
+      "title": "Hand Baggage",
+      "maxWeight": "The total weight of luggage must not exceed 20kg.",
+      "noBulkyGoods": "Bulky goods are not allowed."
+    },
+    "childrenPregnant": {
+      "title": "Children & Pregnant Passengers",
+      "childTicketPolicy": "Children under 6 years old, under 1.3m tall, and under 30kg don't need a ticket.",
+      "maxOneChild": "Each adult may accompany one child.",
+      "pregnantCaution": "Pregnant passengers should ensure their health during the trip."
+    },
+    "pickup": {
+      "title": "Pick-up Ticket",
+      "registerPickup": "Contact hotline 19006067 at least 2 hours before departure. Prepare compact luggage (max 20kg).",
+      "pickupLocationNote": "Pick-up is available only at select locations along the route."
+    }
+  },
+
+  "Transshipment": {
+    "title": "Door-to-door Pickup/Dropoff",
+    "guestTime": "Time to receive guests: 4 hours before.",
+    "pickupTime": "Pick up time: Prepare 2–3 hours in advance. The driver will contact you directly due to traffic and multiple pickup points.",
+    "smallAlleys": "Cars cannot turn in small alleys: Pickup at the start of the alley/street.",
+    "noParking": "No-pickup zones: Pickup at the nearest location possible due to no-parking signs.",
+    "luggage": "Luggage: Compact under 20kg, no pets, no odorous or leaking items allowed."
+  },
+
+  "Schedule": {
+    "noted": "Noted",
+    "note": "The times of landmarks are estimated times. This schedule is subject to change depending on the actual situation of early or late departure."
+  },
+
+  "booking": {
+    "bookingDetails": "Booking Details",
+    "customerInformation": "Customer Information",
+    "departureTrip": "Departure Trip",
+    "returnTrip": "Return Trip",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "departure": "Departure",
+    "departureDate": "Departure Date",
+    "departureAddress": "Departure Address",
+    "departureTime": "Departure Time",
+    "destination": "Destination",
+    "destinationAddress": "Destination Address",
+    "destinationTime": "Destination Time",
+    "route": "Route",
+    "pricePerSeat": "Price Per Seat",
+    "seatNumbers": "Seat Numbers",
+    "totalPrice": "Total Price",
+    "numOfTickets": "Number of Tickets",
+    "tickets": "tickets",
+    "createdAt": "Created At",
+    "pay": "Pay Now",
+    "returnTicket": "Return Tickets",
+    "processing": "Processing...",
+    "paymentSuccess": "Payment initiated successfully",
+    "returnSuccess": "Tickets returned successfully",
+    "status": {
+      "wait_to_pay": "Waiting for Payment",
+      "out_of_pay": "Payment Expired",
+      "payed": "Paid",
+      "returned": "Returned",
+      "failed": "Failed"
+    }
+  },
+
+  "returnModal": {
+    "title": "Return Ticket",
+    "des": "Do you want to return this ticket and receive money back to your Futa account?"
   }
 }

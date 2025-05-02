@@ -42,9 +42,7 @@ export default function Contact() {
             height={50}
             alt="contact"
           />
-          <h2 className="text-primary font-bold text-2xl">
-            Gửi thông tin liên hệ đến chúng tôi
-          </h2>
+          <h2 className="text-primary font-bold text-2xl">{t("des")}</h2>
         </div>
         <Card className=" bg-[#F2F2F2] p-10 text-4xl">
           <Input placeholder={t("form.fullName")} className="bg-white py-7" />

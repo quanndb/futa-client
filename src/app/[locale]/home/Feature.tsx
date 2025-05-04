@@ -11,56 +11,47 @@ import Image from "next/image";
 const data = [
   {
     id: 1,
-    imageUrl:
-      "https://cdn.futabus.vn/futa-busline-web-cms-prod/5_343_x_184_px_81b12398a8/5_343_x_184_px_81b12398a8.png",
+    imageUrl: "/assets/images/feature1.jpg",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 2,
-    imageUrl:
-      "https://cdn.futabus.vn/futa-busline-web-cms-prod/dat_ve_xe_khach_giam_300_K_Futa_599x337_15730c90c4_7a6d3012ea/dat_ve_xe_khach_giam_300_K_Futa_599x337_15730c90c4_7a6d3012ea.jpg",
+    imageUrl: "/assets/images/feature2.jpg",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 3,
-    imageUrl:
-      "https://cdn.futabus.vn/futa-busline-cms-dev/343x184_4x_29d182ce55/343x184_4x_29d182ce55.png",
+    imageUrl: "/assets/images/feature3.jpg",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 4,
-    imageUrl:
-      "https://cdn.futabus.vn/futa-busline-web-cms-prod/5_343_x_184_px_81b12398a8/5_343_x_184_px_81b12398a8.png",
+    imageUrl: "/assets/images/feature1.jpg",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 5,
-    imageUrl:
-      "https://cdn.futabus.vn/futa-busline-web-cms-prod/dat_ve_xe_khach_giam_300_K_Futa_599x337_15730c90c4_7a6d3012ea/dat_ve_xe_khach_giam_300_K_Futa_599x337_15730c90c4_7a6d3012ea.jpg",
+    imageUrl: "/assets/images/feature2.jpg",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 6,
-    imageUrl:
-      "https://cdn.futabus.vn/futa-busline-cms-dev/343x184_4x_29d182ce55/343x184_4x_29d182ce55.png",
+    imageUrl: "/assets/images/feature3.jpg",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 7,
-    imageUrl:
-      "https://cdn.futabus.vn/futa-busline-web-cms-prod/5_343_x_184_px_81b12398a8/5_343_x_184_px_81b12398a8.png",
+    imageUrl: "/assets/images/feature1.jpg",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 8,
-    imageUrl:
-      "https://cdn.futabus.vn/futa-busline-web-cms-prod/dat_ve_xe_khach_giam_300_K_Futa_599x337_15730c90c4_7a6d3012ea/dat_ve_xe_khach_giam_300_K_Futa_599x337_15730c90c4_7a6d3012ea.jpg",
+    imageUrl: "/assets/images/feature2.jpg",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 9,
-    imageUrl:
-      "https://cdn.futabus.vn/futa-busline-cms-dev/343x184_4x_29d182ce55/343x184_4x_29d182ce55.png",
+    imageUrl: "/assets/images/feature3.jpg",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
 ];

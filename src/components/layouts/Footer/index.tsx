@@ -35,7 +35,7 @@ export default function Footer() {
                     width={160}
                     height={60}
                     className="transition-all duration-200 relative h-[60px] w-40"
-                    src="https://cdn.futabus.vn/futa-busline-cms-dev/logo_Sale_Noti_7dab1d54a1/logo_Sale_Noti_7dab1d54a1.png"
+                    src="/assets/images/bocongthuong.png"
                   />
                 </div>
               </Link>
@@ -83,7 +83,7 @@ export default function Footer() {
                         width={86}
                         height={24}
                         className="transition-all duration-200 relative min-h-[24px] w-[86px] object-cover h-auto"
-                        src="https://cdn.futabus.vn/futa-busline-cms-dev/CH_Play_712783c88a/CH_Play_712783c88a.svg"
+                        src="/assets/images/CHPlay.svg"
                       />
                     </div>
                   </Link>
@@ -100,7 +100,7 @@ export default function Footer() {
                         width={86}
                         height={24}
                         className="transition-all duration-200 relative min-h-[24px] w-[86px] object-cover h-auto"
-                        src="https://cdn.futabus.vn/futa-busline-cms-dev/App_Store_60da92cb12/App_Store_60da92cb12.svg"
+                        src="/assets/images/AppStore.svg"
                       />
                     </div>
                   </Link>
@@ -123,7 +123,7 @@ export default function Footer() {
                         decoding="async"
                         data-nimg="1"
                         className="transition-all duration-200 w-auto h-auto"
-                        src="https://cdn.futabus.vn/futa-busline-cms-dev/facebook_1830e1b97c/facebook_1830e1b97c.svg"
+                        src="/assets/images/facebook.svg"
                       />
                     </div>
                   </Link>
@@ -141,7 +141,7 @@ export default function Footer() {
                         decoding="async"
                         data-nimg="1"
                         className="transition-all duration-200 w-auto h-auto"
-                        src="https://cdn.futabus.vn/futa-busline-cms-dev/youtube_d5ef476c0e/youtube_d5ef476c0e.svg"
+                        src="/assets/images/youtube.svg"
                       />
                     </div>
                   </Link>
@@ -258,7 +258,7 @@ export default function Footer() {
               width={600}
               height={100}
               className="transition-all duration-200 aspect-[6/1] relative w-full"
-              src="https://cdn.futabus.vn/futa-busline-cms-dev/Bus_Lines_817c989817/Bus_Lines_817c989817.svg"
+              src="/assets/images/BusLines.svg"
             />
           </div>
         </Link>
@@ -272,7 +272,7 @@ export default function Footer() {
               width={600}
               height={100}
               className="transition-all duration-200 aspect-[6/1] relative w-full"
-              src="https://cdn.futabus.vn/futa-busline-cms-dev/logo_futa_express_0ad93b22d3/logo_futa_express_0ad93b22d3.svg"
+              src="/assets/images/logo_futa_express.svg"
             />
           </div>
         </Link>
@@ -286,7 +286,7 @@ export default function Footer() {
               width={600}
               height={100}
               className="transition-all duration-200 aspect-[6/1] relative w-full"
-              src="https://cdn.futabus.vn/futa-busline-cms-dev/FUTA_Advertising_d0b60b3a45/FUTA_Advertising_d0b60b3a45.svg"
+              src="/assets/images/_FUTA_Advertising.svg"
             />
           </div>
         </Link>
@@ -304,7 +304,7 @@ export default function Footer() {
               width={600}
               height={100}
               className="transition-all duration-200 aspect-[6/1] relative w-full"
-              src="https://cdn.futabus.vn/futa-busline-web-cms-prod/Tdcpl_1_5d2e395adc/Tdcpl_1_5d2e395adc.png"
+              src="/assets/images/Tdcpl.png"
             />
           </div>
         </Link>

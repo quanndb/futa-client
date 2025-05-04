@@ -15,10 +15,12 @@
       "yes": "Yes",
       "no": "No",
       "delete": "Delete",
+      "create": "Create",
       "edit": "Edit",
       "save": "Save",
       "view": "View",
-      "completed": "Completed"
+      "completed": "Completed",
+      "submit": "Submit"
     },
     "actionSuccess": "Action successfully",
     "actionFailed": "Action fail",
@@ -30,6 +32,10 @@
   "submit": "Submit",
   "search": "Search",
   "all": "All",
+  "createdDate": "Created date",
+  "transactionDate": "Transaction date",
+  "action": "Action",
+  "status": "Status",
   "returnTicket": "Return ticket",
   "pay": "Pay",
   "orderBy": "Order by",
@@ -58,6 +64,8 @@
   "transshipment": "Transshipment",
   "policy": "Policy",
   "details": "Details",
+  "deposit": "Deposit",
+  "withdraw": "Withdraw",
 
   "signInOut": "Sign In / Sign Out",
   "downloadApp": "Download App",
@@ -277,6 +285,31 @@
     "balance": "Balance",
     "action": "Action"
   },
+  "walletCommand": {
+    "code": "Transaction Code",
+    "bank": "Bank",
+    "accountNumber": "Account Number",
+    "receiver": "Receiver",
+    "amount": "Amount",
+    "createdAt": "Created At",
+    "completedAt": "Completed At",
+    "action": "Action",
+    "status": "Status",
+    "selectCreatedDate": "Select created date",
+    "statuses": {
+      "wait_to_resolve": "Wait to resolve",
+      "wait_to_pay": "Wait to pay",
+      "rejected": "Rejected",
+      "success": "Success",
+      "returned": "Returned"
+    },
+    "actions": {
+      "deposit": "Deposit",
+      "withdraw": "Withdraw",
+      "using": "Using",
+      "return": "Return"
+    }
+  },
   "bookingHistory": {
     "code": "Code",
     "route": "Route",
@@ -384,5 +417,56 @@
   "returnModal": {
     "title": "Return Ticket",
     "des": "Do you want to return this ticket and receive money back to your Futa account?"
+  },
+  "depositModal": {
+    "title": "Deposit Money",
+    "des": "Create deposit command",
+    "amount": "Amount",
+    "enterAmount": "Enter amount"
+  },
+  "withdrawModal": {
+    "title": "Withdraw Money",
+    "des": "Create withdraw command",
+    "bank": "Bank",
+    "enterBank": "Enter bank name",
+    "accountNumber": "Account Number",
+    "enterAccountNumber": "Enter account number",
+    "receiver": "Receiver",
+    "enterReceiver": "Enter receiver name",
+    "amount": "Amount",
+    "enterAmount": "Enter amount"
+  },
+  "book": {
+    "userInfo": "Customer Information",
+    "fullName": "Full name",
+    "enterFullname": "Enter full name",
+    "email": "Email",
+    "enterEmail": "Enter email",
+    "phone": "Phonenumer",
+    "enterPhone": "Enter phonenumber",
+    "termAndPolicy": "TERMS AND POLICIES",
+    "term1": "Please be at the departure station of the bus at least 30 minutes before departure time, bring the confirmed email which contain reservation code in order from the FUTA BUS LINE system. Please contact Hotline 1900 6067 for support.",
+    "term2": "Please call 1900 6918 for shuttle bus service. Shuttle bus services range is limited, therefore, we will not pick passengers who are outside the range of service. Thank you!",
+
+    "transshipmentInfo": "Pickup-Dropoff infomation",
+    "pickup": "Pickup Location",
+    "drop": "Dropoff Location",
+
+    "5perTrip": "5 seats per trip",
+    "note": "Note: Only able to select",
+    "sold": "Sold",
+    "selected": "Selected",
+    "able": "Available",
+    "price": "Price per seat",
+    "firstFloor": "First Floor",
+    "secondFloor": "Second Floor",
+    "busInfo": "Bus Information",
+    "selectSeats": "Select Seats",
+    "departureTrip": "Departure Trip",
+    "returnTrip": "Return Trip",
+
+    "total": "Total:",
+    "yourBalance": "Your balance:",
+    "useWallet": "Use Futa Wallet"
   }
 }

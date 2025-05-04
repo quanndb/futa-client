@@ -28,7 +28,8 @@ export type TypeDetails = {
 
 export type Seat = {
   id: string;
-  seatNumber: string;
+  seatNumber?: string;
+  seatOrder: number;
 };
 
 export enum TripOrderBy {
@@ -41,6 +42,20 @@ export type TripResponse = {
   departureDate: string;
   details: TripDetails;
   tripTransits: TripTransit[];
+};
+
+export type DetailsTransit = {
+  tripDetailsId: string;
+  departureDate: string;
+  pricePerSeat: number;
+  firstFloorSeats: Seat[];
+  secondFloorSeats: Seat[];
+  type: BusType;
+  departure: string;
+  departureTime: string;
+  destination: string;
+  destinationTime: string;
+  transitPoints: TripTransit[];
 };
 
 export type TripDetails = {
@@ -60,10 +75,11 @@ export enum TripStatus {
 
 export type TripTransit = {
   id: string;
-  transitPoint?: TransitPoint;
-  arrivalTime?: string;
-  transitOrder?: number;
-  type?: TransitType;
+  transitPointId: string;
+  transitPoint: TransitPoint;
+  arrivalTime: string;
+  transitOrder: number;
+  type: TransitType;
 };
 
 export enum TransitType {
@@ -78,6 +94,17 @@ const tripAPI = {
   ): Promise<{ data: TripResponse[]; page: Page }> => {
     const url = "/trip/api/v1/trips/schedules";
     return axios.get(url, { params });
+  },
+
+  getTripDetails: ({
+    id,
+    departureDate,
+  }: {
+    id: string;
+    departureDate: string;
+  }): Promise<{ data: DetailsTransit }> => {
+    const url = `/trip/api/v1/detail-transits/${id}?departureDate=${departureDate}`;
+    return axios.get(url);
   },
 };
 

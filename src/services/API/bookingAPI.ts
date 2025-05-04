@@ -7,6 +7,22 @@ export interface GetBookingsRequest extends PagingRequest {
   status?: BookingStatus[];
 }
 
+export type BookingRequest = {
+  departureTrip: BookingTrip;
+  returnTrip: BookingTrip | null;
+  fullName: string;
+  email: string;
+  phone: string;
+};
+
+export type BookingTrip = {
+  tripDetailsId: string;
+  departureDate: string;
+  seats: string[];
+  departureId: string;
+  destinationId: string;
+};
+
 export type BookingResponse = {
   code: string;
   status: BookingStatus;
@@ -82,6 +98,34 @@ const bookingAPI = {
   getBookingDetails: (code: string): Promise<{ data: BookingResponse }> => {
     const url = "/booking/api/v1/bookings/details?code=" + code;
     return axios.get(url);
+  },
+
+  getBookedSeats: (
+    detailsId: string,
+    startDate: string
+  ): Promise<{ data: string[] }> => {
+    const url =
+      "/booking/api/v1/booking-seats/" +
+      detailsId +
+      "?departureDate=" +
+      startDate;
+    return axios.get(url);
+  },
+
+  book: (data: BookingRequest): Promise<{ data: BookingResponse }> => {
+    const url = "/booking/api/v1/bookings";
+    return axios.post(url, data);
+  },
+  createPayment: (
+    code: string,
+    isUseWallet: boolean
+  ): Promise<{ data: BookingResponse }> => {
+    const url =
+      "/booking/api/v1/bookings/payment?code=" +
+      code +
+      "&isUseWallet=" +
+      isUseWallet;
+    return axios.post(url);
   },
 };
 

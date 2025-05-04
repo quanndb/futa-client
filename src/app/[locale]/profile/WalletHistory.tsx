@@ -46,7 +46,7 @@ const WalletHistory = () => {
           label: t("walletAction.deposit"),
           color: "bg-green-100 text-green-800",
         };
-      case WalletAction.WITH_DRAW:
+      case WalletAction.WITHDRAW:
         return {
           label: t("walletAction.withdraw"),
           color: "bg-red-100 text-red-800",

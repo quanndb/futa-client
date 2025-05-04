@@ -122,7 +122,7 @@ export default function TicketResults() {
   return (
     <div className="bg-white-dark pb-20">
       <SearchTrip />
-      <div className="layout mt-160">
+      <div className="layout mt-200 sm:mt-150 md:mt-100 lg:mt-160">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <TripFilter filter={filter} setFilter={setFilter} />
           <TripTab
@@ -158,14 +158,13 @@ const TripTab = ({
   const [returnTripId, setReturnTripId] = useState("");
 
   useEffect(() => {
-    if (departureTripId && departureDate && !returnDate) {
-      router.push(
-        `/ticket-booking?departureDate=${departureDate}&departureTripId=${departureTripId}`
-      );
-    }
     if (departureTripId && departureDate && returnDate && returnTripId) {
       router.push(
         `/ticket-booking?departureDate=${departureDate}&returnDate=${returnDate}&departureTripId=${departureTripId}&returnTripId=${returnTripId}`
+      );
+    } else if (departureTripId && departureDate && !returnDate) {
+      router.push(
+        `/ticket-booking?departureDate=${departureDate}&departureTripId=${departureTripId}`
       );
     }
   }, [departureTripId, departureDate, returnTripId, returnDate, router]);

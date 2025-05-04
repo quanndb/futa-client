@@ -13,7 +13,7 @@ export default function Schedule({
   return (
     <div className="flex flex-col h-full border-2 gap-2">
       {/* Scrollable content area */}
-      <div className="flex-1 overflow-y-auto bg-white p-3 rounded-2xl shadow-lg">
+      <div className="flex-1 max-h-[380px] overflow-y-auto bg-white p-3 rounded-2xl shadow-lg">
         {tripTransits?.map((transit, idx) => (
           <div
             key={transit.id}

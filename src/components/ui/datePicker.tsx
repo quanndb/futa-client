@@ -18,9 +18,15 @@ interface DatePickerProps {
   value: string | undefined;
   onChange: (date: string | undefined) => void;
   className?: string;
+  placeholder?: string;
 }
 
-export function DatePicker({ value, onChange, className }: DatePickerProps) {
+export function DatePicker({
+  value,
+  onChange,
+  className,
+  placeholder,
+}: DatePickerProps) {
   const t = useTranslations();
 
   const handleClearDate = () => {
@@ -59,7 +65,7 @@ export function DatePicker({ value, onChange, className }: DatePickerProps) {
                 </div>
               </Fragment>
             ) : (
-              <span>{t("select-date")}</span>
+              <span>{placeholder || t("select-date")}</span>
             )}
           </Button>
         </PopoverTrigger>

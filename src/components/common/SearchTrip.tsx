@@ -76,8 +76,10 @@ const SearchTrip = ({
       departure: origin?.value,
       destination: destination?.value,
       departureDate: formatDateToYYYYMMDD(departureDate),
-      returnDate: formatDateToYYYYMMDD(returnDate),
     });
+    if (tripType === TripType.ROUND_TRIP) {
+      searchParams.append("returnDate", formatDateToYYYYMMDD(returnDate));
+    }
     router.push(`/bookings?${searchParams.toString()}`);
   };
 

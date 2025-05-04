@@ -18,7 +18,9 @@
       "edit": "Sửa",
       "save": "Lưu",
       "view": "Xem",
-      "completed": "Hoàn tất"
+      "create": "Tạo",
+      "completed": "Hoàn tất",
+      "submit": "Xử lý"
     },
     "actionSuccess": "Xử lý hành động thành công",
     "actionFailed": "Xử lý hành động không thành công",
@@ -33,6 +35,10 @@
   "returnTicket": "Trả vé",
   "pay": "Thanh toán",
   "orderBy": "Sắp xếp theo",
+  "createdDate": "Ngày tạo",
+  "transactionDate": "Ngày giao dịch",
+  "action": "Hành động",
+  "status": "Trạng thái",
   "departureAndDestinationRequired": "Điểm xuất phát và điểm cuối không được bỏ trống",
   "returnDateRequired": "Ngày về không được bỏ trống",
   "searchFilter": "Bộ lọc tìm kiếm",
@@ -58,6 +64,8 @@
   "transshipment": "Trung chuyển",
   "policy": "Chính sách",
   "details": "Chi tiết",
+  "deposit": "Nạp tiền",
+  "withdraw": "Rút tiền",
 
   "signInOut": "Đăng nhập / Đăng xuất",
   "downloadApp": "Tải ứng dụng",
@@ -278,6 +286,31 @@
     "balance": "Số dư",
     "action": "Hành động"
   },
+  "walletCommand": {
+    "code": "Mã giao dịch",
+    "bank": "Ngân hàng",
+    "accountNumber": "Số tài khoản",
+    "receiver": "Người nhận",
+    "amount": "Số tiền",
+    "createdAt": "Thời gian tạo",
+    "completedAt": "Thời gian hoàn thành",
+    "action": "Hành động",
+    "status": "Trạng thái",
+    "selectCreatedDate": "Chọn ngày tạo",
+    "statuses": {
+      "wait_to_resolve": "Chờ xử lý",
+      "wait_to_pay": "Chờ thanh toán",
+      "rejected": "Từ chối",
+      "success": "Thành công",
+      "returned": "Đã trả"
+    },
+    "actions": {
+      "deposit": "Nạp tiền",
+      "withdraw": "Rút tiền",
+      "using": "Sử dụng",
+      "return": "Hoàn tiền"
+    }
+  },
   "bookingHistory": {
     "code": "Mã đơn",
     "route": "Tuyến xe",
@@ -385,5 +418,56 @@
   "returnModal": {
     "title": "Hoàn trả vé",
     "des": "Bạn có chắc chắn muốn hoàn trả vé này và nhận tiền vào ví Futa của bạn?"
+  },
+  "depositModal": {
+    "title": "Nạp tiền",
+    "des": "Tạo lệnh nạp tiền",
+    "amount": "Số tiền",
+    "enterAmount": "Nhập số tiền"
+  },
+  "withdrawModal": {
+    "title": "Rút tiền",
+    "des": "Tạo lệnh rút tiền",
+    "bank": "Ngân hàng",
+    "enterBank": "Nhập tên Ngân hàng",
+    "accountNumber": "Số tài khoản",
+    "enterAccountNumber": "Nhập số tài khoản",
+    "receiver": "Người nhận tiền",
+    "enterReceiver": "Nhập tên người nhận tiền",
+    "amount": "Số tiền",
+    "enterAmount": "Nhập số tiền"
+  },
+  "book": {
+    "userInfo": "Thông tin khách hàng",
+    "fullName": "Họ và tên",
+    "enterFullname": "Nhập họ và tên",
+    "email": "Email",
+    "enterEmail": "Nhập email",
+    "phone": "Số điện thoại",
+    "enterPhone": "Nhập số điện thoại",
+    "termAndPolicy": "ĐIỀU KHOẢN & LƯU Ý",
+    "term1": "Quý khách vui lòng có mặt tại bến xuất phát của xe trước ít nhất 30 phút giờ xe khởi hành, mang theo thông báo đã thanh toán vé thành công có chứa mã vé được gửi từ hệ thống FUTA BUS LINES. Vui lòng liên hệ Trung tâm tổng đài 1900 6067 để được hỗ trợ.",
+    "term2": "Nếu quý khách có nhu cầu trung chuyển, vui lòng liên hệ Tổng đài trung chuyển 1900 6918 trước khi đặt vé. Chúng tôi không đón/trung chuyển tại những điểm xe trung chuyển không thể tới được.",
+
+    "transshipmentInfo": "Thông tin đón trả",
+    "pickup": "Điểm đón",
+    "drop": "Điểm trả",
+
+    "5perTrip": "5 vé/chuyến",
+    "note": "Lưu ý: Được chọn tối đa",
+    "sold": "Đã bán",
+    "selected": "Đã chọn",
+    "able": "Còn trống",
+    "price": "Giá vé",
+    "firstFloor": "Tầng 1",
+    "secondFloor": "Tầng 2",
+    "busInfo": "Thống tin xe",
+    "selectSeats": "Chọn Ghế",
+    "departureTrip": "Chuyến Đi",
+    "returnTrip": "Chuyến Về",
+
+    "total": "Tổng:",
+    "yourBalance": "Số dư của bạn:",
+    "useWallet": "Dùng Ví Futa"
   }
 }

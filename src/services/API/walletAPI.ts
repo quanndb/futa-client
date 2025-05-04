@@ -8,7 +8,7 @@ export type MyWalletResponse = {
 
 export enum WalletAction {
   DEPOSIT = "DEPOSIT",
-  WITH_DRAW = "WITH_DRAW",
+  WITHDRAW = "WITHDRAW",
   USING = "USING",
   RETURN = "RETURN",
 }
@@ -60,6 +60,13 @@ export interface WalletCommandPagingRequest extends PagingRequest {
   transactionDate?: string;
 }
 
+export type WithdrawRequest = {
+  amount: number;
+  bankCode: string;
+  accountNumber: string;
+  receiverName: string;
+};
+
 const walletAPI = {
   getMyWallet: (): Promise<{ data: MyWalletResponse }> => {
     const url = "/payment/api/v1/me/wallet";
@@ -78,6 +85,19 @@ const walletAPI = {
   ): Promise<{ data: WalletCommand[]; page: Page }> => {
     const url = "/payment/api/v1/me/wallet-commands";
     return axios.get(url, { params });
+  },
+
+  deposit: (data: { amount: number }): Promise<{ data: WalletCommand }> => {
+    const url = "/payment/api/v1/deposits";
+    return axios.post(url, data);
+  },
+  withdraw: (data: WithdrawRequest): Promise<{ data: WalletCommand }> => {
+    const url = "/payment/api/v1/withdraws";
+    return axios.post(url, data);
+  },
+  getBanks: (): Promise<{ data: { short_name: string }[] }> => {
+    const url = "https://qr.sepay.vn/banks.json";
+    return axios.get(url);
   },
 };
 

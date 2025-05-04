@@ -1,7 +1,7 @@
 import { AutocompleteOption } from "@/lib/types/common";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
-import { GroupBase } from "react-select";
+import { GroupBase, StylesConfig } from "react-select";
 import AsyncSelect from "react-select/async";
 
 // Define props interface
@@ -83,7 +83,11 @@ export default function AutoComplete({
 }
 
 // Custom styles for the AsyncSelect component
-const customStyles = ({ isDisabled }: { isDisabled: boolean }) => ({
+const customStyles = ({
+  isDisabled,
+}: {
+  isDisabled: boolean;
+}): StylesConfig<AutocompleteOption, false> => ({
   container: (provided) => ({
     ...provided,
     position: "relative",

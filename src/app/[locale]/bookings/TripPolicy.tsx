@@ -1,14 +1,24 @@
 "use client";
 
-import { AlertTriangle, Baby, Bus, Luggage, Phone } from "lucide-react";
+import {
+  AlertTriangle,
+  Baby,
+  Bus,
+  LucideProps,
+  Luggage,
+  Phone,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
 
 const Section = ({
   icon: Icon,
   title,
   children,
 }: {
-  icon: any;
+  icon: ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+  >;
   title: string;
   children: React.ReactNode;
 }) => (

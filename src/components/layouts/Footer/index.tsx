@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -14,14 +15,14 @@ export default function Footer() {
                 <p className="text-secondary font-medium uppercase">
                   {t("bookingCenterAndCustomerCare")}
                 </p>
-                <a
+                <Link
                   href="tel:19006067"
                   className="text-3xl font-medium text-primary"
                 >
                   1900 6067
-                </a>
+                </Link>
               </div>
-              <a
+              <Link
                 target="_blank"
                 href="http://online.gov.vn/Home/WebDetails/14029"
               >
@@ -37,7 +38,7 @@ export default function Footer() {
                     src="https://cdn.futabus.vn/futa-busline-cms-dev/logo_Sale_Noti_7dab1d54a1/logo_Sale_Noti_7dab1d54a1.png"
                   />
                 </div>
-              </a>
+              </Link>
             </div>
             <span className="text-secondary mt-5 font-medium uppercase">
               {t("futaJSC")}
@@ -47,29 +48,29 @@ export default function Footer() {
             </span>
             <span className="text-gray mt-2 sm:mt-1">
               Email:{" "}
-              <a href="mailto:hotro@futa.vn" className="text-primary">
+              <Link href="mailto:hotro@futa.vn" className="text-primary">
                 hotro@futa.vn
-              </a>
+              </Link>
             </span>
             <div className="mt-[10px] flex w-full max-w-md justify-between sm:mt-1">
               <span className="text-gray">
                 {t("phoneNumber")}:{" "}
-                <a href="tel:02838386852" className="text-black">
+                <Link href="tel:02838386852" className="text-black">
                   02838386852
-                </a>
+                </Link>
               </span>
               <span className="text-gray mr-px">
                 Fax:{" "}
-                <a href="tel:02838386853" className="text-black">
+                <Link href="tel:02838386853" className="text-black">
                   02838386853
-                </a>
+                </Link>
               </span>
             </div>
             <div className="mb-4 mt-5 flex w-full max-w-md justify-between">
               <div className="text-secondary font-medium uppercase">
                 {t("downloadApp")}
                 <div className="mt-2 flex gap-4">
-                  <a
+                  <Link
                     target="_blank"
                     className="relative"
                     href="http://onelink.to/futa.android"
@@ -85,8 +86,8 @@ export default function Footer() {
                         src="https://cdn.futabus.vn/futa-busline-cms-dev/CH_Play_712783c88a/CH_Play_712783c88a.svg"
                       />
                     </div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     target="_blank"
                     className="relative"
                     href="http://onelink.to/futa.ios"
@@ -102,13 +103,13 @@ export default function Footer() {
                         src="https://cdn.futabus.vn/futa-busline-cms-dev/App_Store_60da92cb12/App_Store_60da92cb12.svg"
                       />
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="text-secondary font-medium uppercase">
                 {t("connectWithUs")}
                 <div className="mt-2 flex gap-4">
-                  <a
+                  <Link
                     target="_blank"
                     href="https://www.facebook.com/xephuongtrang"
                     rel="noreferrer"
@@ -125,8 +126,8 @@ export default function Footer() {
                         src="https://cdn.futabus.vn/futa-busline-cms-dev/facebook_1830e1b97c/facebook_1830e1b97c.svg"
                       />
                     </div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     target="_blank"
                     href="https://www.youtube.com/channel/UCs32uT002InnxFnfXCRN48A?view_as=subscriber"
                     rel="noreferrer"
@@ -143,7 +144,7 @@ export default function Footer() {
                         src="https://cdn.futabus.vn/futa-busline-cms-dev/youtube_d5ef476c0e/youtube_d5ef476c0e.svg"
                       />
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -156,41 +157,41 @@ export default function Footer() {
               <div className="mt-1 flex max-w-md flex-col">
                 <div className="mt-3 flex min-w-[140px] max-w-[200px] items-center">
                   <div className="border-rad mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
-                  <a href="/ve-chung-toi" target="_self" rel="noreferrer">
+                  <Link href="/ve-chung-toi" target="_self" rel="noreferrer">
                     {t("aboutUs")}
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-3 flex min-w-[140px] max-w-[200px] items-center">
                   <div className="border-rad mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
-                  <a href="/lich-trinh" target="_self" rel="noreferrer">
+                  <Link href="/lich-trinh" target="_self" rel="noreferrer">
                     {t("schedule")}
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-3 flex min-w-[140px] max-w-[200px] items-center">
                   <div className="border-rad mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
-                  <a
+                  <Link
                     href="https://vieclam.futabus.vn/"
                     target="_blank"
                     rel="noreferrer"
                   >
                     {t("recruitment")}
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-3 flex min-w-[140px] max-w-[200px] items-center">
                   <div className="border-rad mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
-                  <a href="/tin-tuc" target="_self" rel="noreferrer">
+                  <Link href="/tin-tuc" target="_self" rel="noreferrer">
                     {t("newsAndEvents")}
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-3 flex min-w-[140px] max-w-[200px] items-center">
                   <div className="border-rad mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
-                  <a
+                  <Link
                     href="/danh-sach-chi-nhanh"
                     target="_self"
                     rel="noreferrer"
                   >
                     {t("officeNetwork")}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -201,41 +202,45 @@ export default function Footer() {
               <div className="mt-1 flex max-w-md flex-col">
                 <div className="mt-3 flex min-w-[140px] max-w-[200px] items-center">
                   <div className="border-rad mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
-                  <a href="/tra-cuu-ve" target="_self" rel="noreferrer">
+                  <Link href="/tra-cuu-ve" target="_self" rel="noreferrer">
                     {t("manageBooking")}
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-3 flex min-w-[140px] max-w-[200px] items-center">
                   <div className="border-rad mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
-                  <a href="/dieu-khoan-su-dung" target="_self" rel="noreferrer">
+                  <Link
+                    href="/dieu-khoan-su-dung"
+                    target="_self"
+                    rel="noreferrer"
+                  >
                     {t("termsOfService")}
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-3 flex min-w-[140px] max-w-[200px] items-center">
                   <div className="border-rad mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
-                  <a href="/hoi-dap" target="_self" rel="noreferrer">
+                  <Link href="/hoi-dap" target="_self" rel="noreferrer">
                     {t("faq")}
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-3 flex min-w-[140px] max-w-[200px] items-center">
                   <div className="border-rad mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
-                  <a
+                  <Link
                     href="/huong-dan-dat-ve-tren-web"
                     target="_self"
                     rel="noreferrer"
                   >
                     {t("bookingGuideWeb")}
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-3 flex min-w-[140px] max-w-[200px] items-center">
                   <div className="border-rad mr-3 h-2 w-2 rounded-full bg-gray-300"></div>
-                  <a
+                  <Link
                     href="/huong-dan-nap-tien-tren-app"
                     target="_self"
                     rel="noreferrer"
                   >
                     {t("bookingGuideApp")}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -243,7 +248,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="layout mb-6 grid grid-cols-2 gap-6 sm:mb-10 sm:flex sm:flex-wrap sm:justify-center">
-        <a target="_blank" className="flex-1" href="https://futabus.vn/">
+        <Link target="_blank" className="flex-1" href="https://futabus.vn/">
           <div className="aspect-[6/1] relative w-full">
             <Image
               alt=""
@@ -256,8 +261,8 @@ export default function Footer() {
               src="https://cdn.futabus.vn/futa-busline-cms-dev/Bus_Lines_817c989817/Bus_Lines_817c989817.svg"
             />
           </div>
-        </a>
-        <a target="_blank" className="flex-1" href="https://futaexpress.vn">
+        </Link>
+        <Link target="_blank" className="flex-1" href="https://futaexpress.vn">
           <div className="aspect-[6/1] relative w-full">
             <Image
               alt=""
@@ -270,8 +275,8 @@ export default function Footer() {
               src="https://cdn.futabus.vn/futa-busline-cms-dev/logo_futa_express_0ad93b22d3/logo_futa_express_0ad93b22d3.svg"
             />
           </div>
-        </a>
-        <a target="_blank" className="flex-1" href="https://futaads.vn/">
+        </Link>
+        <Link target="_blank" className="flex-1" href="https://futaads.vn/">
           <div className="aspect-[6/1] relative w-full">
             <Image
               alt=""
@@ -284,8 +289,8 @@ export default function Footer() {
               src="https://cdn.futabus.vn/futa-busline-cms-dev/FUTA_Advertising_d0b60b3a45/FUTA_Advertising_d0b60b3a45.svg"
             />
           </div>
-        </a>
-        <a
+        </Link>
+        <Link
           target="_blank"
           className="flex-1"
           href="https://futabus.vn/tin-tuc/tram-dung-chan-5-sao"
@@ -302,7 +307,7 @@ export default function Footer() {
               src="https://cdn.futabus.vn/futa-busline-web-cms-prod/Tdcpl_1_5d2e395adc/Tdcpl_1_5d2e395adc.png"
             />
           </div>
-        </a>
+        </Link>
       </div>
       <div className="flex min-h-[40px] flex-col items-center justify-center bg-[#00613D] py-2 text-center text-white sm:flex-row">
         <span>{t("copyRight")}</span>

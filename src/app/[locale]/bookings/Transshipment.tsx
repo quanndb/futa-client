@@ -1,14 +1,24 @@
 "use client";
 
-import { Clock4, MapPin, MapPinOff, Package, Truck } from "lucide-react";
+import {
+  Clock4,
+  LucideProps,
+  MapPin,
+  MapPinOff,
+  Package,
+  Truck,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
 
 const Section = ({
   icon: Icon,
   title,
   children,
 }: {
-  icon: any;
+  icon: ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+  >;
   title: string;
   children: React.ReactNode;
 }) => (

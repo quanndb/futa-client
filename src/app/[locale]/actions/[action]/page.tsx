@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import SubmitButton from "@/components/ui/submitBtn";
+import { VALID_ACTIONS } from "@/lib/consts/enum";
 import { authStorage } from "@/lib/utils/authUtils";
 import accountAPI from "@/services/API/accountAPI";
 import authAPI from "@/services/API/authAPI";
@@ -27,11 +28,6 @@ import { use, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
-
-export enum Action {
-  MAC_VERIFICATION = "mac-verification",
-  SET_PASSWORD = "set-password",
-}
 
 const resetPasswordSchema = z.object({
   password: z
@@ -52,8 +48,8 @@ export default function ActionPage({
   const router = useRouter();
 
   useEffect(() => {
-    console.log(action === Action.MAC_VERIFICATION && token);
-    if (action === Action.MAC_VERIFICATION && token) {
+    console.log(action === VALID_ACTIONS.MAC_VERIFICATION && token);
+    if (action === VALID_ACTIONS.MAC_VERIFICATION && token) {
       authStorage.saveTokens(token, "");
       authAPI
         .macVerify()
@@ -68,7 +64,7 @@ export default function ActionPage({
         .finally(() => {
           authStorage.clearTokens();
         });
-    } else if (action === Action.SET_PASSWORD && token) {
+    } else if (action === VALID_ACTIONS.SET_PASSWORD && token) {
       authStorage.saveTokens(token, "");
     } else {
       notFound();
@@ -78,7 +74,7 @@ export default function ActionPage({
   return (
     <Card className="layout w-full my-20">
       {success && <SuccessAction t={t} />}
-      {!success && action === Action.SET_PASSWORD && (
+      {!success && action === VALID_ACTIONS.SET_PASSWORD && (
         <ResetPassword successFn={() => setSuccess(true)} />
       )}
     </Card>

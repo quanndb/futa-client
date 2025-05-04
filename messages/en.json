@@ -6,8 +6,8 @@
       "emptyMessage": "No results found.",
       "loading": "Loading..."
     },
-    "hour": "Hour",
-    "min": "Min",
+    "hour": "Hours",
+    "min": "Mins",
     "nodata": "No data",
     "action": {
       "ok": "OK",

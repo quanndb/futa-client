@@ -83,7 +83,7 @@ const LoginForm = () => {
 
         <div className="md:w-1/2 pl-0 md:pl-4">
           <h2 className="text-lg font-medium text-gray-800 mb-6">
-            Sign in account
+            {t("signInAccount")}
           </h2>
 
           <Tabs defaultValue="signin" className="w-full">

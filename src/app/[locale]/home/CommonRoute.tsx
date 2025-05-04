@@ -1,153 +1,153 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-const departureData = [
-  {
-    departure: "Tp Hồ Chí Minh",
-    image: "hcm.png",
-    destinations: [
-      {
-        name: "Đà Lạt",
-        distance: "305km",
-        duration: "8 hours",
-        date: new Date()
-          .toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          })
-          .replace(/\//g, "/"),
-        price: "290.000đ",
-      },
-      {
-        name: "Cần Thơ",
-        distance: "166km",
-        duration: "5 hours 30 minutes",
-        date: new Date()
-          .toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          })
-          .replace(/\//g, "/"),
-        price: "165.000đ",
-      },
-      {
-        name: "Long Xuyên",
-        distance: "203km",
-        duration: "5 hours",
-        date: new Date()
-          .toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          })
-          .replace(/\//g, "/"),
-        price: "190.000đ",
-      },
-    ],
-  },
-  {
-    departure: "Đà Lạt",
-    image: "dalat.png",
-    destinations: [
-      {
-        name: "TP. Hồ Chí Minh",
-        distance: "310km",
-        duration: "8 hours",
-        date: new Date()
-          .toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          })
-          .replace(/\//g, "/"),
-        price: "290.000đ",
-      },
-      {
-        name: "Đà Nẵng",
-        distance: "757km",
-        duration: "17 hours",
-        date: new Date()
-          .toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          })
-          .replace(/\//g, "/"),
-        price: "410.000đ",
-      },
-      {
-        name: "Cần Thơ",
-        distance: "457km",
-        duration: "11 hours",
-        date: new Date()
-          .toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          })
-          .replace(/\//g, "/"),
-        price: "435.000đ",
-      },
-    ],
-  },
-  {
-    departure: "Đà Nẵng",
-    image: "danang.png",
-    destinations: [
-      {
-        name: "Đà Lạt",
-        distance: "666km",
-        duration: "17 hours",
-        date: new Date()
-          .toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          })
-          .replace(/\//g, "/"),
-        price: "410.000đ",
-      },
-      {
-        name: "BX An Sương",
-        distance: "966km",
-        duration: "20 hours",
-        date: new Date()
-          .toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          })
-          .replace(/\//g, "/"),
-        price: "470.000đ",
-      },
-      {
-        name: "Nha Trang",
-        distance: "528km",
-        duration: "9 hours 25 minutes",
-        date: new Date()
-          .toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          })
-          .replace(/\//g, "/"),
-        price: "370.000đ",
-      },
-    ],
-  },
-];
-
 export default function CommonRoute() {
-  const t = useTranslations("home");
+  const t = useTranslations();
+
+  const departureData = [
+    {
+      departure: "Tp Hồ Chí Minh",
+      image: "hcm.png",
+      destinations: [
+        {
+          name: "Đà Lạt",
+          distance: "305km",
+          duration: `8 ${t("common.hour")}`,
+          date: new Date()
+            .toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })
+            .replace(/\//g, "/"),
+          price: "290.000đ",
+        },
+        {
+          name: "Cần Thơ",
+          distance: "166km",
+          duration: `5 ${t("common.hour")} 30 ${t("common.min")}`,
+          date: new Date()
+            .toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })
+            .replace(/\//g, "/"),
+          price: "165.000đ",
+        },
+        {
+          name: "Long Xuyên",
+          distance: "203km",
+          duration: `5 ${t("common.hour")}`,
+          date: new Date()
+            .toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })
+            .replace(/\//g, "/"),
+          price: "190.000đ",
+        },
+      ],
+    },
+    {
+      departure: "Đà Lạt",
+      image: "dalat.png",
+      destinations: [
+        {
+          name: "TP. Hồ Chí Minh",
+          distance: "310km",
+          duration: `8 ${t("common.hour")}`,
+          date: new Date()
+            .toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })
+            .replace(/\//g, "/"),
+          price: "290.000đ",
+        },
+        {
+          name: "Đà Nẵng",
+          distance: "757km",
+          duration: `17 ${t("common.hour")}`,
+          date: new Date()
+            .toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })
+            .replace(/\//g, "/"),
+          price: "410.000đ",
+        },
+        {
+          name: "Cần Thơ",
+          distance: "457km",
+          duration: `11 ${t("common.hour")}`,
+          date: new Date()
+            .toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })
+            .replace(/\//g, "/"),
+          price: "435.000đ",
+        },
+      ],
+    },
+    {
+      departure: "Đà Nẵng",
+      image: "danang.png",
+      destinations: [
+        {
+          name: "Đà Lạt",
+          distance: "666km",
+          duration: `17 ${t("common.hour")}`,
+          date: new Date()
+            .toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })
+            .replace(/\//g, "/"),
+          price: "410.000đ",
+        },
+        {
+          name: "BX An Sương",
+          distance: "966km",
+          duration: `20 ${t("common.hour")}`,
+          date: new Date()
+            .toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })
+            .replace(/\//g, "/"),
+          price: "470.000đ",
+        },
+        {
+          name: "Nha Trang",
+          distance: "528km",
+          duration: `9 ${t("common.hour")} 25 ${t("common.min")}`,
+          date: new Date()
+            .toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })
+            .replace(/\//g, "/"),
+          price: "370.000đ",
+        },
+      ],
+    },
+  ];
 
   return (
     <div className="py-10 layout">
       <h2 className="text-3xl text-secondary uppercase font-bold text-center">
-        {t("commonRoute")}
+        {t("home.commonRoute")}
       </h2>
-      <p className="text-center py-2 text-xl">{t("trustAndChosen")}</p>
+      <p className="text-center py-2 text-xl">{t("home.trustAndChosen")}</p>
       <div className="flex flex-wrap justify-center gap-6 mt-8">
         {departureData.map((item) => (
           <div

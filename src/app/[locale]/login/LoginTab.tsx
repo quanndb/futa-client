@@ -126,7 +126,7 @@ const LoginTab = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>{t("password")}</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <LockIcon className="absolute left-3 top-3 h-5 w-5 text-gray-400" />

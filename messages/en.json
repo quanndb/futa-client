@@ -1,0 +1,472 @@
+{
+  "common": {
+    "autocomplete": {
+      "search": "Search...",
+      "selectOption": "Select option...",
+      "emptyMessage": "No results found.",
+      "loading": "Loading..."
+    },
+    "hour": "Hour",
+    "min": "Min",
+    "nodata": "No data",
+    "action": {
+      "ok": "OK",
+      "cancel": "Cancel",
+      "yes": "Yes",
+      "no": "No",
+      "delete": "Delete",
+      "create": "Create",
+      "edit": "Edit",
+      "save": "Save",
+      "view": "View",
+      "completed": "Completed",
+      "submit": "Submit"
+    },
+    "actionSuccess": "Action successfully",
+    "actionFailed": "Action fail",
+    "backHome": "Back home",
+    "searchTrip": "Search trip"
+  },
+  "success": "Success",
+  "failed": "Failed",
+  "submit": "Submit",
+  "search": "Search",
+  "all": "All",
+  "createdDate": "Created date",
+  "transactionDate": "Transaction date",
+  "action": "Action",
+  "status": "Status",
+  "returnTicket": "Return ticket",
+  "pay": "Pay",
+  "orderBy": "Order by",
+  "departureAndDestinationRequired": "Departure and destination is required",
+  "returnDateRequired": "Return date is required",
+  "searchFilter": "Search filter",
+  "deleteFilter": "Delete filters",
+  "busType": {
+    "SEAT": "Seat",
+    "BED": "Bed",
+    "LIMOUSINE": "Limousine"
+  },
+  "morning": "Morning",
+  "afternoon": "Afternoon",
+  "evening": "Evening",
+  "night": "Night",
+  "busTypeTitle": "Bus type",
+  "departureTime": "Departure time",
+  "price": "Price",
+  "departureTrip": "Departure trip",
+  "returnTrip": "Return trip",
+  "foundResults": "Found results",
+  "blankSeat": "Blank seats",
+  "selectTrip": "Select trip",
+  "schedule": "Schedule",
+  "transshipment": "Transshipment",
+  "policy": "Policy",
+  "details": "Details",
+  "deposit": "Deposit",
+  "withdraw": "Withdraw",
+
+  "signInOut": "Sign In / Sign Out",
+  "downloadApp": "Download App",
+  "signInAccount": "Sign in account",
+  "signIn": "Sign In",
+  "signUp": "Sign Up",
+  "enterEmail": "Enter email address",
+  "enterPassword": "Enter password",
+  "enterFullname": "Enter full name",
+  "enterPhonenumber": "Enter phone number",
+  "gender": "Gender",
+  "enterGender": "Enter gender",
+  "login": "Login",
+  "forgotPassword": "Forgot password",
+  "loginSuccess": "Login successfully",
+  "loginWithGoogle": "Login with Google",
+  "registerSuccess": "Register successfully",
+  "fullName": "Full name",
+  "phoneNumber": "Phone number",
+  "password": "Password",
+  "forgotPasswordTitle": "Forgot password",
+  "pleaseEnterEmail": "Please enter email",
+  "setPassword": "Set a new password",
+  "setPasswordDes": "Enter a new password to reset your password",
+  "male": "Male",
+  "female": "Female",
+  "other": "Other",
+
+  "one-way": "One-way",
+  "round-trip": "Round-trip",
+  "ticket-guide": "Ticket booking guide",
+  "origin": "Origin",
+  "destination": "Destination",
+  "departure-date": "Departure date",
+  "return-date": "Return date",
+  "tickets": "Tickets",
+  "select-origin": "Select origin",
+  "select-destination": "Select destination",
+  "select-date": "Select date",
+  "select-return-date": "Select return date",
+  "select-tickets": "Select tickets",
+  "recent-search": "Recent search",
+  "search-trip": "Search trip",
+  "slogan": "With you on every trip",
+
+  "nav": {
+    "home": "Home",
+    "schedule": "Schedule",
+    "booking": "Bookings",
+    "contact": "Contact",
+    "about": "About us"
+  },
+
+  "footer": {
+    "bookingCenterAndCustomerCare": "Booking Center and Customer Care",
+    "futaJSC": "FUTA BUS LINES - PHUONG TRANG INC",
+    "address": "Address: 01 To Hien Thanh, Ward 3, Da Lat City, Lam Dong Province, Viet Nam.",
+    "phoneNumber": "Phone",
+    "downloadApp": "Download the FUTA app",
+    "connectWithUs": "Connect with us",
+    "aboutUs": "About us",
+    "schedule": "Schedule",
+    "recruitment": "Recruitment",
+    "newsAndEvents": "News & Events",
+    "officeNetwork": "Office network",
+    "support": "Support",
+    "manageBooking": "Manage Booking",
+    "termsOfService": "Terms of Service",
+    "faq": "FAQ",
+    "bookingGuideWeb": "Booking Guide (Web)",
+    "bookingGuideApp": "Booking Guide (App)",
+    "copyRight": "© 2023 | All rights are reserved belong to FUTA BUS LINES - PHUONG TRANG INC"
+  },
+
+  "home": {
+    "feature": "Featured Promotion",
+    "commonRoute": "Common Route",
+    "trustAndChosen": "Trusted and chosen by customers",
+    "honor": {
+      "title": "FUTA BUS LINES - QUALITY IS HONOR",
+      "first": {
+        "num": "Over 200 million",
+        "unit": "Passengers",
+        "des": "Phuong Trang serving an average of more than 200 million passengers/year nationwide."
+      },
+      "second": {
+        "num": "Over 350",
+        "unit": "Ticket Offices - Shuttle Offices",
+        "des": "Phuong Trang has more than 350 ticket offices, transit stations, bus stations, etc. throughout the system."
+      },
+      "third": {
+        "num": "Over 1,000",
+        "unit": "Bus trip",
+        "des": "Phuong Trang serves more than 1,000 long-distance and intercity bus trips every day."
+      }
+    }
+  },
+
+  "contact": {
+    "title": "CONTACT US",
+    "des": "Send contact information to us",
+    "JSC": "FUTA BUS LINES - PHUONG TRANG INC",
+    "address": "Address: 01 To Hien Thanh Street, Ward 3, Da Lat City, Lam Dong Province, Vietnam.",
+    "website": "Website: https://futabus.vn/",
+    "phone": "Phone: 02838386852",
+    "fax": "Fax: 02838386853",
+    "email": "Email: hotro@futa.vn",
+    "hotline": "Hotline: 19006067",
+    "form": {
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "title": "Title",
+      "notes": "Notes",
+      "send": "Send"
+    }
+  },
+
+  "about": {
+    "name": "PHUONG TRANG",
+    "sub": "“Quality is honor”",
+    "des1": "Founded in 2001 focusing on supporting the transportation needs of Vietnamese people. With main business activities in the field of buying and selling cars, passenger transport, real estate and service business. Phuong Trang has gradually become a familiar name that accompanies Vietnamese people in all fields.",
+    "des2": "After more than 20 years of establishment and development, putting the customer as the focus, we are proud to become a core freight forwarding enterprise that actively contributes to the overall development of the transportation industry in particular and the global economy, the country's economy in general. Always improving to bring the best quality of service to customers, Phuong Trang Company has been recognized through many prestigious awards such as “Vietnam’s No. 1 Brand”, “Top 10 Famous Brands of Vietnam”, “Top 10 Perfect Services for Consumers in 2022”, “Top 10 Typical Enterprises in Vietnam”, “Top 10 Prestigious Brands, Products and Services in Vietnam – ASEAN 2022”...",
+    "services": {
+      "s1": {
+        "name": "FUTA BUS LINES",
+        "des": "Adhering to the motto \"Quality is Honor,\" Phuong Trang Passenger Transport Joint Stock Company – FUTA Bus Lines is currently operating over 60 fixed interprovincial passenger transport routes stretching from the South to the North, with 350 ticket offices and transfer stations, and more than 2,000 vehicles of various types, serving over 20 million passengers each year."
+      },
+      "s2": {
+        "name": "FUTA LAND",
+        "des": "In the real estate sector, Phuong Trang has achieved certain accomplishments with high-quality products such as Da Nang Times Square, a luxury apartment complex in Son Tra District, Lien Chieu District, and many other projects that are gradually being completed."
+      },
+      "s3": {
+        "name": "FUTA EXPRESS",
+        "des": "Alongside the development of Phuong Trang passenger transport, we have recognized an essential demand for cargo transport accompanying passengers and cargo not accompanying passengers. To meet the needs and the trust of customers in Phuong Trang Company, Phuong Trang Express Delivery Service Joint Stock Company – FUTA Express was established. Over a decade of development, FUTA Express has gradually become a unit for cargo transport and business development. FUTA Express has been and is investing in more transaction offices, vehicles, and separate transport services to ensure quick and safe service for customers."
+      },
+      "s4": {
+        "name": "FUTA CITY BUS",
+        "des": "The FUTA City Bus public passenger transport sector is an important piece in the main activities that Phuong Trang Company aims for. Investing in high-quality new vehicles, Phuong Trang buses provide passengers with full amenities such as air conditioning, Wi-Fi, along with a professional team of drivers and staff. Phuong Trang buses are committed to offering customers safe and comfortable journeys at reasonable prices, with the motto \"Quality is Honor.\" Currently, Phuong Trang buses are present in 07 provinces: Dong Thap, Lam Dong, Thua Thien Hue, Khanh Hoa, Can Tho, An Giang, and Ninh Thuan. Following 2022, the company will officially launch new bus routes in the provinces of Ho Chi Minh City, Vinh Long, Dong Nai, Tien Giang, and Bac Lieu, maximizing the travel needs of the people, reducing personal vehicles, and contributing to transforming the transportation landscape towards a more modern and streamlined approach."
+      },
+      "s5": {
+        "name": "FUTA REST STOP",
+        "des": "Understanding the need for rest and relaxation of passengers on long journeys through many provinces and cities, Phuong Trang Company also invested in the Phuc Loc bus stop system in key areas such as Tien Giang, Lam Dong, Ben Tre, Vinh Long, Soc Trang... The Phuc Loc bus stop system is comprehensively invested, ensuring to serve a large number of customers 24/7."
+      }
+    }
+  },
+
+  "profile": {
+    "tabs": {
+      "futaPay": "Futa Wallet",
+      "accountInfo": "Account Information",
+      "bookingHistory": "Booking History",
+      "password": "Change Password",
+      "logout": "Logout"
+    },
+    "logoutDialog": {
+      "title": "Logout Confirmation",
+      "message": "Are you sure you want to logout?"
+    },
+    "accountInfo": {
+      "title": "Account Information",
+      "des": "Manage profile information",
+      "fullName": "Full name",
+      "phone": "Phonenumber",
+      "gender": "Gender",
+      "selectImage": "Choose Image",
+      "selectMessage": "Maximum file size 1MB Format:.JPEG, .PNG"
+    },
+    "changePass": {
+      "title": "Change Password",
+      "des": "Manage your password",
+      "oldPass": "Old Password",
+      "enterOldPass": "Enter old password",
+      "newPass": "New Password",
+      "enterNewPass": "Enter new password"
+    },
+    "futaWallet": {
+      "title": "Futa Wallet",
+      "des": "Manage your Futa Wallet",
+      "balance": "Balance",
+      "deposit": "Deposit",
+      "withdraw": "Withdraw",
+      "depositAmount": "Deposit Amount",
+      "withdrawAmount": "Withdraw Amount",
+      "enterDepositAmount": "Enter deposit amount",
+      "enterWithdrawAmount": "Enter withdraw amount",
+      "walletHistory": "Wallet history",
+      "walletCommand": "Wallet command"
+    },
+    "bookingHistory": {
+      "title": "Booking History",
+      "des": "Manage your booking history"
+    }
+  },
+
+  "validator": {
+    "emailAtLeast": "Email must be at least 5 characters",
+    "emailAtLast": "Email must be less than 50 characters",
+    "emailNotValid": "Please enter a valid email address",
+    "notContainA": "Email must contain only one '@' character",
+    "passwordAtLeast": "Password must be at least 6 characters",
+    "fieldRequired": "This field is required"
+  },
+  "walletAction": {
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "using": "Using",
+    "return": "Return"
+  },
+  "walletHistory": {
+    "bank": "Bank",
+    "accountNumber": "Account Number",
+    "receiver": "Receiver",
+    "amount": "Amount",
+    "content": "Content",
+    "time": "Time",
+    "balance": "Balance",
+    "action": "Action"
+  },
+  "walletCommand": {
+    "code": "Transaction Code",
+    "bank": "Bank",
+    "accountNumber": "Account Number",
+    "receiver": "Receiver",
+    "amount": "Amount",
+    "createdAt": "Created At",
+    "completedAt": "Completed At",
+    "action": "Action",
+    "status": "Status",
+    "selectCreatedDate": "Select created date",
+    "statuses": {
+      "wait_to_resolve": "Wait to resolve",
+      "wait_to_pay": "Wait to pay",
+      "rejected": "Rejected",
+      "success": "Success",
+      "returned": "Returned"
+    },
+    "actions": {
+      "deposit": "Deposit",
+      "withdraw": "Withdraw",
+      "using": "Using",
+      "return": "Return"
+    }
+  },
+  "bookingHistory": {
+    "code": "Code",
+    "route": "Route",
+    "departureTime": "Departure Time",
+    "departureDate": "Departure Date",
+    "numOfTickets": "Number of Tickets",
+    "totalPrice": "Total Price",
+    "createdAt": "Created At",
+    "status": "Status",
+    "action": "Action"
+  },
+  "bookingStatus": {
+    "payed": "Payed",
+    "failed": "Failed",
+    "returned": "Returned",
+    "waitToPay": "Wait to pay",
+    "outOfPay": "Out of pay"
+  },
+
+  "TripPolicy": {
+    "cancellationPolicy": {
+      "title": "Cancellation Policy",
+      "exchangeOnce": "Tickets can only be exchanged once.",
+      "costExplanation": "The cost of ticket cancellation is from 10% to 30% of the fare depending on the cancellation time and the number of tickets.",
+      "contactInstruction": "Contact Call Center 1900 6067 or the ticket counter at least 24 hours before departure."
+    },
+    "boarding": {
+      "title": "Requirements when boarding",
+      "arrivalTime": "Arrive 30 minutes before departure (60 minutes for holidays and Tet).",
+      "presentTicket": "Show ticket information sent via SMS/Email/Futa App or contact counter.",
+      "noStrongOdors": "Do not bring food/beverages with strong odors on board.",
+      "noSmokingAlcohol": "No smoking, alcohol, or stimulants on the bus.",
+      "noFlammableItems": "No flammable/explosive items on board.",
+      "noLittering": "Do not litter on the bus.",
+      "noPets": "No pets on board."
+    },
+    "baggage": {
+      "title": "Hand Baggage",
+      "maxWeight": "The total weight of luggage must not exceed 20kg.",
+      "noBulkyGoods": "Bulky goods are not allowed."
+    },
+    "childrenPregnant": {
+      "title": "Children & Pregnant Passengers",
+      "childTicketPolicy": "Children under 6 years old, under 1.3m tall, and under 30kg don't need a ticket.",
+      "maxOneChild": "Each adult may accompany one child.",
+      "pregnantCaution": "Pregnant passengers should ensure their health during the trip."
+    },
+    "pickup": {
+      "title": "Pick-up Ticket",
+      "registerPickup": "Contact hotline 19006067 at least 2 hours before departure. Prepare compact luggage (max 20kg).",
+      "pickupLocationNote": "Pick-up is available only at select locations along the route."
+    }
+  },
+
+  "Transshipment": {
+    "title": "Door-to-door Pickup/Dropoff",
+    "guestTime": "Time to receive guests: 4 hours before.",
+    "pickupTime": "Pick up time: Prepare 2–3 hours in advance. The driver will contact you directly due to traffic and multiple pickup points.",
+    "smallAlleys": "Cars cannot turn in small alleys: Pickup at the start of the alley/street.",
+    "noParking": "No-pickup zones: Pickup at the nearest location possible due to no-parking signs.",
+    "luggage": "Luggage: Compact under 20kg, no pets, no odorous or leaking items allowed."
+  },
+
+  "Schedule": {
+    "noted": "Noted",
+    "note": "The times of landmarks are estimated times. This schedule is subject to change depending on the actual situation of early or late departure."
+  },
+
+  "booking": {
+    "bookingDetails": "Booking Details",
+    "customerInformation": "Customer Information",
+    "departureTrip": "Departure Trip",
+    "returnTrip": "Return Trip",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "departure": "Departure",
+    "departureDate": "Departure Date",
+    "departureAddress": "Departure Address",
+    "departureTime": "Departure Time",
+    "destination": "Destination",
+    "destinationAddress": "Destination Address",
+    "destinationTime": "Destination Time",
+    "route": "Route",
+    "pricePerSeat": "Price Per Seat",
+    "seatNumbers": "Seat Numbers",
+    "totalPrice": "Total Price",
+    "numOfTickets": "Number of Tickets",
+    "tickets": "tickets",
+    "createdAt": "Created At",
+    "pay": "Pay Now",
+    "returnTicket": "Return Tickets",
+    "processing": "Processing...",
+    "paymentSuccess": "Payment initiated successfully",
+    "returnSuccess": "Tickets returned successfully",
+    "status": {
+      "wait_to_pay": "Waiting for Payment",
+      "out_of_pay": "Payment Expired",
+      "payed": "Paid",
+      "returned": "Returned",
+      "failed": "Failed"
+    }
+  },
+
+  "returnModal": {
+    "title": "Return Ticket",
+    "des": "Do you want to return this ticket and receive money back to your Futa account?"
+  },
+  "depositModal": {
+    "title": "Deposit Money",
+    "des": "Create deposit command",
+    "amount": "Amount",
+    "enterAmount": "Enter amount"
+  },
+  "withdrawModal": {
+    "title": "Withdraw Money",
+    "des": "Create withdraw command",
+    "bank": "Bank",
+    "enterBank": "Enter bank name",
+    "accountNumber": "Account Number",
+    "enterAccountNumber": "Enter account number",
+    "receiver": "Receiver",
+    "enterReceiver": "Enter receiver name",
+    "amount": "Amount",
+    "enterAmount": "Enter amount"
+  },
+  "book": {
+    "userInfo": "Customer Information",
+    "fullName": "Full name",
+    "enterFullname": "Enter full name",
+    "email": "Email",
+    "enterEmail": "Enter email",
+    "phone": "Phonenumer",
+    "enterPhone": "Enter phonenumber",
+    "termAndPolicy": "TERMS AND POLICIES",
+    "term1": "Please be at the departure station of the bus at least 30 minutes before departure time, bring the confirmed email which contain reservation code in order from the FUTA BUS LINE system. Please contact Hotline 1900 6067 for support.",
+    "term2": "Please call 1900 6918 for shuttle bus service. Shuttle bus services range is limited, therefore, we will not pick passengers who are outside the range of service. Thank you!",
+
+    "transshipmentInfo": "Pickup-Dropoff infomation",
+    "pickup": "Pickup Location",
+    "drop": "Dropoff Location",
+
+    "5perTrip": "5 seats per trip",
+    "note": "Note: Only able to select",
+    "sold": "Sold",
+    "selected": "Selected",
+    "able": "Available",
+    "price": "Price per seat",
+    "firstFloor": "First Floor",
+    "secondFloor": "Second Floor",
+    "busInfo": "Bus Information",
+    "selectSeats": "Select Seats",
+    "departureTrip": "Departure Trip",
+    "returnTrip": "Return Trip",
+
+    "total": "Total:",
+    "yourBalance": "Your balance:",
+    "useWallet": "Use Futa Wallet"
+  }
+}

@@ -1,0 +1,473 @@
+{
+  "common": {
+    "autocomplete": {
+      "search": "Tìm kiếm...",
+      "selectOption": "Lựa chọn...",
+      "emptyMessage": "Không tìm thấy kết quả.",
+      "loading": "Đang tìm kiếm..."
+    },
+    "hour": "Giờ",
+    "min": "Phút",
+    "nodata": "Không có dữ liệu",
+    "action": {
+      "ok": "Đồng ý",
+      "cancel": "Hủy",
+      "yes": "Có",
+      "no": "Không",
+      "delete": "Xóa",
+      "edit": "Sửa",
+      "save": "Lưu",
+      "view": "Xem",
+      "create": "Tạo",
+      "completed": "Hoàn tất",
+      "submit": "Xử lý"
+    },
+    "actionSuccess": "Xử lý hành động thành công",
+    "actionFailed": "Xử lý hành động không thành công",
+    "backHome": "Quay lại trang chủ",
+    "searchTrip": "Tìm chuyến xe"
+  },
+  "success": "Thành công",
+  "failed": "Không thành công",
+  "submit": "Xử lý",
+  "search": "Tìm kiếm",
+  "all": "Tất cả",
+  "returnTicket": "Trả vé",
+  "pay": "Thanh toán",
+  "orderBy": "Sắp xếp theo",
+  "createdDate": "Ngày tạo",
+  "transactionDate": "Ngày giao dịch",
+  "action": "Hành động",
+  "status": "Trạng thái",
+  "departureAndDestinationRequired": "Điểm xuất phát và điểm cuối không được bỏ trống",
+  "returnDateRequired": "Ngày về không được bỏ trống",
+  "searchFilter": "Bộ lọc tìm kiếm",
+  "deleteFilter": "Xóa lọc",
+  "busType": {
+    "SEAT": "Ghế",
+    "BED": "Giường",
+    "LIMOUSINE": "Limousine"
+  },
+  "morning": "Sáng",
+  "afternoon": "Chiều",
+  "evening": "Tối",
+  "night": "Đêm",
+  "busTypeTitle": "Loại xe",
+  "departureTime": "Giờ khởi hành",
+  "price": "Giá",
+  "departureTrip": "Chuyến đi",
+  "returnTrip": "Chuyến về",
+  "foundResults": "Kết quả tìm kiếm",
+  "blankSeat": "Ghế trống",
+  "selectTrip": "Chọn chuyến xe",
+  "schedule": "Lịch trình",
+  "transshipment": "Trung chuyển",
+  "policy": "Chính sách",
+  "details": "Chi tiết",
+  "deposit": "Nạp tiền",
+  "withdraw": "Rút tiền",
+
+  "signInOut": "Đăng nhập / Đăng xuất",
+  "downloadApp": "Tải ứng dụng",
+  "signInAccount": "Đăng nhập tài khoản",
+  "signIn": "Đăng nhập",
+  "signUp": "Đăng ký",
+  "enterEmail": "Nhập địa chỉ email",
+  "enterPassword": "Nhập mật khẩu",
+  "enterFullname": "Nhập họ và tên",
+  "enterPhonenumber": "Nhập số điện thoại",
+  "gender": "Giơi tính",
+  "enterGender": "Nhập giới tính",
+  "login": "Đăng nhập",
+  "forgotPassword": "Quên mật khẩu",
+  "loginSuccess": "Đăng nhập thành công",
+  "loginWithGoogle": "Đăng nhập với Google",
+  "registerSuccess": "Đăng ký thành công",
+  "fullName": "Họ và tên",
+  "phoneNumber": "Số điện thoại",
+  "password": "Mật khẩu",
+  "forgotPasswordTitle": "Quên mật khẩu",
+  "pleaseEnterEmail": "Vui lòng nhập địa chỉ email",
+  "setPassword": "Thiết lập mật khẩu mới",
+  "setPasswordDes": "Vui lòng nhập mật khẩu mới cho tài khoản",
+  "male": "Nam",
+  "female": "Nữ",
+  "other": "Khác",
+
+  "one-way": "Một chiều",
+  "round-trip": "Khứ hồi",
+  "ticket-guide": "Hướng dẫn đặt vé",
+  "origin": "Điểm đi",
+  "destination": "Điểm đến",
+  "departure-date": "Ngày khởi hành",
+  "return-date": "Ngày về",
+  "tickets": "Số lượng vé",
+  "select-origin": "Chọn điểm đi",
+  "select-destination": "Chọn điểm đến",
+  "select-date": "Chọn ngày",
+  "select-return-date": "Chọn ngày về",
+  "select-tickets": "Chọn vé",
+  "recent-search": "Tìm kiếm gần đây",
+  "search-trip": "Tìm kiếm chuyến đi",
+  "slogan": "Cùng bạn trên mọi nẻo đường",
+
+  "nav": {
+    "home": "Trang chủ",
+    "schedule": "Lịch trình",
+    "booking": "Đặt vé",
+    "contact": "Liên hệ",
+    "about": "Về chúng tôi"
+  },
+
+  "footer": {
+    "bookingCenterAndCustomerCare": "Trung tâm đặt vé và chăm sóc khách hàng",
+    "futaJSC": "Công ty cổ phần xe khách Phương Trang - FUTA Bus Lines",
+    "address": "Địa chỉ: Số 01 Tô Hiến Thành, Phường 3, Thành phố Đà Lạt, Tỉnh Lâm Đồng, Việt Nam",
+    "phoneNumber": "Điện thoại",
+    "downloadApp": "Tải ứng dụng FUTA",
+    "connectWithUs": "Kết nối với chúng tôi",
+    "aboutUs": "Về chúng tôi",
+    "schedule": "Lịch trình",
+    "recruitment": "Tuyển dụng",
+    "newsAndEvents": "Tin tức & Sự kiện",
+    "officeNetwork": "Mạng lưới văn phòng",
+    "support": "Hỗ trợ",
+    "manageBooking": "Quản lý vé",
+    "termsOfService": "Điều khoản dịch vụ",
+    "faq": "Câu hỏi thường gặp",
+    "bookingGuideWeb": "Hướng dẫn đặt vé trên Web",
+    "bookingGuideApp": "Hướng dẫn đặt vé trên App",
+    "copyRight": "© 2023 | Bản quyền thuộc về Công ty Cổ Phần Xe khách Phương Trang - FUTA Bus Lines 2023 | Chịu trách nhiệm quản lý nội dung: Ông Võ Duy Thành"
+  },
+
+  "home": {
+    "feature": "Khuyến mãi nổi bật",
+    "commonRoute": "Tuyến đường phổ biến",
+    "trustAndChosen": "Được khách hàng tin tưởng và lựa chọn",
+    "honor": {
+      "title": "FUTA BUS LINES - CHẤT LƯỢNG LÀ DANH DỰ",
+      "first": {
+        "num": "Hơn 200 triệu",
+        "unit": "Hành khách",
+        "des": "Phương Trang phục vụ trung bình hơn 200 triệu hành khách mỗi năm trên toàn quốc."
+      },
+      "second": {
+        "num": "Hơn 350",
+        "unit": "Văn phòng vé - Văn phòng xe",
+        "des": "Phương Trang có hơn 350 văn phòng vé, trạm trung chuyển, bến xe, v.v. trên toàn hệ thống."
+      },
+      "third": {
+        "num": "Hơn 1.000",
+        "unit": "Chuyến xe",
+        "des": "Phương Trang phục vụ hơn 1.000 chuyến xe đường dài và liên tỉnh mỗi ngày."
+      }
+    }
+  },
+
+  "contact": {
+    "title": "LIÊN HỆ VỚI CHÚNG TÔI",
+    "des": "Gửi thông tin liên hệ đến chúng tôi",
+    "JSC": "FUTA BUS LINES - PHƯƠNG TRANG INC",
+    "address": "Địa chỉ: 01 Đường Tô Hiến Thành, Phường 3, Thành phố Đà Lạt, Tỉnh Lâm Đồng, Việt Nam.",
+    "website": "Website: https://futabus.vn/",
+    "phone": "Điện thoại: 02838386852",
+    "fax": "Fax: 02838386853",
+    "email": "Email: hotro@futa.vn",
+    "hotline": "Hotline: 19006067",
+    "form": {
+      "fullName": "Họ và tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "title": "Chủ đề",
+      "notes": "Ghi chú",
+      "send": "Gửi"
+    }
+  },
+
+  "about": {
+    "name": "PHƯƠNG TRANG",
+    "sub": "“Chất lượng là danh dự”",
+    "des1": "Được thành lập năm 2001 với mục tiêu hỗ trợ nhu cầu vận chuyển của người Việt Nam. Với các hoạt động kinh doanh chính trong lĩnh vực mua bán ô tô, vận tải hành khách, bất động sản và kinh doanh dịch vụ, Phương Trang đã dần trở thành một cái tên quen thuộc, đồng hành cùng người Việt Nam trong mọi lĩnh vực.",
+    "des2": "Sau hơn 20 năm hình thành và phát triển, luôn lấy khách hàng làm trung tâm, chúng tôi tự hào trở thành doanh nghiệp vận tải cốt lõi, đóng góp tích cực vào sự phát triển chung của ngành giao thông vận tải nói riêng và nền kinh tế quốc gia, toàn cầu nói chung. Luôn không ngừng cải tiến để mang đến chất lượng dịch vụ tốt nhất cho khách hàng, Công ty Phương Trang đã được ghi nhận thông qua nhiều giải thưởng uy tín như “Thương hiệu số 1 Việt Nam”, “Top 10 Thương hiệu Nổi tiếng Việt Nam”, “Top 10 Dịch vụ Hoàn Hảo Vì Người Tiêu Dùng 2022”, “Top 10 Doanh nghiệp Tiêu Biểu Việt Nam”, “Top 10 Thương hiệu, Sản phẩm, Dịch vụ Uy tín Việt Nam – ASEAN 2022”…",
+    "services": {
+      "s1": {
+        "name": "FUTA BUS LINES",
+        "des": "Với phương châm \"Chất lượng là danh dự,\" Công ty Cổ phần Vận tải Hành khách Phương Trang – FUTA Bus Lines hiện đang khai thác hơn 60 tuyến vận tải hành khách cố định liên tỉnh trải dài từ Nam ra Bắc, với 350 văn phòng vé và trạm trung chuyển, hơn 2.000 phương tiện các loại, phục vụ hơn 20 triệu lượt hành khách mỗi năm."
+      },
+      "s2": {
+        "name": "FUTA LAND",
+        "des": "Trong lĩnh vực bất động sản, Phương Trang đã đạt được những thành tựu nhất định với các sản phẩm chất lượng cao như Da Nang Times Square, khu phức hợp căn hộ cao cấp tại Quận Sơn Trà, Quận Liên Chiểu, và nhiều dự án khác đang dần được hoàn thiện."
+      },
+      "s3": {
+        "name": "FUTA EXPRESS",
+        "des": "Song song với sự phát triển của vận tải hành khách Phương Trang, chúng tôi nhận thấy nhu cầu thiết yếu về vận chuyển hàng hóa kèm và không kèm theo hành khách. Nhằm đáp ứng nhu cầu và sự tin tưởng của khách hàng, Công ty Cổ phần Dịch vụ Vận chuyển Phương Trang – FUTA Express được thành lập. Trải qua hơn một thập kỷ phát triển, FUTA Express đã dần trở thành đơn vị vận chuyển hàng hóa và phát triển kinh doanh, đồng thời đang đầu tư thêm nhiều văn phòng giao dịch, phương tiện, và dịch vụ vận chuyển riêng biệt nhằm đảm bảo dịch vụ nhanh chóng, an toàn cho khách hàng."
+      },
+      "s4": {
+        "name": "FUTA CITY BUS",
+        "des": "Lĩnh vực vận tải hành khách công cộng FUTA City Bus là một mảnh ghép quan trọng trong hoạt động chính mà Công ty Phương Trang hướng đến. Đầu tư vào các phương tiện mới, chất lượng cao, xe buýt Phương Trang mang đến cho hành khách đầy đủ tiện nghi như máy lạnh, Wi-Fi, cùng đội ngũ tài xế và nhân viên chuyên nghiệp. Xe buýt Phương Trang cam kết mang đến cho khách hàng những chuyến đi an toàn, thoải mái với giá cả hợp lý, theo đúng phương châm \"Chất lượng là danh dự.\" Hiện nay, xe buýt Phương Trang đã có mặt tại 07 tỉnh thành: Đồng Tháp, Lâm Đồng, Thừa Thiên Huế, Khánh Hòa, Cần Thơ, An Giang và Ninh Thuận. Sau năm 2022, công ty sẽ chính thức triển khai các tuyến mới tại TP.HCM, Vĩnh Long, Đồng Nai, Tiền Giang và Bạc Liêu, góp phần tối ưu hóa nhu cầu đi lại của người dân, giảm lượng phương tiện cá nhân, và từng bước hiện đại hóa hệ thống giao thông."
+      },
+      "s5": {
+        "name": "FUTA REST STOP",
+        "des": "Hiểu được nhu cầu nghỉ ngơi, thư giãn của hành khách trên các hành trình dài qua nhiều tỉnh, thành phố, Công ty Phương Trang đã đầu tư vào hệ thống Trạm Dừng Phúc Lộc tại các khu vực trọng điểm như Tiền Giang, Lâm Đồng, Bến Tre, Vĩnh Long, Sóc Trăng… Hệ thống Trạm Dừng Phúc Lộc được đầu tư bài bản, đảm bảo phục vụ lượng lớn khách hàng 24/7."
+      }
+    }
+  },
+
+  "profile": {
+    "tabs": {
+      "futaPay": "Ví Futa",
+      "accountInfo": "Thông tin tài khoản",
+      "bookingHistory": "Lịch sử mua vé",
+      "password": "Đổi mật khẩu",
+      "logout": "Đăng xuất"
+    },
+    "logoutDialog": {
+      "title": "Xác nhận đăng xuất",
+      "message": "Bạn có chắc chắn muốn đăng xuất?"
+    },
+    "accountInfo": {
+      "title": "Thông tin tài khoản",
+      "des": "Quản lý thông tin hồ sơ",
+      "fullName": "Họ và tên",
+      "phone": "Số điện thoại",
+      "gender": "Giới tính",
+      "selectImage": "Chọn ảnh",
+      "selectMessage": "Dụng lượng file tối đa 1 MB Định dạng:.JPEG, .PNG"
+    },
+    "changePass": {
+      "title": "Đổi mật khẩu",
+      "des": "Quản lý mật khẩu",
+      "oldPass": "Mật khẩu cũ",
+      "enterOldPass": "Nhập mật khẩu cũ",
+      "newPass": "Mật khẩu mới",
+      "enterNewPass": "Nhập mật khẩu mới"
+    },
+    "futaWallet": {
+      "title": "Ví Futa",
+      "des": "Quản lý Ví Futa của bạn",
+      "balance": "Số dư",
+      "deposit": "Nạp tiền",
+      "withdraw": "Rút tiền",
+      "depositAmount": "Số tiền nạp",
+      "withdrawAmount": "Số tiền rút",
+      "enterDepositAmount": "Nhập số tiền muốn nạp",
+      "enterWithdrawAmount": "Nhập số tiền muốn rút",
+      "walletHistory": "Lịch sử giao dịch",
+      "walletCommand": "Lịch sử thực hiện"
+    },
+    "bookingHistory": {
+      "title": "Lịch sử đặt vé",
+      "des": "Quản lý lich sử đặt vé"
+    }
+  },
+
+  "validator": {
+    "emailAtLeast": "Email phải có ít nhất 5 ký tự",
+    "emailAtLast": "Email phải ít hơn 50 ký tự",
+    "emailNotValid": "Vui lòng nhập địa chỉ email hợp lệ",
+    "notContainA": "Email chỉ được chứa một ký tự '@'",
+    "passwordAtLeast": "Mật khẩu phải có ít nhất 6 ký tự",
+    "fieldRequired": "Trường này không được để trống"
+  },
+
+  "walletAction": {
+    "deposit": "Nạp tiền",
+    "withdraw": "Rút tiền",
+    "using": "Sử dụng",
+    "return": "Hoàn tiền"
+  },
+  "walletHistory": {
+    "bank": "Ngân hàng",
+    "accountNumber": "Số tài khoản",
+    "receiver": "Người nhận",
+    "amount": "Số tiền",
+    "content": "Nội dung",
+    "time": "Thời gian",
+    "balance": "Số dư",
+    "action": "Hành động"
+  },
+  "walletCommand": {
+    "code": "Mã giao dịch",
+    "bank": "Ngân hàng",
+    "accountNumber": "Số tài khoản",
+    "receiver": "Người nhận",
+    "amount": "Số tiền",
+    "createdAt": "Thời gian tạo",
+    "completedAt": "Thời gian hoàn thành",
+    "action": "Hành động",
+    "status": "Trạng thái",
+    "selectCreatedDate": "Chọn ngày tạo",
+    "statuses": {
+      "wait_to_resolve": "Chờ xử lý",
+      "wait_to_pay": "Chờ thanh toán",
+      "rejected": "Từ chối",
+      "success": "Thành công",
+      "returned": "Đã trả"
+    },
+    "actions": {
+      "deposit": "Nạp tiền",
+      "withdraw": "Rút tiền",
+      "using": "Sử dụng",
+      "return": "Hoàn tiền"
+    }
+  },
+  "bookingHistory": {
+    "code": "Mã đơn",
+    "route": "Tuyến xe",
+    "departureTime": "Thời gian xuất phát",
+    "departureDate": "Ngày xuất phát",
+    "numOfTickets": "Số vé",
+    "totalPrice": "Giá vé",
+    "createdAt": "Thời gian tạo",
+    "status": "Trạng thái",
+    "action": "Hành động"
+  },
+  "bookingStatus": {
+    "payed": "Đã thanh toán",
+    "failed": "Thất bại",
+    "returned": "Đã trả vé",
+    "waitToPay": "Chờ thanh toán",
+    "outOfPay": "Hết hạn"
+  },
+
+  "TripPolicy": {
+    "cancellationPolicy": {
+      "title": "Chính sách hủy vé",
+      "exchangeOnce": "Vé chỉ được đổi một lần duy nhất.",
+      "costExplanation": "Phí hủy vé từ 10% đến 30% giá vé tùy theo thời gian hủy so với giờ khởi hành và số lượng vé cá nhân/nhóm.",
+      "contactInstruction": "Liên hệ tổng đài 1900 6067 hoặc quầy vé ít nhất 24 giờ trước giờ khởi hành ghi trên vé."
+    },
+    "boarding": {
+      "title": "Yêu cầu khi lên xe",
+      "arrivalTime": "Có mặt tại văn phòng/bến xe (điểm đón trực tiếp) trước giờ khởi hành 30 phút (ngày lễ và Tết đến sớm 60 phút).",
+      "presentTicket": "Xuất trình thông tin vé qua SMS/Email/Ứng dụng Futa hoặc liên hệ quầy vé để nhận thông tin vé.",
+      "noStrongOdors": "Không mang theo thức ăn/nước uống có mùi nặng lên xe.",
+      "noSmokingAlcohol": "Không hút thuốc, uống rượu bia, hoặc sử dụng chất kích thích trên xe.",
+      "noFlammableItems": "Không mang theo vật dễ cháy nổ lên xe.",
+      "noLittering": "Không xả rác trên xe.",
+      "noPets": "Không mang theo thú cưng lên xe."
+    },
+    "baggage": {
+      "title": "Hành lý xách tay",
+      "maxWeight": "Tổng trọng lượng hành lý không vượt quá 20kg.",
+      "noBulkyGoods": "Không vận chuyển hàng hóa cồng kềnh."
+    },
+    "childrenPregnant": {
+      "title": "Trẻ em & Phụ nữ mang thai",
+      "childTicketPolicy": "Trẻ em dưới 6 tuổi, cao dưới 1.3m và nặng dưới 30kg không cần mua vé.",
+      "maxOneChild": "Mỗi người lớn được đi kèm tối đa một trẻ em.",
+      "pregnantCaution": "Phụ nữ mang thai cần đảm bảo sức khỏe trong suốt hành trình."
+    },
+    "pickup": {
+      "title": "Đón khách",
+      "registerPickup": "Liên hệ tổng đài 19006067 để đăng ký ít nhất 2 giờ trước giờ khởi hành. Chuẩn bị hành lý gọn nhẹ (tối đa 20kg).",
+      "pickupLocationNote": "Chỉ hỗ trợ đón tại một số địa điểm thuận tiện dọc tuyến đường."
+    }
+  },
+
+  "Transshipment": {
+    "title": "Đón/trả tận nơi",
+    "guestTime": "Thời gian tiếp nhận khách: Trước giờ khởi hành 4 tiếng.",
+    "pickupTime": "Thời gian đón khách: Chuẩn bị trước 2–3 tiếng. Tài xế sẽ liên hệ trước vì có thể kẹt xe và ghép nhiều điểm đón.",
+    "smallAlleys": "Hẻm nhỏ không quay đầu được: Xe đón khách tại đầu hẻm/đường.",
+    "noParking": "Khu vực cấm đỗ: Xe đón tại vị trí gần nhất có thể.",
+    "luggage": "Hành lý: Gọn nhẹ dưới 20kg, không mang theo thú cưng, hàng hóa có mùi hoặc chảy nước."
+  },
+
+  "Schedule": {
+    "noted": "Lưu ý",
+    "note": "Thời gian các mốc lịch trình là thời gian dự kiến. Lịch trình này có thể thay đổi tuỳ vào tình hình thực tế xuất bến sớm hay trễ."
+  },
+
+  "booking": {
+    "bookingDetails": "Chi Tiết Đặt Vé",
+    "customerInformation": "Thông Tin Khách Hàng",
+    "departureTrip": "Chuyến Đi",
+    "returnTrip": "Chuyến Về",
+    "name": "Họ Tên",
+    "email": "Email",
+    "phone": "Số Điện Thoại",
+    "departure": "Điểm Khởi Hành",
+    "departureDate": "Ngày Khởi Hành",
+    "departureAddress": "Địa Chỉ Khởi Hành",
+    "departureTime": "Giờ Khởi Hành",
+    "destination": "Điểm Đến",
+    "destinationAddress": "Địa Chỉ Đến",
+    "destinationTime": "Giờ Đến",
+    "route": "Tuyến Đường",
+    "pricePerSeat": "Giá Mỗi Ghế",
+    "seatNumbers": "Số Ghế",
+    "totalPrice": "Tổng Tiền",
+    "numOfTickets": "Số Lượng Vé",
+    "tickets": "vé",
+    "createdAt": "Ngày Tạo",
+    "pay": "Thanh Toán",
+    "returnTicket": "Hoàn Trả Vé",
+    "processing": "Đang Xử Lý...",
+    "paymentSuccess": "Thanh toán được khởi tạo thành công",
+    "returnSuccess": "Hoàn trả vé thành công",
+    "status": {
+      "wait_to_pay": "Chờ Thanh Toán",
+      "out_of_pay": "Hết Hạn Thanh Toán",
+      "payed": "Đã Thanh Toán",
+      "returned": "Đã Hoàn Trả",
+      "failed": "Thất Bại"
+    }
+  },
+
+  "returnModal": {
+    "title": "Hoàn trả vé",
+    "des": "Bạn có chắc chắn muốn hoàn trả vé này và nhận tiền vào ví Futa của bạn?"
+  },
+  "depositModal": {
+    "title": "Nạp tiền",
+    "des": "Tạo lệnh nạp tiền",
+    "amount": "Số tiền",
+    "enterAmount": "Nhập số tiền"
+  },
+  "withdrawModal": {
+    "title": "Rút tiền",
+    "des": "Tạo lệnh rút tiền",
+    "bank": "Ngân hàng",
+    "enterBank": "Nhập tên Ngân hàng",
+    "accountNumber": "Số tài khoản",
+    "enterAccountNumber": "Nhập số tài khoản",
+    "receiver": "Người nhận tiền",
+    "enterReceiver": "Nhập tên người nhận tiền",
+    "amount": "Số tiền",
+    "enterAmount": "Nhập số tiền"
+  },
+  "book": {
+    "userInfo": "Thông tin khách hàng",
+    "fullName": "Họ và tên",
+    "enterFullname": "Nhập họ và tên",
+    "email": "Email",
+    "enterEmail": "Nhập email",
+    "phone": "Số điện thoại",
+    "enterPhone": "Nhập số điện thoại",
+    "termAndPolicy": "ĐIỀU KHOẢN & LƯU Ý",
+    "term1": "Quý khách vui lòng có mặt tại bến xuất phát của xe trước ít nhất 30 phút giờ xe khởi hành, mang theo thông báo đã thanh toán vé thành công có chứa mã vé được gửi từ hệ thống FUTA BUS LINES. Vui lòng liên hệ Trung tâm tổng đài 1900 6067 để được hỗ trợ.",
+    "term2": "Nếu quý khách có nhu cầu trung chuyển, vui lòng liên hệ Tổng đài trung chuyển 1900 6918 trước khi đặt vé. Chúng tôi không đón/trung chuyển tại những điểm xe trung chuyển không thể tới được.",
+
+    "transshipmentInfo": "Thông tin đón trả",
+    "pickup": "Điểm đón",
+    "drop": "Điểm trả",
+
+    "5perTrip": "5 vé/chuyến",
+    "note": "Lưu ý: Được chọn tối đa",
+    "sold": "Đã bán",
+    "selected": "Đã chọn",
+    "able": "Còn trống",
+    "price": "Giá vé",
+    "firstFloor": "Tầng 1",
+    "secondFloor": "Tầng 2",
+    "busInfo": "Thống tin xe",
+    "selectSeats": "Chọn Ghế",
+    "departureTrip": "Chuyến Đi",
+    "returnTrip": "Chuyến Về",
+
+    "total": "Tổng:",
+    "yourBalance": "Số dư của bạn:",
+    "useWallet": "Dùng Ví Futa"
+  }
+}

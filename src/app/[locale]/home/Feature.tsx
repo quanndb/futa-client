@@ -11,47 +11,47 @@ import Image from "next/image";
 const data = [
   {
     id: 1,
-    imageUrl: "/assets/images/feature1.jpg",
+    imageUrl: "/assets/images/feature1.png",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 2,
-    imageUrl: "/assets/images/feature2.jpg",
+    imageUrl: "/assets/images/feature2.png",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 3,
-    imageUrl: "/assets/images/feature3.jpg",
+    imageUrl: "/assets/images/feature3.png",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 4,
-    imageUrl: "/assets/images/feature1.jpg",
+    imageUrl: "/assets/images/feature1.png",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 5,
-    imageUrl: "/assets/images/feature2.jpg",
+    imageUrl: "/assets/images/feature2.png",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 6,
-    imageUrl: "/assets/images/feature3.jpg",
+    imageUrl: "/assets/images/feature3.png",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 7,
-    imageUrl: "/assets/images/feature1.jpg",
+    imageUrl: "/assets/images/feature1.png",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 8,
-    imageUrl: "/assets/images/feature2.jpg",
+    imageUrl: "/assets/images/feature2.png",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
   {
     id: 9,
-    imageUrl: "/assets/images/feature3.jpg",
+    imageUrl: "/assets/images/feature3.png",
     url: "https://beta.futabus.vn/tin-tuc/futa-dong-hanh-cung-shb-nhan-doi-qua-tang",
   },
 ];

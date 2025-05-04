@@ -1,4 +1,5 @@
 import axios from "@/services";
+import { RegisterRequest } from "@/services/API/accountAPI";
 
 export type LoginRequest = {
   email: string;

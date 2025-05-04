@@ -238,7 +238,11 @@ const InfoForm = ({
                 <FormItem className="w-full">
                   <FormLabel>{t("phoneNumber")}</FormLabel>
                   <FormControl>
-                    <Input placeholder={t("enterPhonenumber")} {...field} />
+                    <Input
+                      placeholder={t("enterPhonenumber")}
+                      {...field}
+                      value={field.value ?? ""}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

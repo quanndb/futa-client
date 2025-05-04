@@ -47,7 +47,7 @@ const forgotPasswordSchema = z.object({
   email: emailValidation,
 });
 
-const LoginForm = ({ className }: { className?: string }) => {
+const LoginForm = () => {
   const t = useTranslations();
   const router = useRouter();
   const [isOpenForgotPassword, setIsOpenForgotPassword] = useState(false);
@@ -61,8 +61,7 @@ const LoginForm = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "bg-white rounded-lg shadow-md p-8 mx-auto mb-10 search-form mt-10",
-        className
+        "bg-white rounded-lg shadow-md p-8 mx-auto mb-10 search-form mt-10"
       )}
     >
       <div className="flex flex-col md:flex-row">

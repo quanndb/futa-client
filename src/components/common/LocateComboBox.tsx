@@ -20,6 +20,7 @@ import {
 import { cn } from "@/lib/utils";
 import { formatTime } from "@/lib/utils/TimeConverter";
 import { TripTransit } from "@/services/API/tripAPI";
+import { useTranslations } from "next-intl";
 
 export function LocateCombobox({
   data,
@@ -30,6 +31,7 @@ export function LocateCombobox({
   defaultValue?: TripTransit;
   onValueChange: (value: string) => void;
 }) {
+  const t = useTranslations();
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState(
     defaultValue?.transitPointId || data[0].transitPointId
@@ -57,15 +59,15 @@ export function LocateCombobox({
             ? `${formatTime(findSelected?.arrivalTime || "")} - ${
                 findSelected?.transitPoint.name
               }`
-            : "Select framework..."}
+            : t("search")}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full max-w-[500px] p-0">
         <Command className="">
-          <CommandInput placeholder="Search framework..." />
+          <CommandInput placeholder={t("search")} />
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>{t("common.nodata")}</CommandEmpty>
             <CommandGroup>
               {data.map((sub) => (
                 <CommandItem

@@ -48,6 +48,8 @@
     "BED": "Bed",
     "LIMOUSINE": "Limousine"
   },
+  "previous": "Previous",
+  "next": "Next",
   "morning": "Morning",
   "afternoon": "Afternoon",
   "evening": "Evening",
@@ -269,12 +271,14 @@
     "passwordAtLeast": "Password must be at least 6 characters",
     "fieldRequired": "This field is required"
   },
+
   "walletAction": {
     "deposit": "Deposit",
     "withdraw": "Withdraw",
     "using": "Using",
     "return": "Return"
   },
+
   "walletHistory": {
     "bank": "Bank",
     "accountNumber": "Account Number",
@@ -285,6 +289,7 @@
     "balance": "Balance",
     "action": "Action"
   },
+
   "walletCommand": {
     "code": "Transaction Code",
     "bank": "Bank",
@@ -310,6 +315,7 @@
       "return": "Return"
     }
   },
+
   "bookingHistory": {
     "code": "Code",
     "route": "Route",
@@ -321,6 +327,7 @@
     "status": "Status",
     "action": "Action"
   },
+
   "bookingStatus": {
     "payed": "Payed",
     "failed": "Failed",
@@ -418,12 +425,14 @@
     "title": "Return Ticket",
     "des": "Do you want to return this ticket and receive money back to your Futa account?"
   },
+
   "depositModal": {
     "title": "Deposit Money",
     "des": "Create deposit command",
     "amount": "Amount",
     "enterAmount": "Enter amount"
   },
+
   "withdrawModal": {
     "title": "Withdraw Money",
     "des": "Create withdraw command",
@@ -436,6 +445,7 @@
     "amount": "Amount",
     "enterAmount": "Enter amount"
   },
+
   "book": {
     "userInfo": "Customer Information",
     "fullName": "Full name",
@@ -468,5 +478,13 @@
     "total": "Total:",
     "yourBalance": "Your balance:",
     "useWallet": "Use Futa Wallet"
+  },
+
+  "schedulePage": {
+    "enterDeparture": "Enter departure",
+    "enterDestination": "Enter destination",
+    "route": "Route",
+    "distance": "Distance",
+    "duration": "Duration"
   }
 }

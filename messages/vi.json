@@ -48,6 +48,8 @@
     "BED": "Giường",
     "LIMOUSINE": "Limousine"
   },
+  "previous": "Trước",
+  "next": "Sau",
   "morning": "Sáng",
   "afternoon": "Chiều",
   "evening": "Tối",
@@ -276,6 +278,7 @@
     "using": "Sử dụng",
     "return": "Hoàn tiền"
   },
+
   "walletHistory": {
     "bank": "Ngân hàng",
     "accountNumber": "Số tài khoản",
@@ -286,6 +289,7 @@
     "balance": "Số dư",
     "action": "Hành động"
   },
+
   "walletCommand": {
     "code": "Mã giao dịch",
     "bank": "Ngân hàng",
@@ -311,6 +315,7 @@
       "return": "Hoàn tiền"
     }
   },
+
   "bookingHistory": {
     "code": "Mã đơn",
     "route": "Tuyến xe",
@@ -322,6 +327,7 @@
     "status": "Trạng thái",
     "action": "Hành động"
   },
+
   "bookingStatus": {
     "payed": "Đã thanh toán",
     "failed": "Thất bại",
@@ -419,12 +425,14 @@
     "title": "Hoàn trả vé",
     "des": "Bạn có chắc chắn muốn hoàn trả vé này và nhận tiền vào ví Futa của bạn?"
   },
+
   "depositModal": {
     "title": "Nạp tiền",
     "des": "Tạo lệnh nạp tiền",
     "amount": "Số tiền",
     "enterAmount": "Nhập số tiền"
   },
+
   "withdrawModal": {
     "title": "Rút tiền",
     "des": "Tạo lệnh rút tiền",
@@ -437,6 +445,7 @@
     "amount": "Số tiền",
     "enterAmount": "Nhập số tiền"
   },
+
   "book": {
     "userInfo": "Thông tin khách hàng",
     "fullName": "Họ và tên",
@@ -469,5 +478,13 @@
     "total": "Tổng:",
     "yourBalance": "Số dư của bạn:",
     "useWallet": "Dùng Ví Futa"
+  },
+
+  "schedulePage": {
+    "enterDeparture": "Nhập điểm đi",
+    "enterDestination": "Nhập điểm về",
+    "route": "Tuyến Đường",
+    "distance": "Khoảng cách",
+    "duration": "Thời gian"
   }
 }

@@ -8,6 +8,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface CustomPaginationProps {
   currentPage: number;
@@ -22,6 +23,7 @@ export function CustomPagination({
   onPageChange,
   className,
 }: CustomPaginationProps) {
+  const t = useTranslations();
   const renderPageNumbers = () => {
     const pages = [];
     const maxVisiblePages = 5;
@@ -90,6 +92,7 @@ export function CustomPagination({
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious
+            title={t("previous")}
             onClick={() => onPageChange(Math.max(1, currentPage - 1))}
             className={
               currentPage === 1 ? "pointer-events-none opacity-50" : ""
@@ -99,6 +102,7 @@ export function CustomPagination({
         {renderPageNumbers()}
         <PaginationItem>
           <PaginationNext
+            title={t("next")}
             onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
             className={
               currentPage === totalPages ? "pointer-events-none opacity-50" : ""

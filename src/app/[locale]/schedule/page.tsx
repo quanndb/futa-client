@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function TransportationSearch() {
-  const t = useTranslations("common");
+  const t = useTranslations();
   const router = useRouter();
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
@@ -51,7 +51,6 @@ export default function TransportationSearch() {
 
   const handleSearchTrip = (route: Route) => {
     if (!route) return;
-    console.log(route);
     addRecentSearch({
       origin: { value: route.departureId, label: route.departure },
       destination: { value: route.destinationId, label: route.destination },
@@ -66,7 +65,7 @@ export default function TransportationSearch() {
           <div className="relative w-full">
             <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
             <Input
-              placeholder="Enter origin"
+              placeholder={t("schedulePage.enterDeparture")}
               className="pl-10"
               value={origin}
               onChange={(e) => {
@@ -79,7 +78,7 @@ export default function TransportationSearch() {
           <div className="relative w-full">
             <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
             <Input
-              placeholder="Enter destination"
+              placeholder={t("schedulePage.enterDestination")}
               className="pl-10"
               value={destination}
               onChange={(e) => {
@@ -93,13 +92,13 @@ export default function TransportationSearch() {
         <Tabs defaultValue="route" className="w-full">
           <TabsList className="w-full grid grid-cols-8 mb-4 ">
             <TabsTrigger value="route" className="col-span-4">
-              Route
+              {t("schedulePage.route")}
             </TabsTrigger>
             <TabsTrigger className="col-span-2" value="distance" disabled>
-              Distance
+              {t("schedulePage.distance")}
             </TabsTrigger>
             <TabsTrigger value="time" disabled>
-              Time
+              {t("schedulePage.duration")}
             </TabsTrigger>
             <TabsTrigger value="" disabled></TabsTrigger>
           </TabsList>
@@ -120,23 +119,24 @@ export default function TransportationSearch() {
                               <span className="text-orange-500">
                                 {route.departure}
                               </span>
-                              =<span>{route.destination}</span>
+                              {" -> "}
+                              <span>{route.destination}</span>
                             </div>
                             <div className="flex items-center">
                               {route.distance} Km
                             </div>
                             <div className="flex items-center justify-between">
                               <span>{`${intToHour(route.duration)} ${t(
-                                "hour"
+                                "common.hour"
                               )} ${intToMin(route.duration)} ${t(
-                                "min"
+                                "common.min"
                               )}`}</span>
                               <Button
                                 variant="outline"
                                 className="bg-orange-100 text-orange-500 hover:bg-orange-200 hover:text-orange-600 border-orange-200"
                                 onClick={() => handleSearchTrip(route)}
                               >
-                                {t("searchTrip")}
+                                {t("common.searchTrip")}
                               </Button>
                             </div>
                           </div>
@@ -155,7 +155,7 @@ export default function TransportationSearch() {
                     className="mx-auto"
                   />
                   <p className="text-center mt-5 font-bold text-primary opacity-60 text-2xl">
-                    {t("nodata")}
+                    {t("common.nodata")}
                   </p>
                 </div>
               )}

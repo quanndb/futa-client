@@ -47,6 +47,7 @@ const LoginTab = () => {
   const t = useTranslations();
   const [showPassword, setShowPassword] = useState(false);
   const { setUserInfo } = useUserInfo();
+  const { setIsLoading } = useLoading();
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
@@ -65,7 +66,8 @@ const LoginTab = () => {
 
   const { mutate: mutateLogin } = useMutation({
     mutationFn: (data: z.infer<typeof loginSchema>) => {
-      return authAPI.login(data);
+      setIsLoading(true);
+      return authAPI.login(data).finally(() => setIsLoading(false));
     },
     onSuccess: (res) => {
       authStorage.saveTokens(res.data.accessToken, res.data.refreshToken);
@@ -77,7 +79,10 @@ const LoginTab = () => {
 
   const { mutate: loginWithGoogle } = useMutation({
     mutationKey: ["Login with google auth-code"],
-    mutationFn: (code: string) => authAPI.loginWithGoogle(code),
+    mutationFn: (code: string) => {
+      setIsLoading(true);
+      return authAPI.loginWithGoogle(code).finally(() => setIsLoading(false));
+    },
     onSuccess: (res) => {
       authStorage.saveTokens(res.data.accessToken, res.data.refreshToken);
       toast.success(t("loginSuccess"));

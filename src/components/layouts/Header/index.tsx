@@ -39,7 +39,7 @@ const Header = () => {
                   width={35}
                   height={35}
                   alt="Avatar"
-                  className="rounded-full"
+                  className="w-[35px] h-[35px] rounded-full object-cover"
                 />
                 <p className="hidden md:block text-white font-bold">
                   {userInfo.full_name}

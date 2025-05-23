@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { formatCurrencyVND } from "@/lib/utils/CurrencyFormater";
-import { formatToLocalDateTime } from "@/lib/utils/DateConverter";
+import { formatToLocalDateTimeWithTimeZone } from "@/lib/utils/DateConverter";
 import { isAfterNow24h, nowIsBefore20Min } from "@/lib/utils/dateUtils";
 import { formatTime } from "@/lib/utils/TimeConverter";
 import bookingAPI, {
@@ -312,7 +312,7 @@ const Details = ({ booking }: { booking: BookingResponse }) => {
       <div className="mt-4">
         <Field
           label={t("createdAt")}
-          value={formatToLocalDateTime(booking.createdAt)}
+          value={formatToLocalDateTimeWithTimeZone(booking.createdAt)}
           icon={<CalendarIcon size={16} />}
         />
       </div>

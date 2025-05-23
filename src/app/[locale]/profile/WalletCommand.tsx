@@ -15,7 +15,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { formatCurrencyVND } from "@/lib/utils/CurrencyFormater";
-import { formatToLocalDateTime } from "@/lib/utils/DateConverter";
+import { formatToLocalDateTimeWithTimeZone } from "@/lib/utils/DateConverter";
 import walletAPI, {
   WalletAction,
   WalletCommandStatus,
@@ -244,11 +244,13 @@ export default function WalletCommand() {
                   {formatCurrencyVND(walletCommand.amount)}
                 </TableCell>
                 <TableCell className="text-center">
-                  {formatToLocalDateTime(walletCommand.createdAt)}
+                  {formatToLocalDateTimeWithTimeZone(walletCommand.createdAt)}
                 </TableCell>
                 <TableCell className="text-center">
-                  {walletCommand?.handledAt &&
-                    formatToLocalDateTime(walletCommand.handledAt)}
+                  {walletCommand?.completedAt &&
+                    formatToLocalDateTimeWithTimeZone(
+                      walletCommand.completedAt
+                    )}
                 </TableCell>
                 <TableCell className="text-center">
                   <span

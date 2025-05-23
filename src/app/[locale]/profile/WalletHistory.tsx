@@ -10,7 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { formatCurrencyVND } from "@/lib/utils/CurrencyFormater";
-import { formatToLocalDateTime } from "@/lib/utils/DateConverter";
+import { formatToLocalDateTimeWithTimeZone } from "@/lib/utils/DateConverter";
 import walletAPI, { WalletAction } from "@/services/API/walletAPI";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
@@ -115,7 +115,9 @@ const WalletHistory = () => {
                   {formatCurrencyVND(item.amount)}
                 </TableCell>
                 <TableCell>{item.content}</TableCell>
-                <TableCell>{formatToLocalDateTime(item.createdAt)}</TableCell>
+                <TableCell>
+                  {formatToLocalDateTimeWithTimeZone(item.createdAt)}
+                </TableCell>
                 <TableCell className="text-center text-primary">
                   {formatCurrencyVND(item.currenBalance)}
                 </TableCell>

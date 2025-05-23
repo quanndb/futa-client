@@ -34,9 +34,11 @@ const depositSchema = z.object({
 export default function DepositModal({
   isOpen,
   onClose,
+  refetch,
 }: {
   isOpen: boolean;
   onClose: () => void;
+  refetch: () => void;
 }) {
   const form = useForm<z.infer<typeof depositSchema>>({
     resolver: zodResolver(depositSchema),
@@ -60,6 +62,7 @@ export default function DepositModal({
       form.reset();
       onClose();
       toast.success(t("success"));
+      refetch();
     },
   });
 

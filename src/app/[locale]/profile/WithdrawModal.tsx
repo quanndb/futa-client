@@ -45,9 +45,11 @@ const withdrawSchema = z.object({
 export default function WithdrawModal({
   isOpen,
   onClose,
+  refetch,
 }: {
   isOpen: boolean;
   onClose: () => void;
+  refetch: () => void;
 }) {
   const form = useForm<z.infer<typeof withdrawSchema>>({
     resolver: zodResolver(withdrawSchema),
@@ -74,6 +76,7 @@ export default function WithdrawModal({
       form.reset();
       onClose();
       toast.success(t("success"));
+      refetch();
     },
   });
 

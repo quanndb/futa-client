@@ -41,7 +41,7 @@ export default function WalletCommand() {
   const { userInfo } = useUserInfo();
   const { setIsLoading } = useLoading();
 
-  const { data: walletCommands } = useQuery({
+  const { data: walletCommands, refetch } = useQuery({
     queryKey: [
       "wallet-commands",
       page,
@@ -298,10 +298,12 @@ export default function WalletCommand() {
       <DepositModal
         isOpen={depositModalOpen}
         onClose={() => setDepositModalOpen(false)}
+        refetch={refetch}
       />
       <WithdrawModal
         isOpen={withdrawModalOpen}
         onClose={() => setWithdrawModalOpen(false)}
+        refetch={refetch}
       />
     </div>
   );

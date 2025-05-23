@@ -24,6 +24,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { banks } from "@/lib/consts/banks";
+import { createWithdrawSchema } from "@/lib/schemas/user";
 import walletAPI from "@/services/API/walletAPI";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
@@ -32,15 +33,6 @@ import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
-
-const withdrawSchema = z.object({
-  bankCode: z.string().min(1, { message: "Bank code is required" }),
-  accountNumber: z.string().min(1, { message: "Account number is required" }),
-  receiverName: z.string().min(1, { message: "Receiver name is required" }),
-  amount: z.coerce
-    .number()
-    .min(10000, { message: "Amount must be at least 10.000 VND" }),
-});
 
 export default function WithdrawModal({
   isOpen,
@@ -51,6 +43,9 @@ export default function WithdrawModal({
   onClose: () => void;
   refetch: () => void;
 }) {
+  const ref = useRef<HTMLFormElement>(null);
+  const t = useTranslations();
+  const withdrawSchema = createWithdrawSchema(t);
   const form = useForm<z.infer<typeof withdrawSchema>>({
     resolver: zodResolver(withdrawSchema),
     defaultValues: {
@@ -60,8 +55,6 @@ export default function WithdrawModal({
       amount: 10000,
     },
   });
-  const ref = useRef<HTMLFormElement>(null);
-  const t = useTranslations();
 
   const { mutate: createWithdraw } = useMutation({
     mutationFn: (data: z.infer<typeof withdrawSchema>) => {

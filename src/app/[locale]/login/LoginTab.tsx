@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import SubmitButton from "@/components/ui/submitBtn";
+import { createLoginSchema } from "@/lib/schemas/user";
 import { authStorage, JwtDecoder } from "@/lib/utils/authUtils";
 import authAPI from "@/services/API/authAPI";
 import { useUserInfo } from "@/store/AuthStore";
@@ -27,22 +28,6 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
 
-const emailValidation = z
-  .string()
-  .min(5, { message: "Email must be at least 5 characters" })
-  .max(50, { message: "Email must be less than 50 characters" })
-  .email({ message: "Please enter a valid email address" })
-  .refine((val) => (val.match(/@/g) || []).length === 1, {
-    message: "Email must contain only one '@' character",
-  });
-
-const loginSchema = z.object({
-  email: emailValidation,
-  password: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters" }),
-});
-
 const LoginTab = () => {
   const router = useRouter();
   const t = useTranslations();
@@ -52,6 +37,8 @@ const LoginTab = () => {
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
+
+  const loginSchema = createLoginSchema(t);
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),

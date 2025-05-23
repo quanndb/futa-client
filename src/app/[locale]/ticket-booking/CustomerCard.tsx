@@ -8,32 +8,19 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { CustomerFormValues } from "@/lib/schemas/user";
 import { useBooking } from "@/store/BookingStore";
 import { useTranslations } from "next-intl";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { UseFormReturn } from "react-hook-form";
 
-const emailValidation = z
-  .string()
-  .min(5, { message: "Email must be at least 5 characters" })
-  .max(50, { message: "Email must be less than 50 characters" })
-  .email({ message: "Please enter a valid email address" })
-  .refine((val) => (val.match(/@/g) || []).length === 1, {
-    message: "Email must contain only one '@' character",
-  });
-export const customerSchema = z.object({
-  fullName: z.string().min(1),
-  email: emailValidation,
-  phone: z.string().min(10),
-});
 const CustomerCard = ({
   form,
 }: {
-  form: ReturnType<typeof useForm<z.infer<typeof customerSchema>>>;
+  form: UseFormReturn<CustomerFormValues>;
 }) => {
   const t = useTranslations();
   const { setUserInfo } = useBooking();
-  const onSubmit = (values: z.infer<typeof customerSchema>) => {
+  const onSubmit = (values: CustomerFormValues) => {
     setUserInfo(values);
   };
   return (

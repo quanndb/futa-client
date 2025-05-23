@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import SubmitButton from "@/components/ui/submitBtn";
+import { createChangePasswordSchema } from "@/lib/schemas/user";
 import accountAPI from "@/services/API/accountAPI";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
@@ -18,17 +19,9 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
 
-const changePasswordSchema = z.object({
-  oldPassword: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters" }),
-  newPassword: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters" }),
-});
-
 export default function ChangePassword() {
   const t = useTranslations();
+  const changePasswordSchema = createChangePasswordSchema(t);
   const form = useForm<z.infer<typeof changePasswordSchema>>({
     resolver: zodResolver(changePasswordSchema),
     defaultValues: {

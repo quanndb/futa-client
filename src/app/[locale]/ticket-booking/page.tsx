@@ -1,12 +1,11 @@
 "use client";
-import CustomerCard, {
-  customerSchema,
-} from "@/app/[locale]/ticket-booking/CustomerCard";
+import CustomerCard from "@/app/[locale]/ticket-booking/CustomerCard";
 import TransshipmentCard from "@/app/[locale]/ticket-booking/TransshipmentCard";
 import TripSeatsPage from "@/app/[locale]/ticket-booking/TripSeats";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
+import { createCustomerSchema, CustomerFormValues } from "@/lib/schemas/user";
 import { formatCurrencyVND } from "@/lib/utils/CurrencyFormater";
 import bookingAPI, { BookingRequest } from "@/services/API/bookingAPI";
 import tripAPI, { DetailsTransit } from "@/services/API/tripAPI";
@@ -21,7 +20,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { z } from "zod";
 
 export default function TicketBooking() {
   const t = useTranslations();
@@ -92,7 +90,8 @@ export default function TicketBooking() {
     reset,
   ]);
   const { userInfo } = useUserInfo();
-  const form = useForm<z.infer<typeof customerSchema>>({
+  const customerSchema = createCustomerSchema(t);
+  const form = useForm<CustomerFormValues>({
     resolver: zodResolver(customerSchema),
     defaultValues: {
       fullName: userInfo?.full_name || "",
@@ -122,13 +121,13 @@ export default function TicketBooking() {
   const handleSubmit = async () => {
     const isValid = await form.trigger();
     if (!isValid) {
-      return toast.error("Please fill in all required fields");
+      return toast.error(t("validations.notFillAll"));
     }
     if (booking.departureTrip.seats.length === 0)
-      return toast.error("Please select at least one seat");
+      return toast.error(t("validations.notSelectSeat"));
 
     if (booking.returnTrip && booking.returnTrip.seats.length === 0)
-      return toast.error("Please select at least one seat");
+      return toast.error(t("validations.notSelectSeat"));
 
     const values = form.getValues();
     setUserInfo(values);

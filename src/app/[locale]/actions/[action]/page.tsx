@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import SubmitButton from "@/components/ui/submitBtn";
 import { VALID_ACTIONS } from "@/lib/consts/enum";
+import { createPasswordSchema } from "@/lib/schemas/user";
 import { authStorage } from "@/lib/utils/authUtils";
 import accountAPI from "@/services/API/accountAPI";
 import authAPI from "@/services/API/authAPI";
@@ -28,12 +29,6 @@ import { use, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
-
-const resetPasswordSchema = z.object({
-  password: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters" }),
-});
 
 export default function ActionPage({
   params,
@@ -113,6 +108,9 @@ const ResetPassword = ({ successFn }: { successFn: () => void }) => {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
   const t = useTranslations();
+  const resetPasswordSchema = z.object({
+    password: createPasswordSchema(t),
+  });
   const form = useForm<z.infer<typeof resetPasswordSchema>>({
     resolver: zodResolver(resetPasswordSchema),
     defaultValues: {

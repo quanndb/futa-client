@@ -17,13 +17,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import SubmitButton from "@/components/ui/submitBtn";
+import { createInfoSchema } from "@/lib/schemas/user";
 import { UserInfo } from "@/lib/types/UserInfo";
 import { avatarEncoder } from "@/lib/utils/LinkConverter";
-import accountAPI, {
-  Gender,
-  Profile,
-  UpdateProfile,
-} from "@/services/API/accountAPI";
+import accountAPI, { Profile, UpdateProfile } from "@/services/API/accountAPI";
 import { useUserInfo } from "@/store/AuthStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery } from "@tanstack/react-query";
@@ -33,13 +30,6 @@ import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
-
-const infoSchema = z.object({
-  email: z.string().min(1, { message: "This field is required" }),
-  fullName: z.string().min(1, { message: "This field is required" }),
-  phoneNumber: z.string().optional().nullable(),
-  gender: z.nativeEnum(Gender).optional().nullable(),
-});
 
 const AccountInfo = () => {
   const t = useTranslations();
@@ -130,6 +120,7 @@ const InfoForm = ({
   formRef?: React.RefObject<HTMLFormElement | null>;
 }) => {
   const t = useTranslations();
+  const infoSchema = createInfoSchema(t);
   const form = useForm<z.infer<typeof infoSchema>>({
     resolver: zodResolver(infoSchema),
     defaultValues: {

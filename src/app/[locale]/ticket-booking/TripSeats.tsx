@@ -10,6 +10,7 @@ import { useBooking } from "@/store/BookingStore";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export default function TripSeatsPage({
   departureTrip,
@@ -179,6 +180,7 @@ const SeatCard = ({
   isSeat?: boolean;
   onSelect: (setNumber: string) => void;
 }) => {
+  const t = useTranslations();
   return (
     <div
       className={cn(
@@ -192,6 +194,10 @@ const SeatCard = ({
           onClick={() => {
             if (item.seatNumber) {
               if (bookedSeats?.includes(item?.seatNumber)) return;
+              if (selectedSeats?.length === 5) {
+                toast.error(t("validations.maxSeat"));
+                return;
+              }
               onSelect(item.seatNumber);
             }
           }}

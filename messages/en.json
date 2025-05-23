@@ -486,5 +486,22 @@
     "route": "Route",
     "distance": "Distance",
     "duration": "Duration"
+  },
+
+  "validations": {
+    "passwordAtLeast": "Password must be at least 8 characters",
+    "emailAtLeast": "Email must be at least 5 characters",
+    "emailAtMost": "Email must be at most 50 characters",
+    "emailNotValid": "Please enter a valid email address",
+    "fieldRequired": "This field is required",
+    "notContainA": "Email must contain the '@' character",
+    "amountAtLeast": "The minimum amount is 10,000 VND",
+    "bankcodeRequired": "Bank code is required",
+    "accountNumberRequired": "Account number is required",
+    "receiverRequired": "Recipient's name is required",
+    "phoneNumberAtLeast": "Phone number must be 10 digits",
+    "notFillAll": "Please fill in all required fields",
+    "notSelectSeat": "Please select at least one seat",
+    "maxSeat": "You can only select up to 5 seats"
   }
 }

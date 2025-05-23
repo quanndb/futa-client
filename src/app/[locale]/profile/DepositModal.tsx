@@ -16,6 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { createAmountSchema } from "@/lib/schemas/user";
 import walletAPI from "@/services/API/walletAPI";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
@@ -24,12 +25,6 @@ import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
-
-const depositSchema = z.object({
-  amount: z.coerce
-    .number()
-    .min(10000, { message: "Amount must be at least 10.000 VND" }),
-});
 
 export default function DepositModal({
   isOpen,
@@ -40,14 +35,17 @@ export default function DepositModal({
   onClose: () => void;
   refetch: () => void;
 }) {
+  const ref = useRef<HTMLFormElement>(null);
+  const t = useTranslations();
+  const depositSchema = z.object({
+    amount: createAmountSchema(t),
+  });
   const form = useForm<z.infer<typeof depositSchema>>({
     resolver: zodResolver(depositSchema),
     defaultValues: {
       amount: 10000,
     },
   });
-  const ref = useRef<HTMLFormElement>(null);
-  const t = useTranslations();
 
   const { mutate: createDeposit } = useMutation({
     mutationFn: (data: z.infer<typeof depositSchema>) => {

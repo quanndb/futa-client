@@ -139,7 +139,7 @@
     "faq": "Câu hỏi thường gặp",
     "bookingGuideWeb": "Hướng dẫn đặt vé trên Web",
     "bookingGuideApp": "Hướng dẫn đặt vé trên App",
-    "copyRight": "© 2023 | Bản quyền thuộc về Công ty Cổ Phần Xe khách Phương Trang - FUTA Bus Lines 2023 | Chịu trách nhiệm quản lý nội dung: Ông Võ Duy Thành"
+    "copyRight": "© 2023 | Bản quyền thuộc về Công ty Cổ Phần Xe khách Phương Trang - FUTA Bus Lines 2023."
   },
 
   "home": {
@@ -486,5 +486,22 @@
     "route": "Tuyến Đường",
     "distance": "Khoảng cách",
     "duration": "Thời gian"
+  },
+
+  "validations": {
+    "passwordAtLeast": "Mật khẩu phải có ít nhất 8 ký tự",
+    "emailAtLeast": "Email phải có ít nhất 5 ký tự",
+    "emailAtMost": "Email phải có nhất 50 ký tự",
+    "emailNotValid": "Vui nhập địa chỉ email hợp lệ",
+    "fieldRequired": "Trường này không được bỏ trống",
+    "notContainA": "Email phải chứa một ký tự '@'",
+    "amountAtLeast": "Số tiền ít nhất là 10.000 VNĐ",
+    "bankcodeRequired": "Mã ngân hàng không được bỏ trống",
+    "accountNumberRequired": "Số tài khoản không được bỏ trống",
+    "receiverRequired": "Tên người nhận tiền không được bỏ trống",
+    "phoneNumberAtLeast": "Số điện thoại phải có 10 ký tự",
+    "notFillAll": "Vui lòng điền đầy đủ thông tin",
+    "notSelectSeat": "Vui lòng chọn ít nhất 1 ghế",
+    "maxSeat": "Được chọn tối đa 5 ghế"
   }
 }

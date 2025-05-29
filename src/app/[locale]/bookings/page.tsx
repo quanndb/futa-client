@@ -172,10 +172,10 @@ const TripTab = ({
   const handleSetState = (tripId: string) => {
     if (tab === "departure") {
       setDepartureTripId(tripId === departureTripId ? "" : tripId);
-      setTab("return");
+      if (tripId !== departureTripId) setTab("return");
     } else {
       setReturnTripId(tripId === returnTripId ? "" : tripId);
-      setTab("departure");
+      if (tripId !== returnTripId) setTab("departure");
     }
   };
 

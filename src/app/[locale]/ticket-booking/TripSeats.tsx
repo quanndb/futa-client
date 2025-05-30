@@ -194,7 +194,10 @@ const SeatCard = ({
           onClick={() => {
             if (item.seatNumber) {
               if (bookedSeats?.includes(item?.seatNumber)) return;
-              if (selectedSeats?.length === 5) {
+              if (
+                selectedSeats?.length === 5 &&
+                !selectedSeats?.includes(item.seatNumber)
+              ) {
                 toast.error(t("validations.maxSeat"));
                 return;
               }

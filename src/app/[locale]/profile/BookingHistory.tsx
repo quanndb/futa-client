@@ -148,40 +148,68 @@ export default function BookingHistory() {
                           )}
                     </SelectValue>
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value={"all"} className="p-1">
-                      {t("all")}
-                    </SelectItem>
-                    <SelectItem value={BookingStatus.PAYED} className="p-1">
-                      {/* add badge */}
-                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                        {t("bookingStatus.payed")}
+                  <SelectContent className="!p-0">
+                    <SelectItem
+                      value={"all"}
+                      className="px-3 py-2 hover:bg-gray-50 transition-colors rounded-md"
+                    >
+                      <span className="text-gray-700 font-medium">
+                        {t("all")}
                       </span>
                     </SelectItem>
-                    <SelectItem value={BookingStatus.FAILED} className="p-1">
-                      <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full">
-                        {t("bookingStatus.failed")}
+                    <SelectItem
+                      value={BookingStatus.PAYED}
+                      className="px-3 py-2 hover:bg-green-50 transition-colors rounded-md"
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                        <span className="text-green-700 font-semibold">
+                          {t("bookingStatus.payed")}
+                        </span>
+                      </span>
+                    </SelectItem>
+                    <SelectItem
+                      value={BookingStatus.FAILED}
+                      className="px-3 py-2 hover:bg-red-50 transition-colors rounded-md"
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                        <span className="text-red-700 font-semibold">
+                          {t("bookingStatus.failed")}
+                        </span>
                       </span>
                     </SelectItem>
                     <SelectItem
                       value={BookingStatus.WAIT_TO_PAY}
-                      className="p-1"
+                      className="px-3 py-2 hover:bg-blue-50 transition-colors rounded-md"
                     >
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                        {t("bookingStatus.waitToPay")}
+                      <span className="inline-flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                        <span className="text-blue-700 font-semibold">
+                          {t("bookingStatus.waitToPay")}
+                        </span>
                       </span>
                     </SelectItem>
                     <SelectItem
                       value={BookingStatus.OUT_OF_PAY}
-                      className="p-1"
+                      className="px-3 py-2 hover:bg-yellow-50 transition-colors rounded-md"
                     >
-                      <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
-                        {t("bookingStatus.outOfPay")}
+                      <span className="inline-flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
+                        <span className="text-yellow-700 font-semibold">
+                          {t("bookingStatus.outOfPay")}
+                        </span>
                       </span>
                     </SelectItem>
-                    <SelectItem value={BookingStatus.RETURNED} className="p-1">
-                      <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full">
-                        {t("bookingStatus.returned")}
+                    <SelectItem
+                      value={BookingStatus.RETURNED}
+                      className="px-3 py-2 hover:bg-orange-50 transition-colors rounded-md"
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-orange-400"></span>
+                        <span className="text-orange-700 font-semibold">
+                          {t("bookingStatus.returned")}
+                        </span>
                       </span>
                     </SelectItem>
                   </SelectContent>

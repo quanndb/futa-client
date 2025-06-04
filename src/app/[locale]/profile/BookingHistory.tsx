@@ -149,21 +149,40 @@ export default function BookingHistory() {
                     </SelectValue>
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value={"all"}>{t("all")}</SelectItem>
-                    <SelectItem value={BookingStatus.PAYED}>
-                      {t("bookingStatus.payed")}
+                    <SelectItem value={"all"} className="p-1">
+                      {t("all")}
                     </SelectItem>
-                    <SelectItem value={BookingStatus.FAILED}>
-                      {t("bookingStatus.failed")}
+                    <SelectItem value={BookingStatus.PAYED} className="p-1">
+                      {/* add badge */}
+                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                        {t("bookingStatus.payed")}
+                      </span>
                     </SelectItem>
-                    <SelectItem value={BookingStatus.WAIT_TO_PAY}>
-                      {t("bookingStatus.waitToPay")}
+                    <SelectItem value={BookingStatus.FAILED} className="p-1">
+                      <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full">
+                        {t("bookingStatus.failed")}
+                      </span>
                     </SelectItem>
-                    <SelectItem value={BookingStatus.OUT_OF_PAY}>
-                      {t("bookingStatus.outOfPay")}
+                    <SelectItem
+                      value={BookingStatus.WAIT_TO_PAY}
+                      className="p-1"
+                    >
+                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                        {t("bookingStatus.waitToPay")}
+                      </span>
                     </SelectItem>
-                    <SelectItem value={BookingStatus.RETURNED}>
-                      {t("bookingStatus.returned")}
+                    <SelectItem
+                      value={BookingStatus.OUT_OF_PAY}
+                      className="p-1"
+                    >
+                      <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
+                        {t("bookingStatus.outOfPay")}
+                      </span>
+                    </SelectItem>
+                    <SelectItem value={BookingStatus.RETURNED} className="p-1">
+                      <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full">
+                        {t("bookingStatus.returned")}
+                      </span>
                     </SelectItem>
                   </SelectContent>
                 </Select>

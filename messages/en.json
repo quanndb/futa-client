@@ -41,6 +41,7 @@
   "orderBy": "Order by",
   "departureAndDestinationRequired": "Departure and destination is required",
   "returnDateRequired": "Return date is required",
+  "departureDateMustBeBeforeReturnDate": "Departure date must be before return date",
   "searchFilter": "Search filter",
   "deleteFilter": "Delete filters",
   "busType": {

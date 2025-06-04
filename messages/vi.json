@@ -41,6 +41,7 @@
   "status": "Trạng thái",
   "departureAndDestinationRequired": "Điểm xuất phát và điểm cuối không được bỏ trống",
   "returnDateRequired": "Ngày về không được bỏ trống",
+  "departureDateMustBeBeforeReturnDate": "Ngày khởi hành phải trước ngày về",
   "searchFilter": "Bộ lọc tìm kiếm",
   "deleteFilter": "Xóa lọc",
   "busType": {

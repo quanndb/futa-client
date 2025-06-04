@@ -71,6 +71,10 @@ const SearchTrip = ({
       toast.error(t("returnDateRequired"));
       return;
     }
+    if (departureDate && returnDate && departureDate > returnDate) {
+      toast.error(t("departureDateMustBeBeforeReturnDate"));
+      return;
+    }
     addRecentSearch({ origin, destination });
     const searchParams = new URLSearchParams({
       departure: origin?.value,

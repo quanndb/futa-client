@@ -162,8 +162,7 @@ export default function BookingHistory() {
                       className="px-3 py-2 hover:bg-green-50 transition-colors rounded-md"
                     >
                       <span className="inline-flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                        <span className="text-green-700 font-semibold">
+                        <span className=" font-semibold">
                           {t("bookingStatus.payed")}
                         </span>
                       </span>
@@ -173,8 +172,7 @@ export default function BookingHistory() {
                       className="px-3 py-2 hover:bg-red-50 transition-colors rounded-md"
                     >
                       <span className="inline-flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-red-500"></span>
-                        <span className="text-red-700 font-semibold">
+                        <span className=" font-semibold">
                           {t("bookingStatus.failed")}
                         </span>
                       </span>
@@ -184,8 +182,7 @@ export default function BookingHistory() {
                       className="px-3 py-2 hover:bg-blue-50 transition-colors rounded-md"
                     >
                       <span className="inline-flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                        <span className="text-blue-700 font-semibold">
+                        <span className=" font-semibold">
                           {t("bookingStatus.waitToPay")}
                         </span>
                       </span>
@@ -195,8 +192,7 @@ export default function BookingHistory() {
                       className="px-3 py-2 hover:bg-yellow-50 transition-colors rounded-md"
                     >
                       <span className="inline-flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
-                        <span className="text-yellow-700 font-semibold">
+                        <span className=" font-semibold">
                           {t("bookingStatus.outOfPay")}
                         </span>
                       </span>
@@ -206,8 +202,7 @@ export default function BookingHistory() {
                       className="px-3 py-2 hover:bg-orange-50 transition-colors rounded-md"
                     >
                       <span className="inline-flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-orange-400"></span>
-                        <span className="text-orange-700 font-semibold">
+                        <span className=" font-semibold">
                           {t("bookingStatus.returned")}
                         </span>
                       </span>
